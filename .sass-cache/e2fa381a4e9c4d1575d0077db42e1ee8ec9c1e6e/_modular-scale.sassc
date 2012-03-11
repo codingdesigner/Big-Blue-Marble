@@ -1,0 +1,976 @@
+3.2.0.alpha.76 (Bleeding Edge)
+3583a359003daed58ec500a39985b837d7a74db4
+o:Sass::Tree::RootNode	:@has_childrenT:@template"#.// SASSY MODULAR-SCALE
+// https://github.com/scottkellum/modular-scale
+
+// Ratios
+$golden: 1.618 
+$gold: $golden
+$octave: (2 / 1)
+$major-seventh: (15 / 8)
+$minor-seventh: (16 / 9)
+$major-sixth: (5 / 3)
+$minor-sixth: (8 / 5)
+$fifth: (3 / 2)
+$fourth: (4 / 3)
+$major-third: (5 / 4)
+$minor-third: (6 / 5)
+$major-second: (9 / 8)
+$minor-second: (16 / 15)
+
+// Defaults
+$ratio: $golden !default
+$base-size: 12px !default
+$property: font-size !default
+$class-slug: ms !default
+
+// Modular Scale function
+@function modular-scale($multiple, $base-size, $ratio)
+  // return the $base-size if $multiple is zero
+  @if $multiple == 0
+    @if type-of($base-size) == 'list'
+      $base-size: sort-list($base-size)
+      @return nth($base-size, 1)
+    // return just the simple $base-size value if it's not a list
+    @return $base-size
+
+  // if multiple base-sizes are passed in as a list
+  // and multiple ratios are passed in as a list
+  // calculate values in using each base-size / ratio combination
+  @if type-of($base-size) == 'list' and type-of($ratio) == 'list'
+    @if unit(ms-multibase-multiratio($multiple, $base-size, $ratio)) == 'px'
+      @return round(ms-multibase-multiratio($multiple, $base-size, $ratio))
+    @return ms-multibase-multiratio($multiple, $base-size, $ratio)
+    
+  // if multiple base-sizes are passed in as a list
+  // calculate values in using each base-size
+  @if type-of($base-size) == 'list' and type-of($ratio) == 'number'
+    @if unit(ms-multibase($multiple, $base-size, $ratio)) == 'px'
+      @return round(ms-multibase($multiple, $base-size, $ratio))
+    @return ms-multibase($multiple, $base-size, $ratio)
+      
+  // if multiple ratios are passed in as a list
+  // calculate values in using each ratio
+  @if type-of($base-size) == 'number' and type-of($ratio) == 'list'
+    @if unit(ms-multiratio($multiple, $base-size, $ratio)) == 'px'
+      @return round(ms-multiratio($multiple, $base-size, $ratio))
+    @return ms-multiratio($multiple, $base-size, $ratio)
+    
+  // If there are no lists just run the simple function
+  @if unit(exponent($ratio, $multiple) * $base-size) == 'px'
+    @return round(exponent($ratio, $multiple) * $base-size)
+  @return exponent($ratio, $multiple) * $base-size
+  
+  
+// calculate values in using each base-size / ratio combination
+@function ms-multibase-multiratio($multiple, $base-size, $ratio)
+  // start with an empty list to place all values in
+  $scale-values: ()
+  // make sure base sizes are in ascending order
+  $base-size: sort-list($base-size)
+  // take each base-size in turn
+  $k: 1
+  @while $k <= length($base-size)
+    // add each $base-size to the list except the first
+    @if $k > 1
+      $scale-values: append($scale-values, nth($base-size, $k))
+    // take each ratio in turn
+    $j: 1
+    @while $j <= length($ratio)
+      // reset $modular-scale for each set
+      $modular-scale: nth($base-size, $k)
+      // do the scale for each base-size using this ratio 
+      @if $multiple > 0
+        // up $multiple times
+        // and add the result to $scale-values        
+        @for $i from 1 through $multiple
+          $modular-scale: exponent(nth($ratio, $j), $i) * nth($base-size, $k)
+          $scale-values: append($scale-values, $modular-scale)
+        // and down until the value is lower than the lowest $base-size
+        // and add the result to $scale-values
+        $i: -1
+        $modular-scale: nth($base-size, $k)
+        @while $modular-scale >= nth($base-size, 1)
+          $modular-scale: exponent(nth($ratio, $j), $i) * nth($base-size, $k)
+          $scale-values: append($scale-values, $modular-scale)
+          $i: $i - 1
+      @if $multiple < 0
+        // do the scale down for each set to below 1px
+        $i: -1
+        $modular-scale: nth($base-size, $k)
+        @while $modular-scale > 1
+          $modular-scale: exponent(nth($ratio, $j), $i) * nth($base-size, $k)
+          $scale-values: append($scale-values, $modular-scale)
+          $i: $i - 1
+      $j: $j + 1
+    $k: $k + 1
+  // return trimmed and sorted final list
+  @return trim-sort($multiple, $scale-values, $base-size)
+    
+    
+// calculate values in using each base-size
+@function ms-multibase($multiple, $base-size, $ratio)
+  // start with an empty list to place all values in
+  $scale-values: ()
+  // make sure base sizes are in ascending order
+  $base-size: sort-list($base-size)
+  // take each base-size in turn
+  $k: 1
+  @while $k <= length($base-size)
+    // add each $base-size to the list except the first
+    @if $k > 1
+      $scale-values: append($scale-values, nth($base-size, $k))
+    // reset $modular-scale for each set
+    $modular-scale: nth($base-size, $k)
+    // do the scale for each base-size using this ratio 
+    @if $multiple > 0
+      // up $multiple times
+      // and add the result to $scale-values        
+      @for $i from 1 through $multiple
+        $modular-scale: exponent($ratio, $i) * nth($base-size, $k)
+        $scale-values: append($scale-values, $modular-scale)
+      // and down until the value is lower than the lowest $base-size
+      // and add the result to $scale-values
+      $i: -1
+      $modular-scale: nth($base-size, $k)
+      @while $modular-scale >= nth($base-size, 1)
+        $modular-scale: exponent($ratio, $i) * nth($base-size, $k)
+        $scale-values: append($scale-values, $modular-scale)
+        $i: $i - 1
+    @if $multiple < 0
+      // do the scale down for each set to below 1px
+      $i: -1
+      $modular-scale: nth($base-size, $k)
+      @while $modular-scale > 1
+        $modular-scale: exponent($ratio, $i) * nth($base-size, $k)
+        $scale-values: append($scale-values, $modular-scale)
+        $i: $i - 1
+    $k: $k + 1
+  // return trimmed and sorted final list
+  @return trim-sort($multiple, $scale-values, $base-size)
+
+    
+// calculate values in using each ratio
+@function ms-multiratio($multiple, $base-size, $ratio)
+  // start with an empty list to place all values in
+  $scale-values: ()
+  // If $multiple is a positive integer (up the scale)
+  @if $multiple > 0
+    // take each ratio in turn
+    $j: 1
+    @while $j <= length($ratio)
+      // reset $modular-scale for each set
+      $modular-scale: $base-size
+      // do the scale using this ratio thru the multiple, and add the result to $scale-values
+      @for $i from 1 through $multiple
+        $modular-scale: exponent(nth($ratio, $j), $i) * $base-size
+        $scale-values: append($scale-values, $modular-scale)
+      $j: $j + 1
+    // sort acsending      
+    $scale-values: sort-list($scale-values)
+    // return the final value using the laced list
+    @return nth($scale-values, $multiple)
+  // If $multiple is a negative integer (down the scale)
+  @if $multiple < 0
+    // take each ratio in turn
+    $j: 1
+    @while $j <= length($ratio)
+      // reset $modular-scale for each set
+      $modular-scale: $base-size
+      // do the scale using this ratio thru the multiple, and add the result to $scale-values
+      @for $i from 1 through ($multiple * -1)
+        $modular-scale: exponent(nth($ratio, $j), -$i) * $base-size
+        $scale-values: append($scale-values, $modular-scale)
+      $j: $j + 1
+    // sort decending
+    $scale-values: sort-list($scale-values, 'dec')
+    // return the final value using the laced list
+    @return nth($scale-values, $multiple * -1)
+    
+    
+// trim and sort the final list
+@function trim-sort($multiple, $scale-values, $base-size)
+  @if $multiple > 0
+    // trim list so we can count from the lowest $base-size
+    $scale-values: trim-list($scale-values, nth($base-size, 1))
+    // sort acsending      
+    $scale-values: sort-list($scale-values)
+    // return the final value using the laced list
+    @return nth($scale-values, $multiple)
+  @else
+    // trim list so we can count from the lowest $base-size
+    $scale-values: trim-list($scale-values, nth($base-size, 1), 'dec')
+    // sort acsending      
+    $scale-values: sort-list($scale-values, 'dec')
+    // return the final value using the laced list
+    @return nth($scale-values, -$multiple)
+  
+  
+/////////////////////////////////////////////////////////////////////////
+  
+// Shortcut
+@function ms($multiple, $base-size, $ratio)
+  // Return the value from the Modular Scale function
+  @return modular-scale($multiple, $base-size, $ratio)
+
+// Mixin
+// Deprecated. Use the modular-scale() function instead
+=modular-scale($property, $multiple, $base-size, $ratio)
+  // Print the $property and return the value from the Modular Scale function
+  @warn "The modular-scale mixin is deprecated. Instead use the function: width: modular-scale(3)" 
+  #{$property}: modular-scale($multiple, $base-size, $ratio)
+
+// Classes Mixin
+=modular-scale-classes($multiple, $property, $class-slug, $base-size, $ratio)
+  // Loop from 0 through the value of $multiple and generate a range of classes
+  @for $i from 0 through $multiple
+    .#{$class-slug}-#{$i}
+      // Print the $property and return the value from the Modular Scale function
+      #{$property}: modular-scale($i, $base-size, $ratio)
+      
+
+/////////////////////////////////////////////////////////////////////////
+
+
+// Sass exponent support
+@function exponent($base, $exponent)
+  // reset value
+  $value: $base
+  // positive intergers get multiplied
+  @if $exponent > 1
+    @for $i from 2 through $exponent
+      $value: $value * $base
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1
+    @for $i from 0 through -$exponent
+      $value: $value / $base
+  // return the last value written
+  @return $value
+
+
+// Sass list sorting support
+@function sort-list($list, $dir: 'asc')
+  // built-in list sorting in Sass would make this go away.
+  // declare some empty lists to put our new order and temporary values 
+  $new-order: ()
+  $temp: ()
+  // fill $temp with the contents of $list
+  $temp: join($temp, $list)
+  // if sorting ascending
+  @if $dir == 'asc'
+    // loop through all values in $list
+    @for $i from 1 through length($list)
+      // impossibly high starter value to compare
+      $low: 1000000
+      // check for lowest value in $temp
+      @for $j from 1 through length($temp)
+        @if nth($temp, $j) < $low
+          $low: nth($temp, $j)
+      // add lowest value to $new-order
+      $new-order: append($new-order, $low)
+      // empty $temp for the next comparison
+      $temp: ()
+      // re-populate $temp with remaining values to sort
+      @for $k from 1 through length($list)
+        @if nth($list, $k) > $low
+          $temp: append($temp, nth($list, $k))
+  @if $dir == 'dec'
+    // loop through all values in $list
+    @for $i from 1 through length($list)
+      // 0 starter value
+      $high: 0
+      // check for highest value in $temp
+      @for $j from 1 through length($temp)
+        @if nth($temp, $j) > $high
+          $high: nth($temp, $j)
+      $new-order: append($new-order, $high)
+      // empty $temp for the next comparison
+      $temp: ()
+      // re-populate $temp with remaining values to sort
+      @for $k from 1 through length($list)
+        @if nth($list, $k) < $high
+          $temp: append($temp, nth($list, $k))
+  @return $new-order
+  
+  
+// Sass list trimming support
+@function trim-list($list, $start, $dir: 'asc')
+  // built-in list trimming in Sass would make this go away.
+  // declare some empty lists to put our trimmed values
+  $trimmed: ()
+  // if sorting ascending
+  @if $dir == 'asc'
+    // loop through all values in $list
+    @for $i from 1 through length($list)
+      @if nth($list, $i) >= $start
+        $trimmed: append($trimmed, nth($list, $i))
+  @if $dir == 'dec'
+    // loop through all values in $list
+    @for $i from 1 through length($list)
+      @if nth($list, $i) <= $start
+        $trimmed: append($trimmed, nth($list, $i))
+  @return $trimmed
+
+// Other libraries can easily query if this function is avalible
+$modular-scale-loaded: true:@options{ :@children[3o:Sass::Tree::CommentNode:
+@linei;@:
+@type:silent;	[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass:@value["// SASSY MODULAR-SCALE"
+"4// https://github.com/scottkellum/modular-scaleo;
+;i	;@;;;	[ ;@;["// Ratioso:Sass::Tree::VariableNode;i
+;@:@guarded0;	[ :
+@expro:Sass::Script::Number;i
+:@denominator_units[ ;@:@numerator_units[ :@original"
+1.618;f1.6180000000000001 Ÿ;@:
+@name"goldeno;;i;@;0;	[ ;o:Sass::Script::Variable	;i:@underscored_name"golden;@;"golden;@;"	goldo;;i;@;0;	[ ;o:Sass::Script::Operation
+;i;@:@operand2o;;i;@;@;[ ;"1;i:@operator:div:@operand1o;
+;i;@;@;[ ;i;@;"octaveo;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"8;i;;;o;
+;i;@;@;[ ;i;@;"major-seventho;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"9;i;;;o;
+;i;@;@;[ ;i;@;"minor-seventho;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"3;i;;;o;
+;i;@;@;[ ;i
+;@;"major-sixtho;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"5;i
+;;;o;
+;i;@;@;[ ;i;@;"minor-sixtho;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"2;i;;;o;
+;i;@;@;[ ;i;@;"
+fiftho;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"3;i;;;o;
+;i;@;@;[ ;i	;@;"fourtho;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"4;i	;;;o;
+;i;@;@;[ ;i
+;@;"major-thirdo;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"5;i
+;;;o;
+;i;@;@;[ ;i;@;"minor-thirdo;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"8;i;;;o;
+;i;@;@;[ ;i;@;"major-secondo;;i;@;0;	[ ;o;
+;i;@;o;;i;@;@;[ ;"15;i;;;o;
+;i;@;@;[ ;i;@;"minor-secondo;
+;i;@;;;	[ ;@;["// Defaultso;;i;@;"!default;	[ ;o;	;i;"golden;@;"golden;@;"
+ratioo;;i;@;"!default;	[ ;o;;i;[ ;@;["px;"	12px;i;@;"base-sizeo;;i;@;"!default;	[ ;o:Sass::Script::String	;i;@;:identifier;"font-size;@;"propertyo;;i;@;"!default;	[ ;o;	;i;@;; ;"ms;@;"class-slugo;
+;i;@;;;	[ ;@;["// Modular Scale functiono:Sass::Tree::FunctionNode;T;i:
+@args[[o;;"multiple;@;"multiple0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;i ;@;;;	[ ;@;["2// return the $base-size if $multiple is zerou:Sass::Tree::IfNodel[o:Sass::Script::Operation
+:
+@linei!:@options{ :@operand2o:Sass::Script::Number;i!:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:eq:@operand1o:Sass::Script::Variable	;i!:@underscored_name"multiple;@:
+@name"multiple0[u:Sass::Tree::IfNode˝[o:Sass::Script::Operation
+:
+@linei":@options{ :@operand2o:Sass::Script::String	;i";@:
+@type:string:@value"	list:@operator:eq:@operand1o:Sass::Script::Funcall
+;i":
+@args[o:Sass::Script::Variable	;i":@underscored_name"base_size;@:
+@name"base-size;@:@keywords{ ;"type-of0[o:Sass::Tree::VariableNode;i#;@:@guarded0:@children[ :
+@expro;
+;i#;[o;	;i#;"base_size;@;"base-size;@;{ ;"sort-list:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"base-sizeo:Sass::Tree::ReturnNode
+;i$;@;[ ;o;
+;i$;[o;	;i$;"base_size;@;"base-sizeo:Sass::Script::Number;i$:@denominator_units[ ;@:@numerator_units[ :@original"1;i;@;{ ;"nth;@o:Sass::Tree::CommentNode;i%;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["B// return just the simple $base-size value if it's not a listo:Sass::Tree::ReturnNode
+;i&;@;[ :
+@expro;	;i&;"base_size;@;"base-size;@o;
+;i(;@;;;	[ ;@;[
+"6// if multiple base-sizes are passed in as a list"
+"3// and multiple ratios are passed in as a list"
+"D// calculate values in using each base-size / ratio combinationu;#ı[o:Sass::Script::Operation
+:
+@linei+:@options{ :@operand2o; 
+;i+;@;o:Sass::Script::String	;i+;@:
+@type:string:@value"	list:@operator:eq:@operand1o:Sass::Script::Funcall
+;i+:
+@args[o:Sass::Script::Variable	;i+:@underscored_name"
+ratio;@:
+@name"
+ratio;@:@keywords{ ;"type-of;:and;o; 
+;i+;@;o;		;i+;@;
+;;"	list;;;o;
+;i+;[o;	;i+;"base_size;@;"base-size;@;{ ;"type-of0[u:Sass::Tree::IfNodeÛ[o:Sass::Script::Operation
+:
+@linei,:@options{ :@operand2o:Sass::Script::String	;i,;@:
+@type:string:@value"px:@operator:eq:@operand1o:Sass::Script::Funcall
+;i,:
+@args[o;
+;i,;[o:Sass::Script::Variable	;i,:@underscored_name"multiple;@:
+@name"multipleo;	;i,;"base_size;@;"base-sizeo;	;i,;"
+ratio;@;"
+ratio;@:@keywords{ ;"ms-multibase-multiratio;@;{ ;"	unit0[o:Sass::Tree::ReturnNode
+;i-;@:@children[ :
+@expro;
+;i-;[o;
+;i-;[o;	;i-;"multiple;@;"multipleo;	;i-;"base_size;@;"base-sizeo;	;i-;"
+ratio;@;"
+ratio;@;{ ;"ms-multibase-multiratio;@;{ ;"
+round:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso:Sass::Tree::ReturnNode
+;i.;@:@children[ :
+@expro;
+;i.;[o;	;i.;"multiple;@;"multipleo;	;i.;"base_size;@;"base-sizeo;	;i.;"
+ratio;@;"
+ratio;@;{ ;"ms-multibase-multiratio:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso;
+;i0;@;;;	[ ;@;["6// if multiple base-sizes are passed in as a list"
+"0// calculate values in using each base-sizeu;#÷[o:Sass::Script::Operation
+:
+@linei2:@options{ :@operand2o; 
+;i2;@;o:Sass::Script::String	;i2;@:
+@type:string:@value"number:@operator:eq:@operand1o:Sass::Script::Funcall
+;i2:
+@args[o:Sass::Script::Variable	;i2:@underscored_name"
+ratio;@:
+@name"
+ratio;@:@keywords{ ;"type-of;:and;o; 
+;i2;@;o;		;i2;@;
+;;"	list;;;o;
+;i2;[o;	;i2;"base_size;@;"base-size;@;{ ;"type-of0[u:Sass::Tree::IfNode›[o:Sass::Script::Operation
+:
+@linei3:@options{ :@operand2o:Sass::Script::String	;i3;@:
+@type:string:@value"px:@operator:eq:@operand1o:Sass::Script::Funcall
+;i3:
+@args[o;
+;i3;[o:Sass::Script::Variable	;i3:@underscored_name"multiple;@:
+@name"multipleo;	;i3;"base_size;@;"base-sizeo;	;i3;"
+ratio;@;"
+ratio;@:@keywords{ ;"ms-multibase;@;{ ;"	unit0[o:Sass::Tree::ReturnNode
+;i4;@:@children[ :
+@expro;
+;i4;[o;
+;i4;[o;	;i4;"multiple;@;"multipleo;	;i4;"base_size;@;"base-sizeo;	;i4;"
+ratio;@;"
+ratio;@;{ ;"ms-multibase;@;{ ;"
+round:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso:Sass::Tree::ReturnNode
+;i5;@:@children[ :
+@expro;
+;i5;[o;	;i5;"multiple;@;"multipleo;	;i5;"base_size;@;"base-sizeo;	;i5;"
+ratio;@;"
+ratio;@;{ ;"ms-multibase:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso;
+;i7;@;;;	[ ;@;["2// if multiple ratios are passed in as a list"
+",// calculate values in using each ratiou;#Ÿ[o:Sass::Script::Operation
+:
+@linei9:@options{ :@operand2o; 
+;i9;@;o:Sass::Script::String	;i9;@:
+@type:string:@value"	list:@operator:eq:@operand1o:Sass::Script::Funcall
+;i9:
+@args[o:Sass::Script::Variable	;i9:@underscored_name"
+ratio;@:
+@name"
+ratio;@:@keywords{ ;"type-of;:and;o; 
+;i9;@;o;		;i9;@;
+;;"number;;;o;
+;i9;[o;	;i9;"base_size;@;"base-size;@;{ ;"type-of0[u:Sass::Tree::IfNodeﬂ[o:Sass::Script::Operation
+:
+@linei::@options{ :@operand2o:Sass::Script::String	;i:;@:
+@type:string:@value"px:@operator:eq:@operand1o:Sass::Script::Funcall
+;i::
+@args[o;
+;i:;[o:Sass::Script::Variable	;i::@underscored_name"multiple;@:
+@name"multipleo;	;i:;"base_size;@;"base-sizeo;	;i:;"
+ratio;@;"
+ratio;@:@keywords{ ;"ms-multiratio;@;{ ;"	unit0[o:Sass::Tree::ReturnNode
+;i;;@:@children[ :
+@expro;
+;i;;[o;
+;i;;[o;	;i;;"multiple;@;"multipleo;	;i;;"base_size;@;"base-sizeo;	;i;;"
+ratio;@;"
+ratio;@;{ ;"ms-multiratio;@;{ ;"
+round:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso:Sass::Tree::ReturnNode
+;i<;@:@children[ :
+@expro;
+;i<;[o;	;i<;"multiple;@;"multipleo;	;i<;"base_size;@;"base-sizeo;	;i<;"
+ratio;@;"
+ratio;@;{ ;"ms-multiratio:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso;
+;i>;@;;;	[ ;@;[":// If there are no lists just run the simple functionu;#[o:Sass::Script::Operation
+:
+@linei?:@options{ :@operand2o:Sass::Script::String	;i?;@:
+@type:string:@value"px:@operator:eq:@operand1o:Sass::Script::Funcall
+;i?:
+@args[o; 
+;i?;@;o:Sass::Script::Variable	;i?:@underscored_name"base_size;@:
+@name"base-size;:
+times;o;
+;i?;[o;	;i?;"
+ratio;@;"
+ratioo;	;i?;"multiple;@;"multiple;@:@keywords{ ;"exponent;@;{ ;"	unit0[o:Sass::Tree::ReturnNode
+;i@;@:@children[ :
+@expro;
+;i@;[o; 
+;i@;@;o;	;i@;"base_size;@;"base-size;;;o;
+;i@;[o;	;i@;"
+ratio;@;"
+ratioo;	;i@;"multiple;@;"multiple;@;{ ;"exponent;@;{ ;"
+round:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sasso:Sass::Tree::ReturnNode
+;iA;@;	[ ;o;
+;iA;@;o;	;iA;"base_size;@;"base-size;:
+times;o:Sass::Script::Funcall
+;iA;"[o;	;iA;"
+ratio;@;"
+ratioo;	;iA;"multiple;@;"multiple;@:@keywords{ ;"exponent;@;@;"modular-scaleo;
+;iD;@;;;	[ ;@;["D// calculate values in using each base-size / ratio combinationo;!;T;iE;"[[o;;"multiple;@;"multiple0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;iF;@;;;	[ ;@;["7// start with an empty list to place all values ino;;iG;@;0;	[ ;o:Sass::Script::List	;iG;@:@separator:
+space;[ ;@;"scale-valueso;
+;iH;@;;;	[ ;@;["3// make sure base sizes are in ascending ordero;;iI;@;0;	[ ;o;&
+;iI;"[o;	;iI;"base_size;@;"base-size;@;'{ ;"sort-list;@;"base-sizeo;
+;iJ;@;;;	[ ;@;["#// take each base-size in turno;;iK;@;0;	[ ;o;;iK;@;@;[ ;"1;i;@;"ko:Sass::Tree::WhileNode;T;iL;@;	[o;
+;iM;@;;;	[ ;@;["8// add each $base-size to the list except the firstu;#á[o:Sass::Script::Operation
+:
+@lineiN:@options{ :@operand2o:Sass::Script::Number;iN:@denominator_units[ ;@:@numerator_units[ :@original"1:@valuei:@operator:gt:@operand1o:Sass::Script::Variable	;iN:@underscored_name"k;@:
+@name"k0[o:Sass::Tree::VariableNode;iO;@:@guarded0:@children[ :
+@expro:Sass::Script::Funcall
+;iO:
+@args[o;	;iO;"scale_values;@;"scale-valueso;
+;iO;[o;	;iO;"base_size;@;"base-sizeo;	;iO;"k;@;"k;@:@keywords{ ;"nth;@;{ ;"append:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"scale-valueso;
+;iP;@;;;	[ ;@;["// take each ratio in turno;;iQ;@;0;	[ ;o;;iQ;@;@;[ ;"1;i;@;"jo;+;T;iR;@;	[o;
+;iS;@;;;	[ ;@;[")// reset $modular-scale for each seto;;iT;@;0;	[ ;o;&
+;iT;"[o;	;iT;"base_size;@;"base-sizeo;	;iT;"k;@;"k;@;'{ ;"nth;@;"modular-scaleo;
+;iU;@;;;	[ ;@;["8// do the scale for each base-size using this ratiou;#‡[o:Sass::Script::Operation
+:
+@lineiV:@options{ :@operand2o:Sass::Script::Number;iV:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:gt:@operand1o:Sass::Script::Variable	;iV:@underscored_name"multiple;@:
+@name"multiple0[o:Sass::Tree::CommentNode;iW;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["// up $multiple times"
+"+// and add the result to $scale-valueso:Sass::Tree::ForNode:@has_childrenT;iY:
+@fromo;	;iY;
+@	;@;[ ;"1;i:	@var"i;@;[o:Sass::Tree::VariableNode;iZ;@:@guarded0;[ :
+@expro; 
+;iZ;@;o:Sass::Script::Funcall
+;iZ:
+@args[o;	;iZ;"base_size;@;"base-sizeo;	;iZ;"k;@;"k;@:@keywords{ ;"nth;:
+times;o; 
+;iZ;![o; 
+;iZ;![o;	;iZ;"
+ratio;@;"
+ratioo;	;iZ;"j;@;"j;@;"{ ;"ntho;	;iZ;"i;@;"i;@;"{ ;"exponent;@;"modular-scaleo;;i[;@;0;[ ;o; 
+;i[;![o;	;i[;"scale_values;@;"scale-valueso;	;i[;"modular_scale;@;"modular-scale;@;"{ ;"append;@;"scale-values:@exclusiveF:@too;	;iY;"multiple;@;"multiple;@o;;i\;@;;;[ ;@;["D// and down until the value is lower than the lowest $base-size"
+"+// and add the result to $scale-valueso;;i^;@;0;[ ;o;	;i^;
+@	;@;[ ;"-1;i˙;@;"io;;i_;@;0;[ ;o; 
+;i_;![o;	;i_;"base_size;@;"base-sizeo;	;i_;"k;@;"k;@;"{ ;"nth;@;"modular-scaleo:Sass::Tree::WhileNode;T;i`;@;[o;;ia;@;0;[ ;o; 
+;ia;@;o; 
+;ia;![o;	;ia;"base_size;@;"base-sizeo;	;ia;"k;@;"k;@;"{ ;"nth;;#;o; 
+;ia;![o; 
+;ia;![o;	;ia;"
+ratio;@;"
+ratioo;	;ia;"j;@;"j;@;"{ ;"ntho;	;ia;"i;@;"i;@;"{ ;"exponent;@;"modular-scaleo;;ib;@;0;[ ;o; 
+;ib;![o;	;ib;"scale_values;@;"scale-valueso;	;ib;"modular_scale;@;"modular-scale;@;"{ ;"append;@;"scale-valueso;;ic;@;0;[ ;o; 
+;ic;@;o;	;ic;
+@	;@;[ ;"1;i;:
+minus;o;	;ic;"i;@;"i;@;"i;o; 
+;i`;@;o; 
+;i`;![o;	;i`;"base_size;@;"base-sizeo;	;i`;
+@	;@;[ ;"1;i;@;"{ ;"nth;:gte;o;	;i`;"modular_scale;@;"modular-scale;@u;#º[o:Sass::Script::Operation
+:
+@lineid:@options{ :@operand2o:Sass::Script::Number;id:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:lt:@operand1o:Sass::Script::Variable	;id:@underscored_name"multiple;@:
+@name"multiple0[	o:Sass::Tree::CommentNode;ie;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["3// do the scale down for each set to below 1pxo:Sass::Tree::VariableNode;if;@:@guarded0;[ :
+@expro;	;if;
+@	;@;[ ;"-1;i˙;@;"io;;ig;@;0;[ ;o:Sass::Script::Funcall
+;ig:
+@args[o;	;ig;"base_size;@;"base-sizeo;	;ig;"k;@;"k;@:@keywords{ ;"nth;@;"modular-scaleo:Sass::Tree::WhileNode:@has_childrenT;ih;@;[o;;ii;@;0;[ ;o; 
+;ii;@;o;
+;ii;[o;	;ii;"base_size;@;"base-sizeo;	;ii;"k;@;"k;@;{ ;"nth;:
+times;o;
+;ii;[o;
+;ii;[o;	;ii;"
+ratio;@;"
+ratioo;	;ii;"j;@;"j;@;{ ;"ntho;	;ii;"i;@;"i;@;{ ;"exponent;@;"modular-scaleo;;ij;@;0;[ ;o;
+;ij;[o;	;ij;"scale_values;@;"scale-valueso;	;ij;"modular_scale;@;"modular-scale;@;{ ;"append;@;"scale-valueso;;ik;@;0;[ ;o; 
+;ik;@;o;	;ik;
+@	;@;[ ;"1;i;:
+minus;o;	;ik;"i;@;"i;@;"i;o; 
+;ih;@;o;	;ih;
+@	;@;[ ;"1;i;:gt;o;	;ih;"modular_scale;@;"modular-scale;@o;;il;@;0;	[ ;o;
+;il;@;o;;il;@;@;[ ;"1;i;:	plus;o;	;il;"j;@;"j;@;"j;o;
+;iR;@;o;&
+;iR;"[o;	;iR;"
+ratio;@;"
+ratio;@;'{ ;"length;:lte;o;	;iR;"j;@;"j;@o;;im;@;0;	[ ;o;
+;im;@;o;;im;@;@;[ ;"1;i;;,;o;	;im;"k;@;"k;@;"k;o;
+;iL;@;o;&
+;iL;"[o;	;iL;"base_size;@;"base-size;@;'{ ;"length;;-;o;	;iL;"k;@;"k;@o;
+;in;@;;;	[ ;@;[",// return trimmed and sorted final listo;$
+;io;@;	[ ;o;&
+;io;"[o;	;io;"multiple;@;"multipleo;	;io;"scale_values;@;"scale-valueso;	;io;"base_size;@;"base-size;@;'{ ;"trim-sort;@;@;"ms-multibase-multiratioo;
+;ir;@;;;	[ ;@;["0// calculate values in using each base-sizeo;!;T;is;"[[o;;"multiple;@;"multiple0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;it;@;;;	[ ;@;["7// start with an empty list to place all values ino;;iu;@;0;	[ ;o;(	;iu;@;);*;[ ;@;"scale-valueso;
+;iv;@;;;	[ ;@;["3// make sure base sizes are in ascending ordero;;iw;@;0;	[ ;o;&
+;iw;"[o;	;iw;"base_size;@;"base-size;@;'{ ;"sort-list;@;"base-sizeo;
+;ix;@;;;	[ ;@;["#// take each base-size in turno;;iy;@;0;	[ ;o;;iy;@;@;[ ;"1;i;@;"ko;+;T;iz;@;	[o;
+;i{;@;;;	[ ;@;["8// add each $base-size to the list except the firstu;#á[o:Sass::Script::Operation
+:
+@linei|:@options{ :@operand2o:Sass::Script::Number;i|:@denominator_units[ ;@:@numerator_units[ :@original"1:@valuei:@operator:gt:@operand1o:Sass::Script::Variable	;i|:@underscored_name"k;@:
+@name"k0[o:Sass::Tree::VariableNode;i};@:@guarded0:@children[ :
+@expro:Sass::Script::Funcall
+;i}:
+@args[o;	;i};"scale_values;@;"scale-valueso;
+;i};[o;	;i};"base_size;@;"base-sizeo;	;i};"k;@;"k;@:@keywords{ ;"nth;@;{ ;"append:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"scale-valueso;
+;i~;@;;;	[ ;@;[")// reset $modular-scale for each seto;;i;@;0;	[ ;o;&
+;i;"[o;	;i;"base_size;@;"base-sizeo;	;i;"k;@;"k;@;'{ ;"nth;@;"modular-scaleo;
+;i{;@;;;	[ ;@;["8// do the scale for each base-size using this ratiou;#Æ[o:Sass::Script::Operation
+:
+@linei|:@options{ :@operand2o:Sass::Script::Number;i|:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:gt:@operand1o:Sass::Script::Variable	;i|:@underscored_name"multiple;@:
+@name"multiple0[o:Sass::Tree::CommentNode;i};@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["// up $multiple times"
+"+// and add the result to $scale-valueso:Sass::Tree::ForNode:@has_childrenT;i:
+@fromo;	;i;
+@	;@;[ ;"1;i:	@var"i;@;[o:Sass::Tree::VariableNode;iÄ;@:@guarded0;[ :
+@expro; 
+;iÄ;@;o:Sass::Script::Funcall
+;iÄ:
+@args[o;	;iÄ;"base_size;@;"base-sizeo;	;iÄ;"k;@;"k;@:@keywords{ ;"nth;:
+times;o; 
+;iÄ;![o;	;iÄ;"
+ratio;@;"
+ratioo;	;iÄ;"i;@;"i;@;"{ ;"exponent;@;"modular-scaleo;;iÅ;@;0;[ ;o; 
+;iÅ;![o;	;iÅ;"scale_values;@;"scale-valueso;	;iÅ;"modular_scale;@;"modular-scale;@;"{ ;"append;@;"scale-values:@exclusiveF:@too;	;i;"multiple;@;"multiple;@o;;iÇ;@;;;[ ;@;["D// and down until the value is lower than the lowest $base-size"
+"+// and add the result to $scale-valueso;;iÑ;@;0;[ ;o;	;iÑ;
+@	;@;[ ;"-1;i˙;@;"io;;iÖ;@;0;[ ;o; 
+;iÖ;![o;	;iÖ;"base_size;@;"base-sizeo;	;iÖ;"k;@;"k;@;"{ ;"nth;@;"modular-scaleo:Sass::Tree::WhileNode;T;iÜ;@;[o;;iá;@;0;[ ;o; 
+;iá;@;o; 
+;iá;![o;	;iá;"base_size;@;"base-sizeo;	;iá;"k;@;"k;@;"{ ;"nth;;#;o; 
+;iá;![o;	;iá;"
+ratio;@;"
+ratioo;	;iá;"i;@;"i;@;"{ ;"exponent;@;"modular-scaleo;;ià;@;0;[ ;o; 
+;ià;![o;	;ià;"scale_values;@;"scale-valueso;	;ià;"modular_scale;@;"modular-scale;@;"{ ;"append;@;"scale-valueso;;iâ;@;0;[ ;o; 
+;iâ;@;o;	;iâ;
+@	;@;[ ;"1;i;:
+minus;o;	;iâ;"i;@;"i;@;"i;o; 
+;iÜ;@;o; 
+;iÜ;![o;	;iÜ;"base_size;@;"base-sizeo;	;iÜ;
+@	;@;[ ;"1;i;@;"{ ;"nth;:gte;o;	;iÜ;"modular_scale;@;"modular-scale;@u;#©[o:Sass::Script::Operation
+:
+@lineiä:@options{ :@operand2o:Sass::Script::Number;iä:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:lt:@operand1o:Sass::Script::Variable	;iä:@underscored_name"multiple;@:
+@name"multiple0[	o:Sass::Tree::CommentNode;iã;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["3// do the scale down for each set to below 1pxo:Sass::Tree::VariableNode;iå;@:@guarded0;[ :
+@expro;	;iå;
+@	;@;[ ;"-1;i˙;@;"io;;iç;@;0;[ ;o:Sass::Script::Funcall
+;iç:
+@args[o;	;iç;"base_size;@;"base-sizeo;	;iç;"k;@;"k;@:@keywords{ ;"nth;@;"modular-scaleo:Sass::Tree::WhileNode:@has_childrenT;ié;@;[o;;iè;@;0;[ ;o; 
+;iè;@;o;
+;iè;[o;	;iè;"base_size;@;"base-sizeo;	;iè;"k;@;"k;@;{ ;"nth;:
+times;o;
+;iè;[o;	;iè;"
+ratio;@;"
+ratioo;	;iè;"i;@;"i;@;{ ;"exponent;@;"modular-scaleo;;iê;@;0;[ ;o;
+;iê;[o;	;iê;"scale_values;@;"scale-valueso;	;iê;"modular_scale;@;"modular-scale;@;{ ;"append;@;"scale-valueso;;ië;@;0;[ ;o; 
+;ië;@;o;	;ië;
+@	;@;[ ;"1;i;:
+minus;o;	;ië;"i;@;"i;@;"i;o; 
+;ié;@;o;	;ié;
+@	;@;[ ;"1;i;:gt;o;	;ié;"modular_scale;@;"modular-scale;@o;;ií;@;0;	[ ;o;
+;ií;@;o;;ií;@;@;[ ;"1;i;;,;o;	;ií;"k;@;"k;@;"k;o;
+;iz;@;o;&
+;iz;"[o;	;iz;"base_size;@;"base-size;@;'{ ;"length;;-;o;	;iz;"k;@;"k;@o;
+;iì;@;;;	[ ;@;[",// return trimmed and sorted final listo;$
+;iî;@;	[ ;o;&
+;iî;"[o;	;iî;"multiple;@;"multipleo;	;iî;"scale_values;@;"scale-valueso;	;iî;"base_size;@;"base-size;@;'{ ;"trim-sort;@;@;"ms-multibaseo;
+;ió;@;;;	[ ;@;[",// calculate values in using each ratioo;!;T;iò;"[[o;;"multiple;@;"multiple0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;iô;@;;;	[ ;@;["7// start with an empty list to place all values ino;;iö;@;0;	[ ;o;(	;iö;@;);*;[ ;@;"scale-valueso;
+;iõ;@;;;	[ ;@;["9// If $multiple is a positive integer (up the scale)u;#C[o:Sass::Script::Operation
+:
+@lineiú:@options{ :@operand2o:Sass::Script::Number;iú:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:gt:@operand1o:Sass::Script::Variable	;iú:@underscored_name"multiple;@:
+@name"multiple0[o:Sass::Tree::CommentNode;iù;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["// take each ratio in turno:Sass::Tree::VariableNode;iû;@:@guarded0;[ :
+@expro;	;iû;
+@	;@;[ ;"1;i;@;"jo:Sass::Tree::WhileNode:@has_childrenT;iü;@;[
+o;;i†;@;;;[ ;@;[")// reset $modular-scale for each seto;;i°;@;0;[ ;o;	;i°;"base_size;@;"base-size;@;"modular-scaleo;;i¢;@;;;[ ;@;["\// do the scale using this ratio thru the multiple, and add the result to $scale-valueso:Sass::Tree::ForNode;T;i£:
+@fromo;	;i£;
+@	;@;[ ;"1;i:	@var"i;@;[o;;i§;@;0;[ ;o; 
+;i§;@;o;	;i§;"base_size;@;"base-size;:
+times;o:Sass::Script::Funcall
+;i§:
+@args[o;"
+;i§;#[o;	;i§;"
+ratio;@;"
+ratioo;	;i§;"j;@;"j;@:@keywords{ ;"ntho;	;i§;"i;@;"i;@;${ ;"exponent;@;"modular-scaleo;;i•;@;0;[ ;o;"
+;i•;#[o;	;i•;"scale_values;@;"scale-valueso;	;i•;"modular_scale;@;"modular-scale;@;${ ;"append;@;"scale-values:@exclusiveF:@too;	;i£;"multiple;@;"multiple;@o;;i¶;@;0;[ ;o; 
+;i¶;@;o;	;i¶;
+@	;@;[ ;"1;i;:	plus;o;	;i¶;"j;@;"j;@;"j;o; 
+;iü;@;o;"
+;iü;#[o;	;iü;"
+ratio;@;"
+ratio;@;${ ;"length;:lte;o;	;iü;"j;@;"j;@o;;iß;@;;;[ ;@;["// sort acsendingo;;i®;@;0;[ ;o;"
+;i®;#[o;	;i®;"scale_values;@;"scale-values;@;${ ;"sort-list;@;"scale-valueso;;i©;@;;;[ ;@;["3// return the final value using the laced listo:Sass::Tree::ReturnNode
+;i™;@;[ ;o;"
+;i™;#[o;	;i™;"scale_values;@;"scale-valueso;	;i™;"multiple;@;"multiple;@;${ ;"nth;@o;
+;i´;@;;;	[ ;@;[";// If $multiple is a negative integer (down the scale)u;#	[o:Sass::Script::Operation
+:
+@linei¨:@options{ :@operand2o:Sass::Script::Number;i¨:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:lt:@operand1o:Sass::Script::Variable	;i¨:@underscored_name"multiple;@:
+@name"multiple0[o:Sass::Tree::CommentNode;i≠;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["// take each ratio in turno:Sass::Tree::VariableNode;iÆ;@:@guarded0;[ :
+@expro;	;iÆ;
+@	;@;[ ;"1;i;@;"jo:Sass::Tree::WhileNode:@has_childrenT;iØ;@;[
+o;;i∞;@;;;[ ;@;[")// reset $modular-scale for each seto;;i±;@;0;[ ;o;	;i±;"base_size;@;"base-size;@;"modular-scaleo;;i≤;@;;;[ ;@;["\// do the scale using this ratio thru the multiple, and add the result to $scale-valueso:Sass::Tree::ForNode;T;i≥:
+@fromo;	;i≥;
+@	;@;[ ;"1;i:	@var"i;@;[o;;i¥;@;0;[ ;o; 
+;i¥;@;o;	;i¥;"base_size;@;"base-size;:
+times;o:Sass::Script::Funcall
+;i¥:
+@args[o;"
+;i¥;#[o;	;i¥;"
+ratio;@;"
+ratioo;	;i¥;"j;@;"j;@:@keywords{ ;"ntho:!Sass::Script::UnaryOperation	;i¥;@:@operando;	;i¥;"i;@;"i;:
+minus;@;${ ;"exponent;@;"modular-scaleo;;iµ;@;0;[ ;o;"
+;iµ;#[o;	;iµ;"scale_values;@;"scale-valueso;	;iµ;"modular_scale;@;"modular-scale;@;${ ;"append;@;"scale-values:@exclusiveF:@too; 
+;i≥;@;o;	;i≥;
+@	;@;[ ;"-1;i˙;;!;o;	;i≥;"multiple;@;"multiple;@o;;i∂;@;0;[ ;o; 
+;i∂;@;o;	;i∂;
+@	;@;[ ;"1;i;:	plus;o;	;i∂;"j;@;"j;@;"j;o; 
+;iØ;@;o;"
+;iØ;#[o;	;iØ;"
+ratio;@;"
+ratio;@;${ ;"length;:lte;o;	;iØ;"j;@;"j;@o;;i∑;@;;;[ ;@;["// sort decendingo;;i∏;@;0;[ ;o;"
+;i∏;#[o;	;i∏;"scale_values;@;"scale-valueso:Sass::Script::String	;i∏;@;:string;"dec;@;${ ;"sort-list;@;"scale-valueso;;iπ;@;;;[ ;@;["3// return the final value using the laced listo:Sass::Tree::ReturnNode
+;i∫;@;[ ;o;"
+;i∫;#[o;	;i∫;"scale_values;@;"scale-valueso; 
+;i∫;@;o;	;i∫;
+@	;@;[ ;"-1;i˙;;!;o;	;i∫;"multiple;@;"multiple;@;${ ;"nth;@;@;"ms-multiratioo;
+;iΩ;@;;;	[ ;@;["$// trim and sort the final listo;!;T;iæ;"[[o;;"multiple;@;"multiple0[o;;"scale_values;@;"scale-values0[o;;"base_size;@;"base-size0;@;	[u;#}	[o:Sass::Script::Operation
+:
+@lineiø:@options{ :@operand2o:Sass::Script::Number;iø:@denominator_units[ ;@:@numerator_units[ :@original"0:@valuei :@operator:gt:@operand1o:Sass::Script::Variable	;iø:@underscored_name"multiple;@:
+@name"multipleu:Sass::Tree::IfNodeµ[00[o:Sass::Tree::CommentNode:
+@linei«:@options{ :
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass:@value["<// trim list so we can count from the lowest $base-sizeo:Sass::Tree::VariableNode;i»;@:@guarded0;
+[ :
+@expro:Sass::Script::Funcall
+;i»:
+@args[o:Sass::Script::Variable	;i»:@underscored_name"scale_values;@:
+@name"scale-valueso;
+;i»;[o;	;i»;"base_size;@;"base-sizeo:Sass::Script::Number;i»:@denominator_units[ ;@:@numerator_units[ :@original"1;i;@:@keywords{ ;"ntho:Sass::Script::String	;i»;@;:string;"dec;@;{ ;"trim-list;@
+;"scale-valueso; ;i…;@;;	;
+[ ;@
+;["// sort acsendingo;;i ;@;0;
+[ ;o;
+;i ;[o;	;i ;"scale_values;@;"scale-valueso;	;i ;@;;;"dec;@;{ ;"sort-list;@
+;"scale-valueso; ;iÀ;@;;	;
+[ ;@
+;["3// return the final value using the laced listo:Sass::Tree::ReturnNode
+;iÃ;@;
+[ ;o;
+;iÃ;[o;	;iÃ;"scale_values;@;"scale-valueso:!Sass::Script::UnaryOperation	;iÃ;@:@operando;	;iÃ;"multiple;@;"multiple:@operator:
+minus;@;{ ;"nth;@
+[o:Sass::Tree::CommentNode;i¿;@:
+@type:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["<// trim list so we can count from the lowest $base-sizeo:Sass::Tree::VariableNode;i¡;@:@guarded0;[ :
+@expro:Sass::Script::Funcall
+;i¡:
+@args[o;	;i¡;"scale_values;@;"scale-valueso;
+;i¡;[o;	;i¡;"base_size;@;"base-sizeo;	;i¡;
+@	;@;[ ;"1;i;@:@keywords{ ;"nth;@;{ ;"trim-list;@;"scale-valueso;;i¬;@;;;[ ;@;["// sort acsendingo;;i√;@;0;[ ;o;
+;i√;[o;	;i√;"scale_values;@;"scale-values;@;{ ;"sort-list;@;"scale-valueso;;iƒ;@;;;[ ;@;["3// return the final value using the laced listo:Sass::Tree::ReturnNode
+;i≈;@;[ ;o;
+;i≈;[o;	;i≈;"scale_values;@;"scale-valueso;	;i≈;"multiple;@;"multiple;@;{ ;"nth;@;@;"trim-sorto;
+;iœ;@;;;	[ ;@;["N/////////////////////////////////////////////////////////////////////////o;
+;i—;@;;;	[ ;@;["// Shortcuto;!;T;i“;"[[o;;"multiple;@;"multiple0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;i”;@;;;	[ ;@;["8// Return the value from the Modular Scale functiono;$
+;i‘;@;	[ ;o;&
+;i‘;"[o;	;i‘;"multiple;@;"multipleo;	;i‘;"base_size;@;"base-sizeo;	;i‘;"
+ratio;@;"
+ratio;@;'{ ;"modular-scale;@;@;"mso;
+;i÷;@;;;	[ ;@;["// Mixin"
+"<// Deprecated. Use the modular-scale() function insteado:Sass::Tree::MixinDefNode;T;iÿ;"[	[o;;"property;@;"property0[o;;"multiple;@;"multiple0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;iŸ;@;;;	[ ;@;["P// Print the $property and return the value from the Modular Scale functiono:Sass::Tree::WarnNode
+;i⁄;@;	[ ;o;	;i⁄;@;:string;"]The modular-scale mixin is deprecated. Instead use the function: width: modular-scale(3);@o:Sass::Tree::PropNode;i€;@;	[ :
+@tabsi ;@:@prop_syntax:new;o;&
+;i€;"[o;	;i€;"multiple;@;"multipleo;	;i€;"base_size;@;"base-sizeo;	;i€;"
+ratio;@;"
+ratio;@;'{ ;"modular-scale;[" o;	;i€;"property;@;"property" ;@;"modular-scaleo;
+;i›;@;;;	[ ;@;["// Classes Mixino;.;T;iﬁ;"[
+[o;;"multiple;@;"multiple0[o;;"property;@;"property0[o;;"class_slug;@;"class-slug0[o;;"base_size;@;"base-size0[o;;"
+ratio;@;"
+ratio0;@;	[o;
+;iﬂ;@;;;	[ ;@;["R// Loop from 0 through the value of $multiple and generate a range of classeso:Sass::Tree::ForNode;T;i‡:
+@fromo;;i‡;@;@;[ ;"0;i :	@var"i;@;	[o:Sass::Tree::RuleNode;T;i·:
+@rule[
+".o;	;i·;"class_slug;@;"class-slug"-o;	;i·;"i;@;"i" ;@;	[o;
+;i‚;@;;;	[ ;@;["P// Print the $property and return the value from the Modular Scale functiono;1;i„;@;	[ ;2i ;@;3;4;o;&
+;i„;"[o;	;i„;"i;@;"io;	;i„;"base_size;@;"base-sizeo;	;i„;"
+ratio;@;"
+ratio;@;'{ ;"modular-scale;[" o;	;i„;"property;@;"property" ;2i ;@:@exclusiveF:@too;	;i‡;"multiple;@;"multiple;@;@;"modular-scale-classeso;
+;iÊ;@;;;	[ ;@;["N/////////////////////////////////////////////////////////////////////////o;
+;iÈ;@;;;	[ ;@;["// Sass exponent supporto;!;T;iÍ;"[[o;;"	base;@;"	base0[o;;"exponent;@;"exponent0;@;	[o;
+;iÎ;@;;;	[ ;@;["// reset valueo;;iÏ;@;0;	[ ;o;	;iÏ;"	base;@;"	base;@;"
+valueo;
+;iÌ;@;;;	[ ;@;[")// positive intergers get multipliedu;#¡[o:Sass::Script::Operation
+:
+@lineiÓ:@options{ :@operand2o:Sass::Script::Number;iÓ:@denominator_units[ ;@:@numerator_units[ :@original"1:@valuei:@operator:gt:@operand1o:Sass::Script::Variable	;iÓ:@underscored_name"exponent;@:
+@name"exponent0[o:Sass::Tree::ForNode:@has_childrenT;iÔ:
+@fromo;	;iÔ;
+@	;@;[ ;"2;i:	@var"i;@:@children[o:Sass::Tree::VariableNode;i;@:@guarded0;[ :
+@expro; 
+;i;@;o;	;i;"	base;@;"	base;:
+times;o;	;i;"
+value;@;"
+value:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"
+value:@exclusiveF:@too;	;iÔ;"exponent;@;"exponent;@o;
+;iÒ;@;;;	[ ;@;["G// negitive intergers get divided. A number divided by itself is 1u;#˚[o:Sass::Script::Operation
+:
+@lineiÚ:@options{ :@operand2o:Sass::Script::Number;iÚ:@denominator_units[ ;@:@numerator_units[ :@original"1:@valuei:@operator:lt:@operand1o:Sass::Script::Variable	;iÚ:@underscored_name"exponent;@:
+@name"exponent0[o:Sass::Tree::ForNode:@has_childrenT;iÛ:
+@fromo;	;iÛ;
+@	;@;[ ;"0;i :	@var"i;@:@children[o:Sass::Tree::VariableNode;iÙ;@:@guarded0;[ :
+@expro; 
+;iÙ;@;o;	;iÙ;"	base;@;"	base;:div;o;	;iÙ;"
+value;@;"
+value:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"
+value:@exclusiveF:@too:!Sass::Script::UnaryOperation	;iÛ;@:@operando;	;iÛ;"exponent;@;"exponent;:
+minus;@o;
+;iı;@;;;	[ ;@;["%// return the last value writteno;$
+;iˆ;@;	[ ;o;	;iˆ;"
+value;@;"
+value;@;@;"exponento;
+;i˘;@;;;	[ ;@;["!// Sass list sorting supporto;!;T;i˙;"[[o;;"	list;@;"	list0[o;;"dir;@;"diro;	;i˙;@;;0;"asc;@;	[o;
+;i˚;@;;;	[ ;@;[">// built-in list sorting in Sass would make this go away."
+"J// declare some empty lists to put our new order and temporary valueso;;i˝;@;0;	[ ;o;(	;i˝;@;);*;[ ;@;"new-ordero;;i˛;@;0;	[ ;o;(	;i˛;@;);*;[ ;@;"	tempo;
+;iˇ;@;;;	[ ;@;["-// fill $temp with the contents of $listo;;i ;@;0;	[ ;o;&
+;i ;"[o;	;i ;"	temp;@;"	tempo;	;i ;"	list;@;"	list;@;'{ ;"	join;@;"	tempo;
+;i;@;;;	[ ;@;["// if sorting ascendingu;#E[o:Sass::Script::Operation
+:
+@linei:@options{ :@operand2o:Sass::Script::String	;i;@:
+@type:string:@value"asc:@operator:eq:@operand1o:Sass::Script::Variable	;i:@underscored_name"dir;@:
+@name"dir0[o:Sass::Tree::CommentNode;i;@;
+:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["(// loop through all values in $listo:Sass::Tree::ForNode:@has_childrenT;i:
+@fromo:Sass::Script::Number;i:@denominator_units[ ;@:@numerator_units[ :@original"1;i:	@var"i;@;[o;;i;@;
+;;[ ;@;["0// impossibly high starter value to compareo:Sass::Tree::VariableNode;i;@:@guarded0;[ :
+@expro;;i;@;@;[ ;"1000000;i@B;@;"lowo;;i;@;
+;;[ ;@;["'// check for lowest value in $tempo;;T;i;o;;i;@;@;[ ;"1;i;"j;@;[u:Sass::Tree::IfNode+[o:Sass::Script::Operation
+:
+@linei	:@options{ :@operand2o:Sass::Script::Variable	;i	:@underscored_name"low;@:
+@name"low:@operator:lt:@operand1o:Sass::Script::Funcall
+;i	:
+@args[o;		;i	;
+"	temp;@;"	tempo;		;i	;
+"j;@;"j;@:@keywords{ ;"nth0[o:Sass::Tree::VariableNode;i
+;@:@guarded0:@children[ :
+@expro;
+;i
+;[o;		;i
+;
+"	temp;@;"	tempo;		;i
+;
+"j;@;"j;@;{ ;"nth:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"low:@exclusiveF:@too:Sass::Script::Funcall
+;i:
+@args[o;	;i;"	temp;@;"	temp;@:@keywords{ ;"length;@o;;i;@;
+;;[ ;@;["&// add lowest value to $new-ordero;;i;@; 0;[ ;!o;%
+;i;&[o;	;i;"new_order;@;"new-ordero;	;i;"low;@;"low;@;'{ ;"append;@;"new-ordero;;i;@;
+;;[ ;@;["+// empty $temp for the next comparisono;;i;@; 0;[ ;!o:Sass::Script::List	;i;@:@separator:
+space;[ ;@;"	tempo;;i;@;
+;;[ ;@;["7// re-populate $temp with remaining values to sorto;;T;i;o;;i;@;@;[ ;"1;i;"k;@;[u;"j[o:Sass::Script::Operation
+:
+@linei:@options{ :@operand2o:Sass::Script::Variable	;i:@underscored_name"low;@:
+@name"low:@operator:gt:@operand1o:Sass::Script::Funcall
+;i:
+@args[o;		;i;
+"	list;@;"	listo;		;i;
+"k;@;"k;@:@keywords{ ;"nth0[o:Sass::Tree::VariableNode;i;@:@guarded0:@children[ :
+@expro;
+;i;[o;		;i;
+"	temp;@;"	tempo;
+;i;[o;		;i;
+"	list;@;"	listo;		;i;
+"k;@;"k;@;{ ;"nth;@;{ ;"append:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"	temp;#F;$o;%
+;i;&[o;	;i;"	list;@;"	list;@;'{ ;"length;@;#F;$o;%
+;i;&[o;	;i;"	list;@;"	list;@;'{ ;"length;@u;#Î
+[o:Sass::Script::Operation
+:
+@linei:@options{ :@operand2o:Sass::Script::String	;i;@:
+@type:string:@value"dec:@operator:eq:@operand1o:Sass::Script::Variable	;i:@underscored_name"dir;@:
+@name"dir0[o:Sass::Tree::CommentNode;i;@;
+:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["(// loop through all values in $listo:Sass::Tree::ForNode:@has_childrenT;i:
+@fromo:Sass::Script::Number;i:@denominator_units[ ;@:@numerator_units[ :@original"1;i:	@var"i;@;[o;;i;@;
+;;[ ;@;["// 0 starter valueo:Sass::Tree::VariableNode;i;@:@guarded0;[ :
+@expro;;i;@;@;[ ;"0;i ;@;"	higho;;i;@;
+;;[ ;@;["(// check for highest value in $tempo;;T;i;o;;i;@;@;[ ;"1;i;"j;@;[u:Sass::Tree::IfNode.[o:Sass::Script::Operation
+:
+@linei:@options{ :@operand2o:Sass::Script::Variable	;i:@underscored_name"	high;@:
+@name"	high:@operator:gt:@operand1o:Sass::Script::Funcall
+;i:
+@args[o;		;i;
+"	temp;@;"	tempo;		;i;
+"j;@;"j;@:@keywords{ ;"nth0[o:Sass::Tree::VariableNode;i;@:@guarded0:@children[ :
+@expro;
+;i;[o;		;i;
+"	temp;@;"	tempo;		;i;
+"j;@;"j;@;{ ;"nth:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"	high:@exclusiveF:@too:Sass::Script::Funcall
+;i:
+@args[o;	;i;"	temp;@;"	temp;@:@keywords{ ;"length;@o;;i;@; 0;[ ;!o;%
+;i;&[o;	;i;"new_order;@;"new-ordero;	;i;"	high;@;"	high;@;'{ ;"append;@;"new-ordero;;i;@;
+;;[ ;@;["+// empty $temp for the next comparisono;;i;@; 0;[ ;!o:Sass::Script::List	;i;@:@separator:
+space;[ ;@;"	tempo;;i;@;
+;;[ ;@;["7// re-populate $temp with remaining values to sorto;;T;i ;o;;i ;@;@;[ ;"1;i;"k;@;[u;"l[o:Sass::Script::Operation
+:
+@linei!:@options{ :@operand2o:Sass::Script::Variable	;i!:@underscored_name"	high;@:
+@name"	high:@operator:lt:@operand1o:Sass::Script::Funcall
+;i!:
+@args[o;		;i!;
+"	list;@;"	listo;		;i!;
+"k;@;"k;@:@keywords{ ;"nth0[o:Sass::Tree::VariableNode;i";@:@guarded0:@children[ :
+@expro;
+;i";[o;		;i";
+"	temp;@;"	tempo;
+;i";[o;		;i";
+"	list;@;"	listo;		;i";
+"k;@;"k;@;{ ;"nth;@;{ ;"append:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"	temp;#F;$o;%
+;i ;&[o;	;i ;"	list;@;"	list;@;'{ ;"length;@;#F;$o;%
+;i;&[o;	;i;"	list;@;"	list;@;'{ ;"length;@o;$
+;i#;@;	[ ;o;	;i#;"new_order;@;"new-order;@;@;"sort-listo;
+;i&;@;;;	[ ;@;[""// Sass list trimming supporto;!;T;i';"[[o;;"	list;@;"	list0[o;;"
+start;@;"
+start0[o;;"dir;@;"diro;	;i';@;;0;"asc;@;	[o;
+;i(;@;;;	[ ;@;["?// built-in list trimming in Sass would make this go away."
+":// declare some empty lists to put our trimmed valueso;;i*;@;0;	[ ;o;(	;i*;@;);*;[ ;@;"trimmedo;
+;i+;@;;;	[ ;@;["// if sorting ascendingu;#c[o:Sass::Script::Operation
+:
+@linei,:@options{ :@operand2o:Sass::Script::String	;i,;@:
+@type:string:@value"asc:@operator:eq:@operand1o:Sass::Script::Variable	;i,:@underscored_name"dir;@:
+@name"dir0[o:Sass::Tree::CommentNode;i-;@;
+:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["(// loop through all values in $listo:Sass::Tree::ForNode:@has_childrenT;i.:
+@fromo:Sass::Script::Number;i.:@denominator_units[ ;@:@numerator_units[ :@original"1;i:	@var"i;@;[u:Sass::Tree::IfNodex[o:Sass::Script::Operation
+:
+@linei/:@options{ :@operand2o:Sass::Script::Variable	;i/:@underscored_name"
+start;@:
+@name"
+start:@operator:gte:@operand1o:Sass::Script::Funcall
+;i/:
+@args[o;		;i/;
+"	list;@;"	listo;		;i/;
+"i;@;"i;@:@keywords{ ;"nth0[o:Sass::Tree::VariableNode;i0;@:@guarded0:@children[ :
+@expro;
+;i0;[o;		;i0;
+"trimmed;@;"trimmedo;
+;i0;[o;		;i0;
+"	list;@;"	listo;		;i0;
+"i;@;"i;@;{ ;"nth;@;{ ;"append:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"trimmed:@exclusiveF:@too:Sass::Script::Funcall
+;i.:
+@args[o;	;i.;"	list;@;"	list;@:@keywords{ ;"length;@u;#c[o:Sass::Script::Operation
+:
+@linei1:@options{ :@operand2o:Sass::Script::String	;i1;@:
+@type:string:@value"dec:@operator:eq:@operand1o:Sass::Script::Variable	;i1:@underscored_name"dir;@:
+@name"dir0[o:Sass::Tree::CommentNode;i2;@;
+:silent:@children[ :@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;["(// loop through all values in $listo:Sass::Tree::ForNode:@has_childrenT;i3:
+@fromo:Sass::Script::Number;i3:@denominator_units[ ;@:@numerator_units[ :@original"1;i:	@var"i;@;[u:Sass::Tree::IfNodex[o:Sass::Script::Operation
+:
+@linei4:@options{ :@operand2o:Sass::Script::Variable	;i4:@underscored_name"
+start;@:
+@name"
+start:@operator:lte:@operand1o:Sass::Script::Funcall
+;i4:
+@args[o;		;i4;
+"	list;@;"	listo;		;i4;
+"i;@;"i;@:@keywords{ ;"nth0[o:Sass::Tree::VariableNode;i5;@:@guarded0:@children[ :
+@expro;
+;i5;[o;		;i5;
+"trimmed;@;"trimmedo;
+;i5;[o;		;i5;
+"	list;@;"	listo;		;i5;
+"i;@;"i;@;{ ;"nth;@;{ ;"append:@filename"h/Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/functions/_modular-scale.sass;"trimmed:@exclusiveF:@too:Sass::Script::Funcall
+;i3:
+@args[o;	;i3;"	list;@;"	list;@:@keywords{ ;"length;@o;$
+;i6;@;	[ ;o;	;i6;"trimmed;@;"trimmed;@;@;"trim-listo;
+;i8;@;;;	[ ;@;["E// Other libraries can easily query if this function is avalibleo;;i9;@;0;	[ ;o:Sass::Script::Bool;i9;@;T;@;"modular-scale-loaded

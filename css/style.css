@@ -1,0 +1,1284 @@
+@charset "UTF-8";
+/* The Coding Designer's Survival Kit
+ * A framework for designing websites in the browser.
+ *
+ * Much love to:
+ * Sass, Compass, HTML5 Boilerplate, Modernizr, Formalize, and more
+ *
+ * Available at http://thecodingdesigner.com
+ * twitter: http://twitter.com/canarymason */
+/* -------------------------------------------------------------------------------------
+ * -------------------------------------------------------------------------------------- */
+/* This CSS was authored using Sass & Compass
+ * Download the source files here:
+ * https://github.com/canarymason/The-Coding-Designers-Survival-Kit
+ * Learn more about Sass & Compass at http://compass-style.org/ */
+/* normalize.css 2011-08-12T17:28 UTC · http://github.com/necolas/normalize.css */
+/* =============================================================================
+ * HTML5 display definitions
+ * ========================================================================== */
+/* line 11, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 25, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+audio:not([controls]), [hidden] {
+  display: none;
+}
+
+/* =============================================================================
+ * Base
+ * ========================================================================== */
+/* line 43, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 56, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* line 63, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+button, input, select, textarea {
+  font-family: sans-serif;
+}
+
+/* =============================================================================
+ * Links
+ * ========================================================================== */
+/* line 71, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+a:focus {
+  outline: thin dotted;
+}
+/* line 73, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+ * Typography
+ * ========================================================================== */
+/* line 90, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 96, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 99, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 105, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+dfn {
+  font-style: italic;
+}
+
+/* line 111, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+mark {
+  background: yellow;
+  color: black;
+}
+
+/* line 119, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em;
+}
+
+/* line 127, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 138, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+q {
+  quotes: none;
+}
+/* line 140, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 146, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+small {
+  font-size: 75%;
+}
+
+/* line 153, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 159, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+/* line 166, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+ * Lists
+ * ========================================================================== */
+/* line 173, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 177, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 181, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* =============================================================================
+ * Embedded content
+ * ========================================================================== */
+/* line 194, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 203, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+ * Figures
+ * ========================================================================== */
+/* line 213, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+figure, form {
+  margin: 0;
+}
+
+/* =============================================================================
+ * Forms
+ * ========================================================================== */
+/* line 226, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 234, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+legend {
+  border: 0;
+  *margin-left: -7px;
+}
+
+/* line 245, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 259, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+button, input {
+  *overflow: visible;
+}
+
+/* line 270, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+table button, table input {
+  *overflow: auto;
+}
+
+/* line 277, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+button, html input[type="button"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/* line 284, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+/* line 289, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+/* line 294, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 301, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 319, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 327, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* =============================================================================
+ * Tables
+ * ========================================================================== */
+/* line 340, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_normalize.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 14, ../sass/partials/02-reset/_reset.sass */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 3, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.clearfix {
+  zoom: 1;
+}
+/* line 31, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_helpers.sass */
+.clearfix:after {
+  content: "\0020";
+  display: table;
+  clear: both;
+}
+
+/* line 6, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* line 9, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 12, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.visuallyhidden.focusable {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* line 15, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_helpers.sass */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 15, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 18, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.constrain-to-parent, img, table, .textinput, textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=week], input[type=time], input[type=number], input[type=range], input[type=search], input[type=color], input:not([type="radio"]) {
+  max-width: 100%;
+}
+
+/* line 21, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.italic, em, address, cite, q, dfn, i {
+  font-style: italic;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.bold, strong, dfn, b {
+  font-weight: bold;
+}
+
+/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/extend/_helpers.sass */
+.wireframe {
+  outline: 1px dashed red;
+}
+
+/* line 2, ../sass/partials/03-extend/_typography.sass */
+.serif {
+  font-family: Georgia, serif;
+}
+
+/* line 5, ../sass/partials/03-extend/_typography.sass */
+.sans, header aside {
+  font-family: sans-serif;
+}
+
+/* line 8, ../sass/partials/03-extend/_typography.sass */
+.mono, pre, code, kbd, tt {
+  font-family: Consolas, Menlo, "Courier New", monospace, monospace;
+  _font-family: Consolas, Menlo, "Courier New", monospace, monospace;
+}
+
+/* line 12, ../sass/partials/03-extend/_typography.sass */
+.caps, .allcaps, .smallcaps {
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+}
+
+/* line 16, ../sass/partials/03-extend/_typography.sass */
+.headers, .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
+  font-family: sans-serif;
+}
+
+/* line 20, ../sass/partials/03-extend/_typography.sass */
+.allcaps {
+  text-transform: uppercase;
+}
+
+/* line 24, ../sass/partials/03-extend/_typography.sass */
+.amp {
+  font-family: Georgia, serif;
+}
+
+/* line 27, ../sass/partials/03-extend/_typography.sass */
+.smallcaps {
+  font-variant: small-caps;
+}
+
+/* line 31, ../sass/partials/03-extend/_typography.sass */
+.dquo {
+  margin-left: -0.5em;
+  font-family: Georgia, serif;
+}
+
+/* Only use the fancy ampersand in <h#> tags */
+/* line 36, ../sass/partials/03-extend/_typography.sass */
+h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
+  font-size: 1em;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+/* line 13, ../sass/partials/04-defaults/_common.sass */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Body -------------------------------------------------------------- */
+/* Establish baseline rhythm
+ * from compass/typography/_vertical_rhythm */
+/* line 53, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
+/* line 57, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html > body {
+  font-size: 16px;
+}
+
+/* line 23, ../sass/partials/04-defaults/_common.sass */
+body {
+  font-family: Georgia, serif;
+  color: black;
+  background: white;
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait), screen and (-o-device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (-o-device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait), screen and (device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait) {
+  /* line 12, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_pixel-normalize.scss */
+  html {
+    font-size: 19.2px;
+  }
+}
+@media screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 683px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 400px) and (orientation: portrait), screen and (-o-device-pixel-ratio: 3/2) and (device-width: 683px) and (orientation: landscape), screen and (-o-device-pixel-ratio: 3/2) and (device-width: 400px) and (orientation: portrait), screen and (device-pixel-ratio: 1.5) and (device-width: 683px) and (orientation: landscape), screen and (device-pixel-ratio: 1.5) and (device-width: 400px) and (orientation: portrait), screen and (device-pixel-ratio: 3/2) and (device-width: 683px) and (orientation: landscape), screen and (device-pixel-ratio: 3/2) and (device-width: 400px) and (orientation: portrait) {
+  /* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/reset/_pixel-normalize.scss */
+  html {
+    font-size: 12.8px;
+  }
+}
+/* Selected Text -------------------------------------------------------------- */
+/* -moz- must be declared separately */
+/* line 34, ../sass/partials/04-defaults/_common.sass */
+::-moz-selection {
+  color: white;
+  background: #bada55;
+  text-shadow: none;
+}
+
+/* line 40, ../sass/partials/04-defaults/_common.sass */
+::selection {
+  color: white;
+  background: #bada55;
+  text-shadow: none;
+}
+
+/* Links -------------------------------------------------------------- */
+/* line 48, ../sass/partials/04-defaults/_common.sass */
+a {
+  color: #bada55;
+}
+/* line 18, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+a:visited {
+  color: #bada55;
+}
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #7555da;
+}
+/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+a:active {
+  color: #7555da;
+}
+/* line 4, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #bada55;
+}
+/* line 8, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
+a:visited {
+  border-bottom-color: #bada55;
+}
+/* line 14, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
+a:hover {
+  border-bottom-color: #7555da;
+}
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
+a:active {
+  border-bottom-color: #7555da;
+}
+
+/* import font files using @font-face, if not using a service such as typekit */
+/* Headings -------------------------------------------------------------- */
+/* line 4, ../sass/partials/04-defaults/markup/_headers.sass */
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 1, ../sass/partials/04-defaults/markup/_grouping.sass */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 6, ../sass/partials/04-defaults/markup/_grouping.sass */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1;
+}
+
+/* Lists -------------------------------------------------------------- */
+/* line 25, ../sass/partials/04-defaults/markup/_grouping.sass */
+dl {
+  margin-left: 0;
+}
+
+/* line 28, ../sass/partials/04-defaults/markup/_grouping.sass */
+ol {
+  list-style: decimal;
+}
+
+/* line 31, ../sass/partials/04-defaults/markup/_grouping.sass */
+ul {
+  list-style: disc;
+}
+/* line 33, ../sass/partials/04-defaults/markup/_grouping.sass */
+li ul {
+  list-style-type: circle;
+}
+
+/* line 1, ../sass/partials/04-defaults/markup/_semantics.sass */
+small {
+  font-size: 0.813em;
+  line-height: 1.846em;
+}
+
+/* line 9, ../sass/partials/04-defaults/markup/_semantics.sass */
+q {
+  quotes: "“" "”";
+}
+/* line 12, ../sass/partials/04-defaults/markup/_semantics.sass */
+q:before {
+  content: open-quote;
+}
+/* line 14, ../sass/partials/04-defaults/markup/_semantics.sass */
+q:after {
+  content: close-quote;
+}
+
+/* line 21, ../sass/partials/04-defaults/markup/_semantics.sass */
+abbr, acronym {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* line 40, ../sass/partials/04-defaults/markup/_semantics.sass */
+sup, sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 46, ../sass/partials/04-defaults/markup/_semantics.sass */
+sup {
+  top: -0.5em;
+}
+
+/* line 49, ../sass/partials/04-defaults/markup/_semantics.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 60, ../sass/partials/04-defaults/markup/_semantics.sass */
+mark {
+  background: red;
+  background-color: rgba(255, 255, 0, 0.5);
+  text-shadow: none;
+}
+
+/* line 1, ../sass/partials/04-defaults/markup/_edits.sass */
+ins {
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+}
+
+/* line 5, ../sass/partials/04-defaults/markup/_edits.sass */
+del {
+  text-decoration: line-through;
+}
+
+/* Images -------------------------------------------------------------- */
+/* line 3, ../sass/partials/04-defaults/markup/_images.sass */
+img {
+  vertical-align: text-bottom;
+  height: auto;
+}
+/* line 10, ../sass/partials/04-defaults/markup/_images.sass */
+img.left {
+  float: left;
+  margin: 12px 25px 12px 0;
+}
+/* line 13, ../sass/partials/04-defaults/markup/_images.sass */
+img.right {
+  float: right;
+  margin: 12px 0 12px 25px;
+}
+
+/* Tables -------------------------------------------------------------- */
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 8, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_tiny {
+  width: 50px;
+}
+
+/* line 11, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_small {
+  width: 100px;
+}
+
+/* line 14, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_medium {
+  width: 150px;
+}
+
+/* line 17, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_large {
+  width: 200px;
+}
+
+/* line 20, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_xlarge {
+  width: 250px;
+}
+
+/* line 23, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_xxlarge {
+  width: 300px;
+}
+
+/* line 26, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_full {
+  width: 100%;
+}
+
+/* line 31, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.input_full_wrap {
+  display: block;
+  padding-right: 8px;
+}
+
+/* line 38, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+::-moz-focus-inner {
+  border: 0;
+}
+
+/* line 41, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+/* line 44, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+input,
+button,
+select,
+textarea {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* line 54, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none;
+  -moz-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -o-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -khtml-border-radius: 11px;
+  border-radius: 11px;
+  background: #dddddd url(../images/button.png) repeat-x;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+  background-image: -moz-linear-gradient(#ffffff, #dddddd);
+  background-image: -o-linear-gradient(#ffffff, #dddddd);
+  background-image: -ms-linear-gradient(#ffffff, #dddddd);
+  background-image: linear-gradient(#ffffff, #dddddd);
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  outline: 0;
+  overflow: visible;
+  padding: 3px 10px 4px;
+  text-shadow: white 0 1px 1px;
+  width: auto;
+  *padding-top: 2px;
+  *padding-bottom: 0px;
+}
+
+/* line 77, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+button {
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+
+/* line 82, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+button[disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled] {
+  color: #888888;
+}
+
+/* line 88, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  -khtml-border-radius: 0;
+  border-radius: 0;
+  background-color: white;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: black;
+  outline: 0;
+  padding: 2px 3px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  height: 1.8em;
+  *padding-top: 2px;
+  *padding-bottom: 1px;
+  *height: auto;
+}
+
+/* line 124, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+input.placeholder-text,
+textarea.placeholder-text {
+  color: #888888;
+}
+
+/* line 128, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+::-webkit-input-placeholder {
+  color: #888888;
+}
+
+/* line 131, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+textarea[disabled],
+select[disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="email"][disabled],
+input[type="month"][disabled],
+input[type="number"][disabled],
+input[type="password"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="text"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+input[type="week"][disabled] {
+  background-color: #eeeeee;
+  color: #888888;
+}
+
+/* line 149, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+button:focus,
+button:active,
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+  -moz-box-shadow: #0066ff 0 0 7px;
+  -webkit-box-shadow: #0066ff 0 0 7px;
+  box-shadow: #0066ff 0 0 7px;
+  z-index: 1;
+}
+
+/* line 164, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+input[type="radio"]:focus,
+input[type="radio"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 172, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.is_webkit select {
+  background-image: url(../images/select_arrow.gif);
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 20px;
+}
+
+/* line 180, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+textarea,
+select[multiple] {
+  height: auto;
+}
+
+/* line 184, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+select[multiple],
+.is_webkit select[multiple] {
+  background-image: none;
+  padding: 0;
+}
+
+/* line 189, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+textarea {
+  min-height: 40px;
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+}
+
+/* line 195, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+optgroup {
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 223, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.ie6_button,
+* html button {
+  background: #dddddd url(../images/button.png) repeat-x;
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  padding: 2px 10px 0px;
+  overflow: visible;
+  width: auto;
+}
+
+/* line 235, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+* html button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/* line 239, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.ie6_input,
+* html textarea,
+* html select {
+  background: white;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: black;
+  padding: 2px 3px 1px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  vertical-align: top;
+}
+
+/* line 251, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+* html select {
+  margin-top: 1px;
+}
+
+/* line 254, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.placeholder_text,
+.ie6_input_disabled,
+.ie6_button_disabled {
+  color: #888888;
+}
+
+/* line 259, ../sass/partials/04-defaults/markup/forms/_formalize.sass */
+.ie6_input_disabled {
+  background: #eeeeee;
+}
+
+/* Forms -------------------------------------------------------------- */
+/* line 8, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+fieldset {
+  margin-bottom: 1.5em;
+  border-style: solid;
+  border-width: 0.063em;
+  padding: 1.438em;
+  border-color: gray;
+  border-style: dotted;
+}
+
+/* line 14, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+legend {
+  padding: 0 0.25em;
+}
+
+/* line 17, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+label {
+  cursor: pointer;
+}
+
+/* line 20, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+label {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+/* line 24, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+.textinput, textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=week], input[type=time], input[type=number], input[type=range], input[type=search], input[type=color] {
+  font-size: 1em;
+  line-height: 1.5em;
+  border-style: solid;
+  border-width: 0.063em;
+  padding: 0.313em;
+  border-width: 1px;
+  margin-bottom: 0.75em;
+  width: 305px;
+  margin-top: 0;
+  border-color: gray;
+  height: 2.25em;
+}
+
+/* line 35, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+textarea {
+  height: 9.75;
+}
+
+/* line 45, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+input[type=search] {
+  -webkit-appearance: none;
+}
+/* line 47, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+input[type=search]::-webkit-search-decoration {
+  display: none;
+}
+
+/* line 50, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+textarea {
+  width: 305px;
+}
+
+/* line 54, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
+input[type="radio"], input[type="checkbox"] {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+
+/* DEFINE THE GRID CONTAINER ------------------------------------------- */
+/* line 14, ../sass/partials/09-styletile/_tile-layout.sass */
+.container, #page {
+  *zoom: 1;
+  margin: auto;
+  width: 874px;
+  max-width: 100%;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.container:after, #page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* LAYOUT -------------------------------------------------------------- */
+/* line 22, ../sass/partials/09-styletile/_tile-layout.sass */
+#page {
+  width: 95%;
+}
+/* line 26, ../sass/partials/09-styletile/_tile-layout.sass */
+#page header {
+  clear: both;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+/* line 29, ../sass/partials/09-styletile/_tile-layout.sass */
+#page header .client-id {
+  display: inline;
+  float: left;
+  width: 66.133%;
+  margin-right: 1.602%;
+}
+/* line 31, ../sass/partials/09-styletile/_tile-layout.sass */
+#page header aside {
+  display: inline;
+  float: left;
+  width: 32.265%;
+  margin-right: 1.602%;
+  display: inline;
+  float: right;
+  margin-right: 0%;
+  #margin-left: -14px;
+}
+/* line 34, ../sass/partials/09-styletile/_tile-layout.sass */
+#page #main {
+  clear: both;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+/* line 36, ../sass/partials/09-styletile/_tile-layout.sass */
+#page #main .text-examples {
+  display: inline;
+  float: left;
+  width: 49.199%;
+  margin-right: 1.602%;
+}
+/* line 38, ../sass/partials/09-styletile/_tile-layout.sass */
+#page #main .graphic-examples {
+  display: inline;
+  float: left;
+  width: 49.199%;
+  margin-right: 1.602%;
+  display: inline;
+  float: right;
+  margin-right: 0%;
+  #margin-left: -14px;
+}
+/* line 41, ../sass/partials/09-styletile/_tile-layout.sass */
+#page footer {
+  clear: both;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+/* graphic examples */
+/* colors */
+/* line 49, ../sass/partials/09-styletile/_tile-layout.sass */
+.colors ul {
+  list-style-type: none;
+}
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
+.colors ul, .colors ul li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+/* line 51, ../sass/partials/09-styletile/_tile-layout.sass */
+.colors ul li {
+  display: inline;
+  float: left;
+  width: 13.953%;
+  margin-right: 3.256%;
+  height: 120px;
+  margin-bottom: 24px;
+  border: 4px solid white;
+  position: relative;
+}
+/* line 57, ../sass/partials/09-styletile/_tile-layout.sass */
+.colors ul li:nth-of-type(6n+6) {
+  display: inline;
+  float: right;
+  margin-right: 0%;
+  #margin-left: -14px;
+}
+/* line 59, ../sass/partials/09-styletile/_tile-layout.sass */
+.colors ul li:after {
+  position: relative;
+  top: 102%;
+  color: gray;
+}
+
+/* line 65, ../sass/partials/09-styletile/_tile-layout.sass */
+.images ul {
+  list-style-type: none;
+}
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
+.images ul, .images ul li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+/* line 67, ../sass/partials/09-styletile/_tile-layout.sass */
+.images ul li {
+  display: inline;
+  float: left;
+  width: 48.372%;
+  margin-right: 3.256%;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+/* line 71, ../sass/partials/09-styletile/_tile-layout.sass */
+.images ul li:nth-of-type(2n+2) {
+  display: inline;
+  float: right;
+  margin-right: 0%;
+  #margin-left: -14px;
+}
+@media screen and (min-width: 1100px) {
+  /* line 67, ../sass/partials/09-styletile/_tile-layout.sass */
+  .images ul li {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+    display: inline;
+    float: left;
+    width: 31.163%;
+    margin-right: 3.256%;
+  }
+  /* line 75, ../sass/partials/09-styletile/_tile-layout.sass */
+  .images ul li:nth-of-type(2n+2) {
+    display: inline;
+    float: left;
+    width: 31.163%;
+    margin-right: 3.256%;
+  }
+  /* line 78, ../sass/partials/09-styletile/_tile-layout.sass */
+  .images ul li:nth-of-type(3n+3) {
+    display: inline;
+    float: right;
+    margin-right: 0%;
+    #margin-left: -14px;
+  }
+}
+
+/* SITE-WIDE DESIGN -------------------------------------------------------------- */
+/* line 6, ../sass/partials/09-styletile/_tile-design.sass */
+header {
+  *zoom: 1;
+  margin-bottom: 1.5em;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 9, ../sass/partials/09-styletile/_tile-design.sass */
+header aside {
+  text-align: right;
+  color: gray;
+}
+
+/* line 15, ../sass/partials/09-styletile/_tile-design.sass */
+.group {
+  *zoom: 1;
+  margin-bottom: 3em;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 19, ../sass/partials/09-styletile/_tile-design.sass */
+h5.label {
+  color: gray;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+/* line 26, ../sass/partials/09-styletile/_tile-design.sass */
+.colors ul li {
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+}
+
+/* line 31, ../sass/partials/09-styletile/_tile-design.sass */
+.images ul {
+  counter-reset: section;
+}
+/* line 33, ../sass/partials/09-styletile/_tile-design.sass */
+.images ul li {
+  position: relative;
+  overflow: visible;
+}
+/* line 37, ../sass/partials/09-styletile/_tile-design.sass */
+.images ul li:after {
+  position: relative;
+  top: 102%;
+  display: block;
+  color: gray;
+  counter-increment: section;
+  content: "Image " counter(section);
+}
+/* line 44, ../sass/partials/09-styletile/_tile-design.sass */
+.images ul li img {
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  border: 4px solid white;
+  display: block;
+}
+
+/* CLIENT NAME ------------------------------------------------------------------------------------------------------------------------------ */
+/* STYLE TILE #1 ------------------------------------------------------------------------------------------------------------------------------ */
+/* type examples */
+/* line 72, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .serif {
+  font-family: Georgia, serif;
+}
+/* line 84, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .sans, .styletile-1 .text-examples header aside, header .styletile-1 .text-examples aside {
+  font-family: sans-serif;
+}
+
+/* graphic examples */
+/* colors */
+/* line 96, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-1 {
+  background-color: gray;
+}
+/* line 98, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-1:after {
+  content: "gray";
+}
+/* line 100, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-2 {
+  background-color: gray;
+}
+/* line 102, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-2:after {
+  content: "gray";
+}
+/* line 104, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-3 {
+  background-color: gray;
+}
+/* line 106, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-3:after {
+  content: "gray";
+}
+/* line 108, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-4 {
+  background-color: gray;
+}
+/* line 110, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-4:after {
+  content: "gray";
+}
+/* line 112, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-5 {
+  background-color: gray;
+}
+/* line 114, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-5:after {
+  content: "gray";
+}
+/* line 116, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-6 {
+  background-color: gray;
+}
+/* line 118, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .colors ul li.color-6:after {
+  content: "gray";
+}
