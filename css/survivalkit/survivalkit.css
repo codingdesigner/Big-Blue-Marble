@@ -118,7 +118,7 @@
 
 /* line 5, ../../sass/partials/03-extend/_typography.sass */
 .sans {
-  font-family: sans-serif;
+  font-family: museo-sans-rounded, sans-serif;
 }
 
 /* line 8, ../../sass/partials/03-extend/_typography.sass */
@@ -135,7 +135,7 @@
 
 /* line 16, ../../sass/partials/03-extend/_typography.sass */
 .headers {
-  font-family: sans-serif;
+  font-family: Georgia, serif;
 }
 
 /* line 20, ../../sass/partials/03-extend/_typography.sass */
@@ -145,7 +145,7 @@
 
 /* line 24, ../../sass/partials/03-extend/_typography.sass */
 .amp {
-  font-family: Georgia, serif;
+  font-family: rooney-web;
 }
 
 /* line 27, ../../sass/partials/03-extend/_typography.sass */
@@ -156,21 +156,21 @@
 /* line 31, ../../sass/partials/03-extend/_typography.sass */
 .dquo {
   margin-left: -0.5em;
-  font-family: Georgia, serif;
+  font-family: rooney-web;
 }
 
 /* Only use the fancy ampersand in <h#> tags */
 /* line 36, ../../sass/partials/03-extend/_typography.sass */
 h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   font-size: 1em;
-  font-family: Georgia, serif;
+  font-family: rooney-web;
   font-style: italic;
 }
 
 /* line 13, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit header {
-  background: #d0d3c6;
-  font-family: futura, sans-serif;
+  background: #c1cdd1;
+  font-family: futura, museo-sans-rounded, sans-serif;
   padding: 0 0.5em;
 }
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
@@ -183,11 +183,11 @@ body.survival-kit header a:visited {
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit header a:hover {
-  color: #aaada0;
+  color: #9ca7ac;
 }
 /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit header a:active {
-  color: #aaada0;
+  color: #9ca7ac;
 }
 /* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit header a {
@@ -200,21 +200,21 @@ body.survival-kit header a:visited {
 }
 /* line 14, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit header a:hover {
-  border-bottom-color: #aaada0;
+  border-bottom-color: #9ca7ac;
 }
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit header a:active {
-  border-bottom-color: #aaada0;
+  border-bottom-color: #9ca7ac;
 }
 /* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit header h1 {
-  font-size: 1.25em;
-  line-height: 1.2em;
+  font-size: 1.188em;
+  line-height: 1.263em;
   float: left;
-  padding-right: 25px;
-  margin-right: 25px;
+  padding-right: 23px;
+  margin-right: 23px;
   border-right: 1px solid white;
-  font-family: futura, sans-serif;
+  font-family: futura, museo-sans-rounded, sans-serif;
 }
 /* line 29, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit header h1 a {
@@ -239,9 +239,9 @@ body.survival-kit header h1 a:hover {
 }
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit header h2 {
-  font-size: 1.563em;
-  line-height: 1.92em;
-  font-family: futura, sans-serif;
+  font-size: 1.438em;
+  line-height: 2.087em;
+  font-family: futura, museo-sans-rounded, sans-serif;
 }
 /* line 37, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit header .intro {
@@ -249,11 +249,11 @@ body.survival-kit header .intro {
 }
 /* line 39, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit h1.section-title {
-  font-size: 1.625em;
-  line-height: 1.846em;
-  background-color: #d0d3c6;
+  font-size: 1.75em;
+  line-height: 1.714em;
+  background-color: #c1cdd1;
   text-transform: uppercase;
-  padding-left: 12.5px;
+  padding-left: 11.5px;
 }
 /* line 44, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit h1.section-title a {
@@ -265,11 +265,11 @@ body.survival-kit h1.section-title a:visited {
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit h1.section-title a:hover {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit h1.section-title a:active {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit h1.section-title a {
@@ -282,11 +282,11 @@ body.survival-kit h1.section-title a:visited {
 }
 /* line 14, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit h1.section-title a:hover {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit h1.section-title a:active {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 47, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit .back-to-top {
@@ -305,8 +305,8 @@ body.survival-kit .back-to-top:hover {
 body.survival-kit .kit-nav, body.survival-kit .section-nav {
   margin-bottom: 1.5em;
   padding: 0 0.5em;
-  font-family: futura, sans-serif;
-  color: #d0d3c6;
+  font-family: futura, museo-sans-rounded, sans-serif;
+  color: #c1cdd1;
 }
 /* line 57, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit .kit-nav h1, body.survival-kit .kit-nav h2, body.survival-kit .kit-nav h3, body.survival-kit .kit-nav h4, body.survival-kit .kit-nav h5, body.survival-kit .kit-nav h6, body.survival-kit .section-nav h1, body.survival-kit .section-nav h2, body.survival-kit .section-nav h3, body.survival-kit .section-nav h4, body.survival-kit .section-nav h5, body.survival-kit .section-nav h6 {
@@ -322,11 +322,11 @@ body.survival-kit .kit-nav a:visited, body.survival-kit .section-nav a:visited {
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit .kit-nav a:hover, body.survival-kit .section-nav a:hover {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit .kit-nav a:active, body.survival-kit .section-nav a:active {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit .kit-nav a, body.survival-kit .section-nav a {
@@ -339,11 +339,11 @@ body.survival-kit .kit-nav a:visited, body.survival-kit .section-nav a:visited {
 }
 /* line 14, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit .kit-nav a:hover, body.survival-kit .section-nav a:hover {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit .kit-nav a:active, body.survival-kit .section-nav a:active {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 62, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit .kit-nav ul, body.survival-kit .section-nav ul {
@@ -378,16 +378,16 @@ body.survival-kit .kit-nav ul li.last, body.survival-kit .section-nav ul li.last
 }
 /* line 64, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit .kit-nav {
-  background: #6a6d62;
+  background: #5f686c;
 }
 /* line 66, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit .section-nav {
-  background: #85897b;
+  background: #778287;
   margin-top: -1.5em;
 }
 /* line 69, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit .section-nav h3 {
-  color: #4f5249;
+  color: #474e51;
   font-size: 0.875em;
   line-height: 1.714em;
 }
@@ -425,10 +425,10 @@ body.survival-kit article.element.closed {
 body.survival-kit article.element h2.element-title {
   font-size: 1em;
   line-height: 1.5em;
-  background-color: #85897b;
+  background-color: #778287;
   color: white;
   text-transform: uppercase;
-  padding-left: 12.5px;
+  padding-left: 11.5px;
 }
 /* line 85, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit article.element h2.element-title a {
@@ -440,11 +440,11 @@ body.survival-kit article.element h2.element-title a:visited {
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit article.element h2.element-title a:hover {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 27, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body.survival-kit article.element h2.element-title a:active {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit article.element h2.element-title a {
@@ -457,11 +457,11 @@ body.survival-kit article.element h2.element-title a:visited {
 }
 /* line 14, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit article.element h2.element-title a:hover {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 body.survival-kit article.element h2.element-title a:active {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 88, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit article.element .example {

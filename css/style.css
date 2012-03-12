@@ -361,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 5, ../sass/partials/03-extend/_typography.sass */
 .sans, header aside {
-  font-family: sans-serif;
+  font-family: museo-sans-rounded, sans-serif;
 }
 
 /* line 8, ../sass/partials/03-extend/_typography.sass */
@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 16, ../sass/partials/03-extend/_typography.sass */
 .headers, .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
-  font-family: sans-serif;
+  font-family: Georgia, serif;
 }
 
 /* line 20, ../sass/partials/03-extend/_typography.sass */
@@ -388,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 24, ../sass/partials/03-extend/_typography.sass */
 .amp {
-  font-family: Georgia, serif;
+  font-family: rooney-web;
 }
 
 /* line 27, ../sass/partials/03-extend/_typography.sass */
@@ -399,14 +399,14 @@ h1, h2, h3, h4, h5, h6 {
 /* line 31, ../sass/partials/03-extend/_typography.sass */
 .dquo {
   margin-left: -0.5em;
-  font-family: Georgia, serif;
+  font-family: rooney-web;
 }
 
 /* Only use the fancy ampersand in <h#> tags */
 /* line 36, ../sass/partials/03-extend/_typography.sass */
 h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   font-size: 1em;
-  font-family: Georgia, serif;
+  font-family: rooney-web;
   font-style: italic;
 }
 
@@ -435,7 +435,7 @@ html > body {
 /* line 23, ../sass/partials/04-defaults/_common.sass */
 body {
   font-family: Georgia, serif;
-  color: black;
+  color: #103d50;
   background: white;
 }
 
@@ -456,50 +456,50 @@ body {
 /* line 34, ../sass/partials/04-defaults/_common.sass */
 ::-moz-selection {
   color: white;
-  background: #bada55;
+  background: #8cc63f;
   text-shadow: none;
 }
 
 /* line 40, ../sass/partials/04-defaults/_common.sass */
 ::selection {
   color: white;
-  background: #bada55;
+  background: #8cc63f;
   text-shadow: none;
 }
 
 /* Links -------------------------------------------------------------- */
 /* line 48, ../sass/partials/04-defaults/_common.sass */
 a {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 18, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 a:visited {
-  color: #bada55;
+  color: #8cc63f;
 }
 /* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 a:hover {
-  color: #7555da;
+  color: #793fc6;
 }
 /* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 a:active {
-  color: #7555da;
+  color: #793fc6;
 }
 /* line 4, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 a {
   text-decoration: none;
-  border-bottom: 1px solid #bada55;
+  border-bottom: 1px solid #8cc63f;
 }
 /* line 8, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 a:visited {
-  border-bottom-color: #bada55;
+  border-bottom-color: #8cc63f;
 }
 /* line 14, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 a:hover {
-  border-bottom-color: #7555da;
+  border-bottom-color: #793fc6;
 }
 /* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.2.1/stylesheets/survivalkit/mixins/_typography.sass */
 a:active {
-  border-bottom-color: #7555da;
+  border-bottom-color: #793fc6;
 }
 
 /* import font files using @font-face, if not using a service such as typekit */
@@ -508,6 +508,30 @@ a:active {
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
   font-weight: normal;
   text-rendering: optimizeLegibility;
+}
+
+/* line 9, ../sass/partials/04-defaults/markup/_headers.sass */
+.h1, h1 {
+  font-size: 2.063em;
+  line-height: 1.455em;
+}
+
+/* line 11, ../sass/partials/04-defaults/markup/_headers.sass */
+.h2, h2 {
+  font-size: 1.75em;
+  line-height: 1.714em;
+}
+
+/* line 13, ../sass/partials/04-defaults/markup/_headers.sass */
+.h3, h3 {
+  font-size: 1.438em;
+  line-height: 2.087em;
+}
+
+/* line 15, ../sass/partials/04-defaults/markup/_headers.sass */
+.h4, h4 {
+  font-size: 1.188em;
+  line-height: 1.263em;
 }
 
 /* line 1, ../sass/partials/04-defaults/markup/_grouping.sass */
@@ -613,12 +637,12 @@ img {
 /* line 10, ../sass/partials/04-defaults/markup/_images.sass */
 img.left {
   float: left;
-  margin: 12px 25px 12px 0;
+  margin: 12px 23px 12px 0;
 }
 /* line 13, ../sass/partials/04-defaults/markup/_images.sass */
 img.right {
   float: right;
-  margin: 12px 0 12px 25px;
+  margin: 12px 0 12px 23px;
 }
 
 /* Tables -------------------------------------------------------------- */
@@ -949,7 +973,7 @@ label {
   padding: 0.313em;
   border-width: 1px;
   margin-bottom: 0.75em;
-  width: 305px;
+  width: 303px;
   margin-top: 0;
   border-color: gray;
   height: 2.25em;
@@ -971,7 +995,7 @@ input[type=search]::-webkit-search-decoration {
 
 /* line 50, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
 textarea {
-  width: 305px;
+  width: 303px;
 }
 
 /* line 54, ../sass/partials/04-defaults/markup/forms/_form-defaults.sass */
@@ -1146,6 +1170,142 @@ input[type="radio"], input[type="checkbox"] {
   }
 }
 
+/* RESPONSIVE GRIDS -------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  /* line 31, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page {
+    *zoom: 1;
+    margin: auto;
+    width: 138px;
+    max-width: 100%;
+    width: 95%;
+  }
+  /* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  #page:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 36, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page header h1 {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+  /* line 38, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page header aside {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+  /* line 40, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page #main {
+    clear: both;
+    margin-left: 2.174%;
+    margin-right: 2.174%;
+  }
+  /* line 42, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page #main .text-examples {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+  /* line 44, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page #main .graphic-examples {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+
+  /* line 48, ../sass/partials/09-styletile/_tile-responsive.sass */
+  .colors ul li {
+    display: inline;
+    float: left;
+    width: 45.455%;
+    margin-right: 9.091%;
+  }
+  /* line 50, ../sass/partials/09-styletile/_tile-responsive.sass */
+  .colors ul li:nth-of-type(even) {
+    display: inline;
+    float: right;
+    margin-right: 2.174%;
+    #margin-left: -12px;
+    margin-right: 0;
+  }
+
+  /* line 56, ../sass/partials/09-styletile/_tile-responsive.sass */
+  .images ul {
+    list-style-type: none;
+  }
+  /* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/typography/lists/_inline-list.scss */
+  .images ul, .images ul li {
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+  }
+  /* line 58, ../sass/partials/09-styletile/_tile-responsive.sass */
+  .images ul li {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 800px) {
+  /* line 91, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page {
+    *zoom: 1;
+    margin: auto;
+    width: 475px;
+    max-width: 100%;
+    width: 95%;
+  }
+  /* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  #page:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 96, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page header h1 {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+  /* line 98, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page header aside {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+  /* line 100, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page #main {
+    clear: both;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  /* line 102, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page #main .text-examples {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+  /* line 104, ../sass/partials/09-styletile/_tile-responsive.sass */
+  #page #main .graphic-examples {
+    float: none;
+    display: block;
+    width: auto;
+    margin-right: auto;
+  }
+}
 /* SITE-WIDE DESIGN -------------------------------------------------------------- */
 /* line 6, ../sass/partials/09-styletile/_tile-design.sass */
 header {
@@ -1177,14 +1337,14 @@ header aside {
 }
 
 /* line 19, ../sass/partials/09-styletile/_tile-design.sass */
-h5.label {
+.label, .styletile-1 .text-examples .logos h1:before {
   color: gray;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 16px;
   text-transform: uppercase;
+  font-family: museo-sans-rounded, sans-serif;
 }
 
-/* line 26, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 27, ../sass/partials/09-styletile/_tile-design.sass */
 .colors ul li {
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
@@ -1192,16 +1352,16 @@ h5.label {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
 
-/* line 31, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 32, ../sass/partials/09-styletile/_tile-design.sass */
 .images ul {
   counter-reset: section;
 }
-/* line 33, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 34, ../sass/partials/09-styletile/_tile-design.sass */
 .images ul li {
   position: relative;
   overflow: visible;
 }
-/* line 37, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 38, ../sass/partials/09-styletile/_tile-design.sass */
 .images ul li:after {
   position: relative;
   top: 102%;
@@ -1210,7 +1370,7 @@ h5.label {
   counter-increment: section;
   content: "Image " counter(section);
 }
-/* line 44, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 45, ../sass/partials/09-styletile/_tile-design.sass */
 .images ul li img {
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
@@ -1223,62 +1383,131 @@ h5.label {
 /* CLIENT NAME ------------------------------------------------------------------------------------------------------------------------------ */
 /* STYLE TILE #1 ------------------------------------------------------------------------------------------------------------------------------ */
 /* type examples */
-/* line 72, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 63, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos {
+  counter-reset: logos;
+}
+/* line 65, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1 {
+  font-size: 2.25em;
+  line-height: 1.333em;
+  line-height: 2;
+  counter-increment: logos;
+}
+/* line 69, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1:before {
+  display: block;
+  font-weight: normal;
+  text-shadow: transparent 0 0 0;
+  line-height: 1;
+}
+/* line 75, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-1 {
+  font-family: rooney-web;
+  font-weight: 900;
+  color: #289ac8;
+  text-shadow: white 1px 1px 0, #fae048 2px 2px 0;
+}
+/* line 81, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-1:before {
+  content: counter(logos) " - rooney-web 900 blue";
+}
+/* line 83, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-2 {
+  font-family: rooney-web;
+  font-weight: 900;
+  color: #8cc63f;
+  text-shadow: white 1px 1px 0, #fae048 2px 2px 0;
+}
+/* line 89, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-2:before {
+  content: counter(logos) " - rooney-web 900 green";
+}
+/* line 91, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-3 {
+  font-family: rooney-web;
+  font-weight: 700;
+  color: #287fc8;
+  text-shadow: white 1px 1px 0, #fae048 2px 2px 0;
+}
+/* line 99, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-3:before {
+  content: counter(logos) " - rooney-web 700";
+}
+/* line 101, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-4 {
+  font-family: museo-sans-rounded;
+  font-weight: 900;
+  color: #289ac8;
+}
+/* line 108, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .logos h1.opt-4:before {
+  content: counter(logos) " - museo-sans-rounded";
+}
+/* line 122, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .text-examples .serif {
   font-family: Georgia, serif;
 }
-/* line 84, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 124, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .serif .label:after, .styletile-1 .text-examples .serif .logos h1:after:before, .styletile-1 .text-examples .logos .serif h1:after:before {
+  content: " - Georgia, serif";
+}
+/* line 136, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .text-examples .sans, .styletile-1 .text-examples header aside, header .styletile-1 .text-examples aside {
-  font-family: sans-serif;
+  font-family: museo-sans-rounded, sans-serif;
+}
+/* line 138, ../sass/partials/09-styletile/_tile-design.sass */
+.styletile-1 .text-examples .sans .label:after, .styletile-1 .text-examples header aside .label:after, header .styletile-1 .text-examples aside .label:after, .styletile-1 .text-examples .sans .logos h1:after:before, .styletile-1 .text-examples .logos .sans h1:after:before, .styletile-1 .text-examples header aside .logos h1:after:before, .styletile-1 .text-examples .logos header aside h1:after:before, header .styletile-1 .text-examples aside .logos h1:after:before, header .styletile-1 .text-examples .logos aside h1:after:before {
+  content: " - museo-sans-rounded, sans-serif";
 }
 
 /* graphic examples */
 /* colors */
-/* line 96, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 150, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-1 {
-  background-color: gray;
+  background-color: #289ac8;
 }
-/* line 98, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 152, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-1:after {
-  content: "gray";
+  content: "#289ac8";
 }
-/* line 100, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 154, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-2 {
-  background-color: gray;
+  background-color: #287fc8;
 }
-/* line 102, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 156, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-2:after {
-  content: "gray";
+  content: "#287fc8";
 }
-/* line 104, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 158, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-3 {
-  background-color: gray;
+  background-color: #28b5c8;
 }
-/* line 106, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 160, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-3:after {
-  content: "gray";
+  content: "#28b5c8";
 }
-/* line 108, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 162, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-4 {
-  background-color: gray;
+  background-color: #d79a37;
 }
-/* line 110, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 164, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-4:after {
-  content: "gray";
+  content: "#d79a37";
 }
-/* line 112, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 166, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-5 {
-  background-color: gray;
+  background-color: #fae048;
 }
-/* line 114, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 168, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-5:after {
-  content: "gray";
+  content: "#fae048";
 }
-/* line 116, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 170, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-6 {
-  background-color: gray;
+  background-color: #8cc63f;
 }
-/* line 118, ../sass/partials/09-styletile/_tile-design.sass */
+/* line 172, ../sass/partials/09-styletile/_tile-design.sass */
 .styletile-1 .colors ul li.color-6:after {
-  content: "gray";
+  content: "#8cc63f";
 }

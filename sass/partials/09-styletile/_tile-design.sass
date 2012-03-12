@@ -16,10 +16,11 @@ header
   +pie-clearfix
   +trailer(2)
 
-h5.label
+.label
   color: $gray
-  +adjust-font-size-to(ms(0))
+  font-size: ms(0)
   text-transform: uppercase
+  font-family: $font-sans
 
 .colors
   ul
@@ -59,9 +60,58 @@ header
 .styletile-1
   // color: $color-tile1-6
   .text-examples
+    .logos
+      counter-reset: logos
+      h1
+        +adjust-font-size-to(36px)
+        line-height: 2
+        counter-increment: logos
+        &:before
+          @extend .label
+          display: block
+          font-weight: normal
+          +text-shadow(transparent 0 0 0)
+          line-height: 1
+        &.opt-1
+          font-family: $font-typekit-rooney-web
+          // text-transform: uppercase
+          font-weight: 900
+          color: $color-tile1-1
+          +text-shadow($white 1px 1px 0, $color-tile1-5 2px 2px 0)
+          &:before
+            content: counter(logos) " - #{$font-typekit-rooney-web} 900 blue"
+        &.opt-2
+          font-family: $font-typekit-rooney-web
+          // text-transform: uppercase
+          font-weight: 900
+          color: $color-tile1-6
+          +text-shadow($white 1px 1px 0, $color-tile1-5 2px 2px 0)
+          &:before
+            content: counter(logos) " - #{$font-typekit-rooney-web} 900 green"
+        &.opt-3
+          // font-family: $font-typekit-museo-sans-rounded
+          font-family: $font-typekit-rooney-web
+          // text-transform: uppercase
+          font-weight: 700
+          // font-style: italic
+          color: $color-tile1-2
+          +text-shadow($white 1px 1px 0, $color-tile1-5 2px 2px 0)
+          &:before
+            content: counter(logos) " - #{$font-typekit-rooney-web} 700"
+        &.opt-4
+          // font-family: $font-typekit-futura-pt
+          font-family: $font-typekit-museo-sans-rounded
+          // text-transform: uppercase
+          font-weight: 900
+          color: $color-tile1-1
+          // +text-shadow($white 1px 1px 0, $color-tile1-1 2px 2px 0)
+          &:before
+            content: counter(logos) " - #{$font-typekit-museo-sans-rounded}"
     .headers
       h1
         // font-family:
+        // font-size:
+        // text-transform:
         // font-weight:
         // color:
       h2
@@ -71,6 +121,8 @@ header
       a
     .serif
       font-family: $font-serifs
+      .label:after
+        content: " - #{$font-serifs}"
       p
         //
     .quotes
@@ -83,6 +135,8 @@ header
         //
     .sans
       font-family: $font-sans
+      .label:after
+        content: " - #{$font-sans}"
       p
         //
 
