@@ -4,6 +4,8 @@ $c-secondary: $black
 $c-tertiary:  $black
 $c-quadrary:  $black
 
+$not-black: change-color($black, $lightness: 10%)
+
 // COLOR SCHEMES
 // use color-schemer if it's loaded
 @if $color-schemer-loaded
@@ -39,7 +41,7 @@ $dark-primary: shade($color-tile1-1, 60%)
 
 // Color variables expected by _defaults.sass ------------------
 $base-color: $c-primary
-$text-color: $black
+$text-color: $not-black
 $alt-color: $badass
 $background-color: $white
 $border-color: $gray
