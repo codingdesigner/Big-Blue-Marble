@@ -15,10 +15,12 @@ header
   +trailer(2)
 
 .label
-  color: $gray
-  +adjust-font-size-to(ms(0))
+  color: rgba($gray, 0.5)
+  font-size: ms(0)
   text-transform: uppercase
   font-family: $font-sans
+  &:hover
+    color: $gray
 
 .colors
   ul

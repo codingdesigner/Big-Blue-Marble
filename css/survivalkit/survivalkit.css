@@ -80,11 +80,11 @@ body.survival-kit #page > header a:active {
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit #page > header h1 {
-  font-size: 1.25em;
-  line-height: 1.2em;
+  font-size: 1.188em;
+  line-height: 1.263em;
   float: left;
-  padding-right: 25px;
-  margin-right: 25px;
+  padding-right: 23px;
+  margin-right: 23px;
   border-right: 1px solid white;
   font-family: futura, museo-sans-rounded, sans-serif;
 }
@@ -111,8 +111,8 @@ body.survival-kit #page > header h1 a:hover {
 }
 /* line 36, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit #page > header h2 {
-  font-size: 1.563em;
-  line-height: 1.92em;
+  font-size: 1.438em;
+  line-height: 2.087em;
   margin-top: 0;
   font-family: futura, museo-sans-rounded, sans-serif;
 }
@@ -122,11 +122,11 @@ body.survival-kit #page > header .intro {
 }
 /* line 42, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit h1.section-title {
-  font-size: 1.625em;
-  line-height: 1.846em;
+  font-size: 1.75em;
+  line-height: 1.714em;
   background-color: #c1cdd1;
   text-transform: uppercase;
-  padding-left: 12.5px;
+  padding-left: 11.5px;
   margin-top: 0;
 }
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
@@ -305,7 +305,7 @@ body.survival-kit div.element h2.element-title {
   background-color: #778287;
   color: white;
   text-transform: uppercase;
-  padding-left: 12.5px;
+  padding-left: 11.5px;
 }
 /* line 92, ../../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/survival_kit/_survival-kit.sass */
 body.survival-kit div.element h2.element-title a {
