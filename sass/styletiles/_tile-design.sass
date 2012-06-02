@@ -83,9 +83,9 @@ header
         border-bottom: 6px solid $color-tile1-5
         border-left: 6px solid $color-tile1-5
     h2
-      color: $color-tile1-3
+      color: $color-tile1-1
     h3
-      color: $color-tile1-3
+      color: $color-tile1-1
     a
   .text-examples
     .logos
@@ -112,13 +112,38 @@ header
       p
         //
     .quotes
-      //
+      position: relative
+      text-align: center
+      +text-shadow(rgba($not-black, 0.3) 0px 1px 0)
       .quote
-        //
+        color: $color-tile1-4
+        +adjust-font-size-to(ms(4))
+        font-weight: 900
         .quote-mark
-          //
+          position: relative
+          font-size: ms(8)
+          color: mix($color-tile1-4, $color-tile1-5)
+          opacity: 0.2
+          top: 25px
+          &.left-quote-mark
+            right: -12px
+          &.right-quote-mark
+            left: -12px
       .source
-        //
+        font-size: ms(2)
+        @extend %italic
+        color: $color-tile1-5
+        font-weight: 400
+    .book
+      fieldset
+        border: none
+        padding: 0
+      .abaproduct-image
+        +float(left)
+        margin-right: 1em
+        a
+          +undo-underline-links
+
 
 
 /* graphic examples
