@@ -134,6 +134,7 @@ header
   .book
     fieldset
       border: none
+      border-width: 0
       padding: 0
     .abaproduct-image
       +float(left)
@@ -150,6 +151,11 @@ header
       color: $color-tile1-1
     .abaproduct-other-editions
       +adjust-font-size-to(ms(-1))
+    form
+      input[type=submit]
+        +sassy-button("matte", ms(-2), ms(0), $color-tile1-1)
+        font-family: $font-typekit-rooney-web
+        text-transform: uppercase
 
 
 

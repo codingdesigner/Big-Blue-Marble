@@ -1747,9 +1747,10 @@ header aside {
 /* line 135, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book fieldset {
   border: none;
+  border-width: 0;
   padding: 0;
 }
-/* line 138, ../sass/styletiles/_tile-design.sass */
+/* line 139, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-image {
   display: inline;
   float: left;
@@ -1776,74 +1777,118 @@ header aside {
 .styletile-1 .book .abaproduct-image a:active {
   border-bottom-color: inherit;
 }
-/* line 144, ../sass/styletiles/_tile-design.sass */
+/* line 145, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-details h2 {
   font-size: 0.813em;
   line-height: 1.846em;
   color: #1a1a1a;
 }
-/* line 147, ../sass/styletiles/_tile-design.sass */
+/* line 148, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-details h2 a {
   font-size: 1.462em;
   line-height: 1.263em;
 }
-/* line 149, ../sass/styletiles/_tile-design.sass */
+/* line 150, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-price {
   color: #289ac8;
 }
-/* line 151, ../sass/styletiles/_tile-design.sass */
+/* line 152, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-other-editions {
   font-size: 0.813em;
   line-height: 1.846em;
 }
+/* line 155, ../sass/styletiles/_tile-design.sass */
+.styletile-1 .book form input[type=submit] {
+  font-size: 16px;
+  padding: 0.3em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 1.5;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -o-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #289ac8;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5ebadf), color-stop(70%, #289ac8));
+  background: -webkit-linear-gradient(#5ebadf, #289ac8 70%);
+  background: -moz-linear-gradient(#5ebadf, #289ac8 70%);
+  background: -o-linear-gradient(#5ebadf, #289ac8 70%);
+  background: -ms-linear-gradient(#5ebadf, #289ac8 70%);
+  background: linear-gradient(#5ebadf, #289ac8 70%);
+  -webkit-box-shadow: #9ed5eb 0 1px 0 inset;
+  -moz-box-shadow: #9ed5eb 0 1px 0 inset;
+  box-shadow: #9ed5eb 0 1px 0 inset;
+  border: 1px solid #248ab3;
+  color: white;
+  text-shadow: #1e7497 0 -1px 0;
+  font-family: rooney-web;
+  text-transform: uppercase;
+}
+/* line 10, ../../../../../../Library/Ruby/Gems/1.8/gems/sassy-buttons-0.1.0/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.styletile-1 .book form input[type=submit]:hover {
+  background-color: #248ab3;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #49b1db), color-stop(75%, #248ab3));
+  background: -webkit-linear-gradient(#49b1db 3%, #248ab3 75%);
+  background: -moz-linear-gradient(#49b1db 3%, #248ab3 75%);
+  background: -o-linear-gradient(#49b1db 3%, #248ab3 75%);
+  background: -ms-linear-gradient(#49b1db 3%, #248ab3 75%);
+  background: linear-gradient(#49b1db 3%, #248ab3 75%);
+}
+/* line 13, ../../../../../../Library/Ruby/Gems/1.8/gems/sassy-buttons-0.1.0/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.styletile-1 .book form input[type=submit]:active {
+  -webkit-box-shadow: #2180a6 0 1px 2px inset;
+  -moz-box-shadow: #2180a6 0 1px 2px inset;
+  box-shadow: #2180a6 0 1px 2px inset;
+}
 
 /* graphic examples */
 /* colors */
-/* line 163, ../sass/styletiles/_tile-design.sass */
+/* line 169, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-1 {
   background-color: #289ac8;
 }
-/* line 165, ../sass/styletiles/_tile-design.sass */
+/* line 171, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-1:after {
   content: "#289ac8";
 }
-/* line 167, ../sass/styletiles/_tile-design.sass */
+/* line 173, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-2 {
   background-color: #284ac8;
 }
-/* line 169, ../sass/styletiles/_tile-design.sass */
+/* line 175, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-2:after {
   content: "#284ac8";
 }
-/* line 171, ../sass/styletiles/_tile-design.sass */
+/* line 177, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-3 {
   background-color: #28c8a6;
 }
-/* line 173, ../sass/styletiles/_tile-design.sass */
+/* line 179, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-3:after {
   content: "#28c8a6";
 }
-/* line 175, ../sass/styletiles/_tile-design.sass */
+/* line 181, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-4 {
   background-color: #c85628;
 }
-/* line 177, ../sass/styletiles/_tile-design.sass */
+/* line 183, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-4:after {
   content: "#c85628";
 }
-/* line 179, ../sass/styletiles/_tile-design.sass */
+/* line 185, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-5 {
   background-color: #fae048;
 }
-/* line 181, ../sass/styletiles/_tile-design.sass */
+/* line 187, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-5:after {
   content: "#fae048";
 }
-/* line 183, ../sass/styletiles/_tile-design.sass */
+/* line 189, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-6 {
   background-color: #8cc63f;
 }
-/* line 185, ../sass/styletiles/_tile-design.sass */
+/* line 191, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-6:after {
   content: "#8cc63f";
 }
