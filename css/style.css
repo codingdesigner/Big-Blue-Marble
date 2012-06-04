@@ -1611,8 +1611,10 @@ header aside {
 /* line 63, ../sass/styletiles/_tile-design.sass */
 .styletile-1 {
   background-color: #fefdf5;
+  background-image: url('/images/styletiles/1/bgnoise-tint.gif?1338785762');
+  background-repeat: repeat;
 }
-/* line 65, ../sass/styletiles/_tile-design.sass */
+/* line 68, ../sass/styletiles/_tile-design.sass */
 .styletile-1 h1:not(.client-name) {
   color: #8cc63f;
   -webkit-box-shadow: #289ac8 0 6px 0, white 0 7px 0;
@@ -1620,7 +1622,7 @@ header aside {
   box-shadow: #289ac8 0 6px 0, white 0 7px 0;
   position: relative;
 }
-/* line 70, ../sass/styletiles/_tile-design.sass */
+/* line 73, ../sass/styletiles/_tile-design.sass */
 .styletile-1 h1:not(.client-name):after {
   position: absolute;
   width: 12px;
@@ -1632,15 +1634,15 @@ header aside {
   border-bottom: 6px solid #fae048;
   border-left: 6px solid #fae048;
 }
-/* line 80, ../sass/styletiles/_tile-design.sass */
+/* line 83, ../sass/styletiles/_tile-design.sass */
 .styletile-1 h2 {
   color: #289ac8;
 }
-/* line 82, ../sass/styletiles/_tile-design.sass */
+/* line 85, ../sass/styletiles/_tile-design.sass */
 .styletile-1 h3 {
   color: #289ac8;
 }
-/* line 84, ../sass/styletiles/_tile-design.sass */
+/* line 87, ../sass/styletiles/_tile-design.sass */
 .styletile-1 a {
   color: #8cc63f;
   -webkit-transition: "all", 0.5s, "ease-out";
@@ -1678,51 +1680,51 @@ header aside {
 .styletile-1 a:active {
   border-bottom-color: #289ac8;
 }
-/* line 88, ../sass/styletiles/_tile-design.sass */
+/* line 91, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .logos {
   counter-reset: logos;
 }
-/* line 90, ../sass/styletiles/_tile-design.sass */
+/* line 93, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .logos h1 {
   counter-increment: logos;
   font-size: 2.25em;
   line-height: 1.333em;
 }
-/* line 93, ../sass/styletiles/_tile-design.sass */
+/* line 96, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .logos h1:before {
   display: block;
   font-weight: normal;
   text-shadow: transparent 0 0 0;
   line-height: 1;
 }
-/* line 99, ../sass/styletiles/_tile-design.sass */
+/* line 102, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .logos h1.opt-1 {
   font-weight: 900;
   color: #289ac8;
   text-shadow: white 1px 1px 0, #fae048 2px 2px 0;
 }
-/* line 103, ../sass/styletiles/_tile-design.sass */
+/* line 106, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .logos h1.opt-1:before {
   content: counter(logos) " - rooney-web 900 blue";
 }
-/* line 107, ../sass/styletiles/_tile-design.sass */
+/* line 110, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .body .label:after, .styletile-1 .body .logos h1:after:before, .styletile-1 .logos .body h1:after:before {
   content: " - rooney-web, Georgia, serif";
 }
-/* line 111, ../sass/styletiles/_tile-design.sass */
+/* line 114, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .quotes {
   position: relative;
   text-align: center;
   text-shadow: rgba(26, 26, 26, 0.3) 0px 1px 0;
 }
-/* line 115, ../sass/styletiles/_tile-design.sass */
+/* line 118, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .quotes .quote {
   color: #c85628;
   font-size: 2.063em;
   line-height: 1.455em;
   font-weight: 900;
 }
-/* line 119, ../sass/styletiles/_tile-design.sass */
+/* line 122, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .quotes .quote .quote-mark {
   position: relative;
   font-size: 69px;
@@ -1730,27 +1732,27 @@ header aside {
   opacity: 0.2;
   top: 25px;
 }
-/* line 125, ../sass/styletiles/_tile-design.sass */
+/* line 128, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .quotes .quote .quote-mark.left-quote-mark {
   right: -12px;
 }
-/* line 127, ../sass/styletiles/_tile-design.sass */
+/* line 130, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .quotes .quote .quote-mark.right-quote-mark {
   left: -12px;
 }
-/* line 129, ../sass/styletiles/_tile-design.sass */
+/* line 132, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .quotes .source {
   font-size: 23px;
   color: #fae048;
   font-weight: 400;
 }
-/* line 135, ../sass/styletiles/_tile-design.sass */
+/* line 138, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book fieldset {
   border: none;
   border-width: 0;
   padding: 0;
 }
-/* line 139, ../sass/styletiles/_tile-design.sass */
+/* line 142, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-image {
   display: inline;
   float: left;
@@ -1777,38 +1779,38 @@ header aside {
 .styletile-1 .book .abaproduct-image a:active {
   border-bottom-color: inherit;
 }
-/* line 145, ../sass/styletiles/_tile-design.sass */
+/* line 148, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-details h2 {
   font-size: 0.813em;
   line-height: 1.846em;
   color: #1a1a1a;
 }
-/* line 148, ../sass/styletiles/_tile-design.sass */
+/* line 151, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-details h2 a {
   font-size: 1.462em;
   line-height: 1.263em;
 }
-/* line 150, ../sass/styletiles/_tile-design.sass */
+/* line 153, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-price {
   color: #289ac8;
 }
-/* line 152, ../sass/styletiles/_tile-design.sass */
+/* line 155, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book .abaproduct-other-editions {
   font-size: 0.813em;
   line-height: 1.846em;
 }
-/* line 155, ../sass/styletiles/_tile-design.sass */
+/* line 158, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .book form input[type=submit] {
   font-size: 16px;
   padding: 0.3em 1.5em;
   display: inline-block;
   cursor: pointer;
   line-height: 1.5;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  -ms-border-radius: 11px;
-  -o-border-radius: 11px;
-  border-radius: 11px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
   background-color: #289ac8;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5ebadf), color-stop(70%, #289ac8));
   background: -webkit-linear-gradient(#5ebadf, #289ac8 70%);
@@ -1844,51 +1846,51 @@ header aside {
 
 /* graphic examples */
 /* colors */
-/* line 169, ../sass/styletiles/_tile-design.sass */
+/* line 172, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-1 {
   background-color: #289ac8;
 }
-/* line 171, ../sass/styletiles/_tile-design.sass */
+/* line 174, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-1:after {
   content: "#289ac8";
 }
-/* line 173, ../sass/styletiles/_tile-design.sass */
+/* line 176, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-2 {
   background-color: #284ac8;
 }
-/* line 175, ../sass/styletiles/_tile-design.sass */
+/* line 178, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-2:after {
   content: "#284ac8";
 }
-/* line 177, ../sass/styletiles/_tile-design.sass */
+/* line 180, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-3 {
   background-color: #28c8a6;
 }
-/* line 179, ../sass/styletiles/_tile-design.sass */
+/* line 182, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-3:after {
   content: "#28c8a6";
 }
-/* line 181, ../sass/styletiles/_tile-design.sass */
+/* line 184, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-4 {
   background-color: #c85628;
 }
-/* line 183, ../sass/styletiles/_tile-design.sass */
+/* line 186, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-4:after {
   content: "#c85628";
 }
-/* line 185, ../sass/styletiles/_tile-design.sass */
+/* line 188, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-5 {
   background-color: #fae048;
 }
-/* line 187, ../sass/styletiles/_tile-design.sass */
+/* line 190, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-5:after {
   content: "#fae048";
 }
-/* line 189, ../sass/styletiles/_tile-design.sass */
+/* line 192, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-6 {
   background-color: #8cc63f;
 }
-/* line 191, ../sass/styletiles/_tile-design.sass */
+/* line 194, ../sass/styletiles/_tile-design.sass */
 .styletile-1 .colors ul li.color-6:after {
   content: "#8cc63f";
 }
