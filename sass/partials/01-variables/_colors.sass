@@ -44,6 +44,22 @@ $color-tile2-4: #a27150
 $color-tile2-5: #ed6a4f
 $color-tile2-6: #aca95c
 
+$color-tile3-1: #0e91c0
+$base-color: $color-tile3-1
+$color-scheme: accented-analogic
+$hue-offset: 75
+$brightness-offset: 30%
+$color-theory: boutet
+$equalize: false
+$color-tile3-2: scale-color(adjust-hue($color-tile3-1, 0deg), $saturation: -5%, $lightness: 34%)
+$color-tile3-3: scale-color(color-schemer(tertiary), $saturation: -70%, $lightness: 30%)
+$color-tile3-4: scale-color(adjust-hue($color-tile3-3, 0deg), $saturation: -5%, $lightness: 34%)
+$color-tile3-5: scale-color(color-schemer(quadrary), $saturation: 30%, $lightness: -30%)
+$color-tile3-6: color-schemer(quadrary)
+
+// @debug hack-colors($color-tile3-1 #79ad79)
+// @debug hack-colors(color-schemer(tertiary) #79ad79)
+
 $dark-primary: shade($color-tile1-1, 60%)
 
 // Color variables expected by _defaults.sass ------------------

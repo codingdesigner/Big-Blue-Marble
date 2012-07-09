@@ -556,7 +556,7 @@ img, textarea, input[type=text], input[type=password], input[type=email], input[
 }
 
 /* line 25, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/extend/_helpers.sass */
-em, address, cite, q, dfn, i, .styletile-1 .quotes .source, .styletile-2 .quotes .source {
+em, address, cite, q, dfn, i, .styletile-1 .quotes .source, .styletile-2 .quotes .source, .styletile-3 .quotes .source {
   font-style: italic;
 }
 
@@ -1560,14 +1560,14 @@ header aside {
 }
 
 /* line 20, ../sass/styletiles/_tile-design.sass */
-.label, .styletile-1 .logos h1:before, .styletile-2 .logos h1:before {
+.label, .styletile-1 .logos h1:before, .styletile-2 .logos h1:before, .styletile-3 .logos h1:before {
   color: rgba(128, 128, 128, 0.5);
   font-size: 16px;
   text-transform: uppercase;
   font-family: museo-sans-rounded, sans-serif;
 }
 /* line 25, ../sass/styletiles/_tile-design.sass */
-.label:hover, .styletile-1 .logos h1:hover:before, .styletile-2 .logos h1:hover:before {
+.label:hover, .styletile-1 .logos h1:hover:before, .styletile-2 .logos h1:hover:before, .styletile-3 .logos h1:hover:before {
   color: gray;
 }
 
@@ -1695,7 +1695,7 @@ header aside {
   content: counter(logos) " - rooney-web 900 blue";
 }
 /* line 99, ../sass/styletiles/_tile-design.sass */
-.styletile-1 .body .label:after, .styletile-1 .body .logos h1:after:before, .styletile-1 .logos .body h1:after:before, .styletile-1 .body .styletile-2 .logos h1:after:before, .styletile-2 .logos .styletile-1 .body h1:after:before {
+.styletile-1 .body .label:after, .styletile-1 .body .logos h1:after:before, .styletile-1 .logos .body h1:after:before, .styletile-1 .body .styletile-2 .logos h1:after:before, .styletile-2 .logos .styletile-1 .body h1:after:before, .styletile-1 .body .styletile-3 .logos h1:after:before, .styletile-3 .logos .styletile-1 .body h1:after:before {
   content: " - rooney-web, Georgia, serif";
 }
 /* line 103, ../sass/styletiles/_tile-design.sass */
@@ -1882,7 +1882,7 @@ header aside {
   content: "#8cc63f";
 }
 
-/* STYLE TILE #1 ------------------------------------------------------------------------------------------------------------------------------ */
+/* STYLE TILE #2 ------------------------------------------------------------------------------------------------------------------------------ */
 /* type examples */
 /* line 207, ../sass/styletiles/_tile-design.sass */
 .styletile-2 {
@@ -1971,7 +1971,7 @@ header aside {
   content: counter(logos) " - rooney-web 900 blue";
 }
 /* line 243, ../sass/styletiles/_tile-design.sass */
-.styletile-2 .body .label:after, .styletile-2 .body .styletile-1 .logos h1:after:before, .styletile-1 .logos .styletile-2 .body h1:after:before, .styletile-2 .body .logos h1:after:before, .styletile-2 .logos .body h1:after:before {
+.styletile-2 .body .label:after, .styletile-2 .body .styletile-1 .logos h1:after:before, .styletile-1 .logos .styletile-2 .body h1:after:before, .styletile-2 .body .logos h1:after:before, .styletile-2 .logos .body h1:after:before, .styletile-2 .body .styletile-3 .logos h1:after:before, .styletile-3 .logos .styletile-2 .body h1:after:before {
   content: " - rooney-web, Georgia, serif";
 }
 /* line 247, ../sass/styletiles/_tile-design.sass */
@@ -2156,4 +2156,281 @@ header aside {
 /* line 327, ../sass/styletiles/_tile-design.sass */
 .styletile-2 .colors ul li.color-6:after {
   content: "#aca95c";
+}
+
+/* STYLE TILE #3 ------------------------------------------------------------------------------------------------------------------------------ */
+/* type examples */
+/* line 351, ../sass/styletiles/_tile-design.sass */
+.styletile-3 {
+  background-color: #fefaf5;
+}
+/* line 356, ../sass/styletiles/_tile-design.sass */
+.styletile-3 h1:not(.client-name) {
+  color: #0e91c0;
+  -webkit-box-shadow: #79b07a 0 6px 0, white 0 7px 0;
+  -moz-box-shadow: #79b07a 0 6px 0, white 0 7px 0;
+  box-shadow: #79b07a 0 6px 0, white 0 7px 0;
+}
+/* line 360, ../sass/styletiles/_tile-design.sass */
+.styletile-3 h2 {
+  color: #48c2ed;
+  -webkit-box-shadow: #a7caa8 0 3px 0, white 0 4px 0;
+  -moz-box-shadow: #a7caa8 0 3px 0, white 0 4px 0;
+  box-shadow: #a7caa8 0 3px 0, white 0 4px 0;
+}
+/* line 363, ../sass/styletiles/_tile-design.sass */
+.styletile-3 h3 {
+  color: #48c2ed;
+}
+/* line 365, ../sass/styletiles/_tile-design.sass */
+.styletile-3 a {
+  color: #48c2ed;
+  -webkit-transition: "all", 0.5s, "ease-out";
+  -moz-transition: "all", 0.5s, "ease-out";
+  -ms-transition: "all", 0.5s, "ease-out";
+  -o-transition: "all", 0.5s, "ease-out";
+  transition: "all", 0.5s, "ease-out";
+}
+/* line 18, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.styletile-3 a:visited {
+  color: #48c2ed;
+}
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.styletile-3 a:hover {
+  color: #cb7d0a;
+}
+/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.styletile-3 a:active {
+  color: #cb7d0a;
+}
+/* line 4, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 a {
+  text-decoration: none;
+  border-bottom: 1px solid #48c2ed;
+}
+/* line 8, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 a:visited {
+  border-bottom-color: #48c2ed;
+}
+/* line 14, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 a:hover {
+  border-bottom-color: #cb7d0a;
+}
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 a:active {
+  border-bottom-color: #cb7d0a;
+}
+/* line 369, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .logos {
+  counter-reset: logos;
+}
+/* line 371, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .logos h1 {
+  counter-increment: logos;
+  font-size: 2.25em;
+  line-height: 1.333em;
+}
+/* line 374, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .logos h1:before {
+  display: block;
+  font-weight: normal;
+  text-shadow: transparent 0 0 0;
+  line-height: 1;
+}
+/* line 380, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .logos h1.opt-1 {
+  font-weight: 900;
+  color: #0e91c0;
+  text-shadow: white 1px 1px 0, #cb7d0a 2px 2px 0;
+}
+/* line 384, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .logos h1.opt-1:before {
+  content: counter(logos) " - rooney-web 900 blue";
+}
+/* line 388, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .body .label:after, .styletile-3 .body .styletile-1 .logos h1:after:before, .styletile-1 .logos .styletile-3 .body h1:after:before, .styletile-3 .body .styletile-2 .logos h1:after:before, .styletile-2 .logos .styletile-3 .body h1:after:before, .styletile-3 .body .logos h1:after:before, .styletile-3 .logos .body h1:after:before {
+  content: " - rooney-web, Georgia, serif";
+}
+/* line 392, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .quotes {
+  position: relative;
+  text-align: center;
+  text-shadow: rgba(26, 26, 26, 0.3) 0px 1px 0;
+}
+/* line 396, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .quotes .quote {
+  color: #cb7d0a;
+  font-size: 2.063em;
+  line-height: 1.455em;
+  font-weight: 900;
+}
+/* line 400, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .quotes .quote .quote-mark {
+  position: relative;
+  font-size: 69px;
+  color: #b9a359;
+  opacity: 0.2;
+  top: 25px;
+}
+/* line 406, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .quotes .quote .quote-mark.left-quote-mark {
+  right: -12px;
+}
+/* line 408, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .quotes .quote .quote-mark.right-quote-mark {
+  left: -12px;
+}
+/* line 410, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .quotes .source {
+  font-size: 23px;
+  color: #f1a93f;
+  font-weight: 400;
+}
+/* line 416, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book fieldset {
+  border: none;
+  border-width: 0;
+  padding: 0;
+}
+/* line 420, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book .abaproduct-image {
+  display: inline;
+  float: left;
+  margin-right: 1em;
+}
+/* line 21, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 .book .abaproduct-image a {
+  text-decoration: none;
+  border-bottom-style: inherit;
+}
+/* line 25, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 .book .abaproduct-image a:visited {
+  border-bottom-color: inherit;
+}
+/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 .book .abaproduct-image a:focus {
+  border-bottom-color: inherit;
+}
+/* line 29, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 .book .abaproduct-image a:hover {
+  border-bottom-color: inherit;
+}
+/* line 31, ../../../../../../Library/Ruby/Gems/1.8/gems/survivalkit-0.3.4/stylesheets/survivalkit/mixins/_typography.sass */
+.styletile-3 .book .abaproduct-image a:active {
+  border-bottom-color: inherit;
+}
+/* line 426, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book .abaproduct-details h2 {
+  font-size: 0.813em;
+  line-height: 1.846em;
+  color: #1a1a1a;
+}
+/* line 429, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book .abaproduct-details h2 a {
+  font-size: 1.462em;
+  line-height: 1.263em;
+}
+/* line 431, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book .abaproduct-price {
+  color: #a7caa8;
+}
+/* line 433, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book .abaproduct-other-editions {
+  font-size: 0.813em;
+  line-height: 1.846em;
+}
+/* line 436, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .book form input[type=submit] {
+  font-size: 16px;
+  padding: 0.3em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 1.5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #f1a93f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f6c986), color-stop(70%, #f1a93f));
+  background: -webkit-linear-gradient(#f6c986, #f1a93f 70%);
+  background: -moz-linear-gradient(#f6c986, #f1a93f 70%);
+  background: -o-linear-gradient(#f6c986, #f1a93f 70%);
+  background: -ms-linear-gradient(#f6c986, #f1a93f 70%);
+  background: linear-gradient(#f6c986, #f1a93f 70%);
+  -webkit-box-shadow: #fbe9ce 0 1px 0 inset;
+  -moz-box-shadow: #fbe9ce 0 1px 0 inset;
+  box-shadow: #fbe9ce 0 1px 0 inset;
+  border: 1px solid #ef9f27;
+  color: white;
+  text-shadow: #e58f11 0 -1px 0;
+  font-family: rooney-web;
+  text-transform: uppercase;
+}
+/* line 10, ../../../../../../Library/Ruby/Gems/1.8/gems/sassy-buttons-0.1.0/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.styletile-3 .book form input[type=submit]:hover {
+  background-color: #ef9f27;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #f4bf6f), color-stop(75%, #ef9f27));
+  background: -webkit-linear-gradient(#f4bf6f 3%, #ef9f27 75%);
+  background: -moz-linear-gradient(#f4bf6f 3%, #ef9f27 75%);
+  background: -o-linear-gradient(#f4bf6f 3%, #ef9f27 75%);
+  background: -ms-linear-gradient(#f4bf6f 3%, #ef9f27 75%);
+  background: linear-gradient(#f4bf6f 3%, #ef9f27 75%);
+}
+/* line 13, ../../../../../../Library/Ruby/Gems/1.8/gems/sassy-buttons-0.1.0/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.styletile-3 .book form input[type=submit]:active {
+  -webkit-box-shadow: #ee9819 0 1px 2px inset;
+  -moz-box-shadow: #ee9819 0 1px 2px inset;
+  box-shadow: #ee9819 0 1px 2px inset;
+}
+
+/* graphic examples */
+/* colors */
+/* line 450, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-1 {
+  background-color: #0e91c0;
+}
+/* line 452, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-1:after {
+  content: "#0e91c0";
+}
+/* line 454, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-2 {
+  background-color: #48c2ed;
+}
+/* line 456, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-2:after {
+  content: "#48c2ed";
+}
+/* line 458, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-3 {
+  background-color: #79b07a;
+}
+/* line 460, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-3:after {
+  content: "#79b07a";
+}
+/* line 462, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-4 {
+  background-color: #a7caa8;
+}
+/* line 464, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-4:after {
+  content: "#a7caa8";
+}
+/* line 466, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-5 {
+  background-color: #cb7d0a;
+}
+/* line 468, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-5:after {
+  content: "#cb7d0a";
+}
+/* line 470, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-6 {
+  background-color: #f1a93f;
+}
+/* line 472, ../sass/styletiles/_tile-design.sass */
+.styletile-3 .colors ul li.color-6:after {
+  content: "#f1a93f";
 }
