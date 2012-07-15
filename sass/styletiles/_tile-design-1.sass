@@ -1,0 +1,152 @@
+/*
+  STYLE TILE #1 ------------------------------------------------------------------------------------------------------------------------------
+
+/* type examples
+.styletile-1
+  background:
+    color: tint($color-tile1-5, 95%)
+    // image: image-url('styletiles/1/bgnoise-tint.gif')
+    // repeat: repeat
+  +background-noise(0.5, 0.06, 75)
+  h1:not(.client-name)
+    color: $color-tile1-6
+    // border-bottom: 1px solid $color-tile1-1
+    +box-shadow($color-tile1-1 0 6px 0, $white 0 7px 0)
+  h2
+    color: $color-tile1-1
+  h3
+    color: $color-tile1-1
+  a
+    +link-colors($color-tile1-6, $color-tile1-1, $color-tile1-1, $color-tile1-6, false)
+    +underline-links($color-tile1-6, $color-tile1-1, $color-tile1-1, $color-tile1-6, false)
+    +link-transitions
+  .logos
+    counter-reset: logos
+    h1
+      counter-increment: logos
+      +adjust-font-size-to(36px)
+      &:before
+        @extend .label
+        display: block
+        font-weight: normal
+        +text-shadow(transparent 0 0 0)
+        line-height: 1
+      &.opt-1
+        font-weight: 900
+        color: $color-tile1-1
+        +text-shadow($white 1px 1px 0, $color-tile1-5 2px 2px 0)
+        &:before
+          content: counter(logos) " - #{$font-typekit-rooney-web} 900 blue"
+  .body
+    // font-family: $font-body
+    .label:after
+      content: " - #{$font-body}"
+    p
+      //
+    figure
+      margin-left: 1em
+      figcaption
+        color: change-color($color-tile1-1, $lightness: 20%)
+        font-size: ms(-1)
+    img
+      +box-shadow(rgba($white, 0.8) 0 0 0 3px, rgba($not-black, 0.3) 0 0 0 4px)
+  .quotes
+    position: relative
+    text-align: center
+    +text-shadow(rgba($not-black, 0.3) 0px 1px 0)
+    .quote
+      color: $color-tile1-4
+      +adjust-font-size-to(ms(4))
+      font-weight: 900
+      .quote-mark
+        position: relative
+        font-size: ms(8)
+        color: mix($color-tile1-4, $color-tile1-5)
+        opacity: 0.2
+        top: 25px
+        &.left-quote-mark
+          right: -12px
+        &.right-quote-mark
+          left: -12px
+    .source
+      font-size: ms(2)
+      @extend %italic
+      color: $color-tile1-5
+      font-weight: 400
+  .book
+    fieldset
+      border: none
+      border-width: 0
+      padding: 0
+    .abaproduct-image
+      +float(left)
+      margin-right: 1em
+      a
+        +undo-underline-links
+    .abaproduct-details
+      h2
+        +adjust-font-size-to(ms(-1))
+        color: $not-black
+        a
+          +adjust-font-size-to(ms(1), 1, ms(-1))
+    .abaproduct-price
+      color: $color-tile1-1
+    .abaproduct-other-editions
+      +adjust-font-size-to(ms(-1))
+    form
+      input[type=submit]
+        +sassy-button("matte", 6px, ms(0), $color-tile1-1, false, $white, "inset")
+        font-family: $font-typekit-rooney-web
+        text-transform: uppercase
+
+
+
+/* graphic examples
+
+/* colors
+.styletile-1
+  .colors
+    ul
+      li
+        &.color-1
+          background-color: $color-tile1-1
+          &:after
+            content: "#{$color-tile1-1}"
+        &.color-2
+          background-color: $color-tile1-2
+          &:after
+            content: "#{$color-tile1-2}"
+        &.color-3
+          background-color: $color-tile1-3
+          &:after
+            content: "#{$color-tile1-3}"
+        &.color-4
+          background-color: $color-tile1-4
+          &:after
+            content: "#{$color-tile1-4}"
+        &.color-5
+          background-color: $color-tile1-5
+          &:after
+            content: "#{$color-tile1-5}"
+        &.color-6
+          background-color: $color-tile1-6
+          &:after
+            content: "#{$color-tile1-6}"
+.styletile-1
+  .images
+    ul
+      li
+        &.image-1
+          //
+        &.image-2
+          //
+        &.image-3
+          //
+        &.image-4
+          //
+        &.image-5
+          //
+        &.image-6
+          //
+
+
