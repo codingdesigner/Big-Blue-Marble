@@ -1,0 +1,11 @@
+name = Survival Kit
+description = A theme meant for use while designing "in the browser" and for writing customized CSS using the Sass CSS preprocessor. See <a href="http://thecodingdesigner.com">thecodingdesigner.com</a> for more information.
+package = The Coding Designer's Survival Kit
+version = 1.x-dev
+core = 6.x
+
+; stylesheets
+stylesheets[all][] = css/style.css
+
+
+
