@@ -1,0 +1,15 @@
+// This file establishes simple clean default font stacks
+
+$font-sans: sans-serif;
+$font-serifs: Georgia, serif;
+$font-mono: Consolas, Menlo, "Courier New", monospace, monospace;
+
+$font-body: $font-serifs;
+$font-headline: $font-sans;
+$font-logo: $font-sans;
+
+// SPECIAL USE FONT STACKS
+// ampersands
+$font-amp: $font-serifs;
+// caps
+$font-cap: $font-sans;
