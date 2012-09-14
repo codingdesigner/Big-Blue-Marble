@@ -6,7 +6,7 @@
   color: change-color($color-tile3-1, $lightness: 10%)
   background:
     color: tint($color-tile3-6, 95%)
-  +background-noise(0.5, 0.06, 75)
+  // +background-noise(0.5, 0.06, 75)
   h1:not(.client-name)
     color: $color-tile3-1
     // border-bottom: 1px solid $color-tile3-1
@@ -21,7 +21,7 @@
       +box-shadow($color-tile3-4 0 3px 0, $white 0 4px 0)
   a
     +link-colors($color-tile3-2, $color-tile3-5, $color-tile3-5, $color-tile3-2, false)
-    +underline-links($color-tile3-2, $color-tile3-5, $color-tile3-5, $color-tile3-2, false)
+    +border-links($color-tile3-2, $color-tile3-5, $color-tile3-5, $color-tile3-2, false)
     +link-transitions
   .logos
     counter-reset: logos
@@ -94,7 +94,7 @@
       padding: 0
     .abaproduct-image
       a
-        +undo-underline-links
+        +undo-border-links
       img
         width: 100%
     .abaproduct-details

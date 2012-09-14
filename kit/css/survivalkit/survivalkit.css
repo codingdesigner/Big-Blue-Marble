@@ -13,18 +13,9 @@
  * Download the source files here:
  * https://github.com/canarymason/The-Coding-Designers-Survival-Kit
  * Learn more about Sass & Compass at http://compass-style.org/ */
-.clearfix, body.survival-kit #page > header hgroup {
-  zoom: 1;
-}
-.clearfix:after, body.survival-kit #page > header hgroup:after {
-  content: "\0020";
-  display: table;
-  clear: both;
-}
-
-.hidden {
-  display: none !important;
-  visibility: hidden;
+.survival-kit div.element .example .markup + .show-source {
+  font-family: Consolas, Menlo, "Courier New", monospace, monospace;
+  _font-family: Consolas, Menlo, "Courier New", monospace, monospace;
 }
 
 /* Only use the fancy ampersand in <h#> tags */
@@ -34,51 +25,51 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   font-style: italic;
 }
 
-body.survival-kit #page > header {
+.survival-kit #page > header {
   background: #c1cdd1;
   font-family: futura, museo-sans-rounded, sans-serif;
   padding: 0 0.5em;
   margin-bottom: 0;
 }
-body.survival-kit #page > header a {
+.survival-kit #page > header a {
   color: white;
 }
-body.survival-kit #page > header a:visited {
+.survival-kit #page > header a:visited {
   color: white;
 }
-body.survival-kit #page > header a:hover {
+.survival-kit #page > header a:hover {
   color: #9ca7ac;
 }
-body.survival-kit #page > header a:active {
+.survival-kit #page > header a:active {
   color: #9ca7ac;
 }
-body.survival-kit #page > header a {
+.survival-kit #page > header a {
   text-decoration: none;
   border-bottom: 1px solid white;
 }
-body.survival-kit #page > header a:visited {
+.survival-kit #page > header a:visited {
   border-bottom-color: white;
 }
-body.survival-kit #page > header a:hover {
+.survival-kit #page > header a:hover {
   border-bottom-color: #9ca7ac;
 }
-body.survival-kit #page > header a:active {
+.survival-kit #page > header a:active {
   border-bottom-color: #9ca7ac;
 }
-body.survival-kit #page > header h1 {
-  font-size: 1.188em;
-  line-height: 1.263em;
+.survival-kit #page > header h1 {
+  font-size: 1.1875em;
+  line-height: 1.26316em;
   float: left;
   padding-right: 23px;
   margin-right: 23px;
   border-right: 1px solid white;
   font-family: futura, museo-sans-rounded, sans-serif;
 }
-body.survival-kit #page > header h1 a {
+.survival-kit #page > header h1 a {
   text-indent: 110%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url('/images/survival-kit-logo.png?1338671267');
+  background-image: url('/images/survival-kit-logo.png?1345392875');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 220px;
@@ -86,106 +77,126 @@ body.survival-kit #page > header h1 a {
   display: block;
   padding: 0.3em;
 }
-body.survival-kit #page > header h1 a {
+.survival-kit #page > header h1 a {
+  text-decoration: none;
   border-bottom: none;
 }
-body.survival-kit #page > header h1 a:hover {
+.survival-kit #page > header h1 a:visited {
   border-bottom: none;
 }
-body.survival-kit #page > header h2 {
-  font-size: 1.438em;
-  line-height: 1.565em;
+.survival-kit #page > header h1 a:focus {
+  border-bottom: none;
+}
+.survival-kit #page > header h1 a:hover {
+  border-bottom: none;
+}
+.survival-kit #page > header h1 a:active {
+  border-bottom: none;
+}
+.survival-kit #page > header h2 {
+  font-size: 1.4375em;
+  line-height: 1.56522em;
   margin-top: 0;
   font-family: futura, museo-sans-rounded, sans-serif;
 }
-body.survival-kit #page > header .intro {
-  margin-left: 16.563em;
+.survival-kit #page > header .intro {
+  margin-left: 16.5625em;
 }
-body.survival-kit h1.section-title {
+.survival-kit h1.section-title {
   font-size: 1.75em;
-  line-height: 1.286em;
+  line-height: 1.28571em;
   background-color: #c1cdd1;
   text-transform: uppercase;
   padding-left: 11.5px;
   margin-top: 0;
 }
-body.survival-kit h1.section-title a {
+.survival-kit h1.section-title a {
   color: black;
 }
-body.survival-kit h1.section-title a:visited {
+.survival-kit h1.section-title a:visited {
   color: black;
 }
-body.survival-kit h1.section-title a:hover {
+.survival-kit h1.section-title a:hover {
   color: #bada55;
 }
-body.survival-kit h1.section-title a:active {
+.survival-kit h1.section-title a:active {
   color: #bada55;
 }
-body.survival-kit h1.section-title a {
+.survival-kit h1.section-title a {
   text-decoration: none;
   border-bottom: 1px solid black;
 }
-body.survival-kit h1.section-title a:visited {
+.survival-kit h1.section-title a:visited {
   border-bottom-color: black;
 }
-body.survival-kit h1.section-title a:hover {
+.survival-kit h1.section-title a:hover {
   border-bottom-color: #bada55;
 }
-body.survival-kit h1.section-title a:active {
+.survival-kit h1.section-title a:active {
   border-bottom-color: #bada55;
 }
-body.survival-kit .back-to-top {
+.survival-kit .back-to-top {
   float: right;
   font-size: 10px;
 }
-body.survival-kit .back-to-top {
+.survival-kit .back-to-top {
+  text-decoration: none;
   border-bottom: none;
 }
-body.survival-kit .back-to-top:hover {
+.survival-kit .back-to-top:visited {
   border-bottom: none;
 }
-body.survival-kit .kit-nav, body.survival-kit .section-nav {
+.survival-kit .back-to-top:focus {
+  border-bottom: none;
+}
+.survival-kit .back-to-top:hover {
+  border-bottom: none;
+}
+.survival-kit .back-to-top:active {
+  border-bottom: none;
+}
+.survival-kit .kit-nav, .survival-kit .section-nav {
   margin-bottom: 1.5em;
   padding: 0 0.5em;
   font-family: futura, museo-sans-rounded, sans-serif;
   color: #c1cdd1;
 }
-body.survival-kit .kit-nav h1, body.survival-kit .kit-nav h2, body.survival-kit .kit-nav h3, body.survival-kit .kit-nav h4, body.survival-kit .kit-nav h5, body.survival-kit .kit-nav h6, body.survival-kit .section-nav h1, body.survival-kit .section-nav h2, body.survival-kit .section-nav h3, body.survival-kit .section-nav h4, body.survival-kit .section-nav h5, body.survival-kit .section-nav h6 {
+.survival-kit .kit-nav h1, .survival-kit .kit-nav h2, .survival-kit .kit-nav h3, .survival-kit .kit-nav h4, .survival-kit .kit-nav h5, .survival-kit .kit-nav h6, .survival-kit .section-nav h1, .survival-kit .section-nav h2, .survival-kit .section-nav h3, .survival-kit .section-nav h4, .survival-kit .section-nav h5, .survival-kit .section-nav h6 {
   font-size: 16px;
 }
-body.survival-kit .kit-nav a, body.survival-kit .section-nav a {
+.survival-kit .kit-nav a, .survival-kit .section-nav a {
   color: white;
 }
-body.survival-kit .kit-nav a:visited, body.survival-kit .section-nav a:visited {
+.survival-kit .kit-nav a:visited, .survival-kit .section-nav a:visited {
   color: white;
 }
-body.survival-kit .kit-nav a:hover, body.survival-kit .section-nav a:hover {
+.survival-kit .kit-nav a:hover, .survival-kit .section-nav a:hover {
   color: #bada55;
 }
-body.survival-kit .kit-nav a:active, body.survival-kit .section-nav a:active {
+.survival-kit .kit-nav a:active, .survival-kit .section-nav a:active {
   color: #bada55;
 }
-body.survival-kit .kit-nav a, body.survival-kit .section-nav a {
+.survival-kit .kit-nav a, .survival-kit .section-nav a {
   text-decoration: none;
   border-bottom: 1px solid white;
 }
-body.survival-kit .kit-nav a:visited, body.survival-kit .section-nav a:visited {
+.survival-kit .kit-nav a:visited, .survival-kit .section-nav a:visited {
   border-bottom-color: white;
 }
-body.survival-kit .kit-nav a:hover, body.survival-kit .section-nav a:hover {
+.survival-kit .kit-nav a:hover, .survival-kit .section-nav a:hover {
   border-bottom-color: #bada55;
 }
-body.survival-kit .kit-nav a:active, body.survival-kit .section-nav a:active {
+.survival-kit .kit-nav a:active, .survival-kit .section-nav a:active {
   border-bottom-color: #bada55;
 }
-body.survival-kit .kit-nav ul, body.survival-kit .section-nav ul {
+.survival-kit .kit-nav ul, .survival-kit .section-nav ul {
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
 }
-body.survival-kit .kit-nav ul li, body.survival-kit .section-nav ul li {
+.survival-kit .kit-nav ul li, .survival-kit .section-nav ul li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
@@ -195,56 +206,56 @@ body.survival-kit .kit-nav ul li, body.survival-kit .section-nav ul li {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-body.survival-kit .kit-nav ul li:first-child, body.survival-kit .kit-nav ul li.first, body.survival-kit .section-nav ul li:first-child, body.survival-kit .section-nav ul li.first {
+.survival-kit .kit-nav ul li:first-child, .survival-kit .kit-nav ul li.first, .survival-kit .section-nav ul li:first-child, .survival-kit .section-nav ul li.first {
   padding-left: 0;
 }
-body.survival-kit .kit-nav ul li:last-child, body.survival-kit .section-nav ul li:last-child {
+.survival-kit .kit-nav ul li:last-child, .survival-kit .section-nav ul li:last-child {
   padding-right: 0;
 }
-body.survival-kit .kit-nav ul li.last, body.survival-kit .section-nav ul li.last {
+.survival-kit .kit-nav ul li.last, .survival-kit .section-nav ul li.last {
   padding-right: 0;
 }
-body.survival-kit .kit-nav {
+.survival-kit .kit-nav {
   background: #5f686c;
 }
-body.survival-kit .section-nav {
+.survival-kit .section-nav {
   background: #778287;
   margin-top: -1.5em;
   margin-bottom: 0;
 }
-body.survival-kit .section-nav h3 {
+.survival-kit .section-nav h3 {
   color: #474e51;
   font-size: 0.875em;
-  line-height: 1.714em;
+  line-height: 1.71429em;
 }
-body.survival-kit .section-nav h4 {
+.survival-kit .section-nav h4 {
   float: left;
   margin-right: 0.5em;
   margin-top: 0;
   margin-bottom: 0;
 }
-body.survival-kit div.element {
+.survival-kit div.element {
   *zoom: 1;
   border-bottom: 1px solid rgba(128, 128, 128, 0.1);
   margin-bottom: 24px;
   padding-bottom: 23px;
 }
-body.survival-kit div.element:after {
+.survival-kit div.element:after {
   content: "";
   display: table;
   clear: both;
 }
-body.survival-kit div.element:last-child {
+.survival-kit div.element:last-child {
   padding-bottom: 0;
   border-bottom-width: 0;
   margin-bottom: 0;
 }
-body.survival-kit div.element.closed {
+.survival-kit div.element.closed {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-body.survival-kit div.element h2.element-title {
+.survival-kit div.element h2.element-title {
   font-size: 1em;
   line-height: 1.5em;
   background-color: #778287;
@@ -252,68 +263,68 @@ body.survival-kit div.element h2.element-title {
   text-transform: uppercase;
   padding-left: 11.5px;
 }
-body.survival-kit div.element h2.element-title a {
+.survival-kit div.element h2.element-title a {
   color: white;
 }
-body.survival-kit div.element h2.element-title a:visited {
+.survival-kit div.element h2.element-title a:visited {
   color: white;
 }
-body.survival-kit div.element h2.element-title a:hover {
+.survival-kit div.element h2.element-title a:hover {
   color: #bada55;
 }
-body.survival-kit div.element h2.element-title a:active {
+.survival-kit div.element h2.element-title a:active {
   color: #bada55;
 }
-body.survival-kit div.element h2.element-title a {
+.survival-kit div.element h2.element-title a {
   text-decoration: none;
   border-bottom: 1px solid white;
 }
-body.survival-kit div.element h2.element-title a:visited {
+.survival-kit div.element h2.element-title a:visited {
   border-bottom-color: white;
 }
-body.survival-kit div.element h2.element-title a:hover {
+.survival-kit div.element h2.element-title a:hover {
   border-bottom-color: #bada55;
 }
-body.survival-kit div.element h2.element-title a:active {
+.survival-kit div.element h2.element-title a:active {
   border-bottom-color: #bada55;
 }
-body.survival-kit div.element .example {
+.survival-kit div.element .example {
   *zoom: 1;
   border-bottom: 1px dashed rgba(128, 128, 128, 0.1);
   margin-bottom: 12px;
   padding-bottom: 11px;
   *zoom: 1;
 }
-body.survival-kit div.element .example:after {
+.survival-kit div.element .example:after {
   content: "";
   display: table;
   clear: both;
 }
-body.survival-kit div.element .example:last-child {
+.survival-kit div.element .example:last-child {
   padding-bottom: 0;
   border-bottom-width: 0;
   margin-bottom: 0;
 }
-body.survival-kit div.element .example:after {
+.survival-kit div.element .example:after {
   content: "";
   display: table;
   clear: both;
 }
-body.survival-kit div.element .example .markup {
+.survival-kit div.element .example .markup {
   display: inline;
   float: left;
   width: 64.228%;
   margin-right: 2.439%;
 }
-body.survival-kit div.element .example .markup + .show-source {
+.survival-kit div.element .example .markup + .show-source {
   display: inline;
   float: right;
   width: 30.894%;
   margin-right: 0;
 }
-body.survival-kit div.element .example .markup + .show-source .show-hide {
+.survival-kit div.element .example .markup + .show-source .show-hide {
   text-align: right;
 }
-body.survival-kit div.element .example .markup + .show-source + p {
+.survival-kit div.element .example .markup + .show-source + p {
   clear: both;
 }

@@ -30,19 +30,19 @@ $not-black: change-color($black, $lightness: 10%)
 
 // COLOR VARIABLES FOR STYLE TILES
 // enable and customize as needed
-$color-tile1-1: $c-primary
-$color-tile1-2: $c-secondary
-$color-tile1-3: $c-tertiary
-$color-tile1-4: $c-quadrary
-$color-tile1-5: #fae048
-$color-tile1-6: #8cc63f
+// $color-tile1-1: $c-primary
+// $color-tile1-2: $c-secondary
+// $color-tile1-3: $c-tertiary
+// $color-tile1-4: $c-quadrary
+// $color-tile1-5: #fae048
+// $color-tile1-6: #8cc63f
 
-$color-tile2-1: adjust-color(#d2eeec, $lightness: -20%)
-$color-tile2-2: color-schemer(secondary, $color-tile2-1)
-$color-tile2-3: #ffd47c
-$color-tile2-4: #a27150
-$color-tile2-5: #ed6a4f
-$color-tile2-6: #aca95c
+// $color-tile2-1: adjust-color(#d2eeec, $lightness: -20%)
+// $color-tile2-2: color-schemer(secondary, $color-tile2-1)
+// $color-tile2-3: #ffd47c
+// $color-tile2-4: #a27150
+// $color-tile2-5: #ed6a4f
+// $color-tile2-6: #aca95c
 
 $color-tile3-1: #0e91c0
 $base-color: $color-tile3-1
@@ -60,11 +60,11 @@ $color-tile3-6: color-schemer(quadrary)
 // @debug hack-colors($color-tile3-1 #79ad79)
 // @debug hack-colors(color-schemer(tertiary) #79ad79)
 
-$dark-primary: shade($color-tile1-1, 60%)
+$dark-primary: shade($c-primary, 60%)
 
 // Color variables expected by _defaults.sass ------------------
-$base-color: $c-primary
-$text-color: $not-black
+$base-color: change-color($color-tile3-1, $lightness: 10%)
+$text-color: change-color($color-tile3-1, $lightness: 10%)
 $alt-color: $badass
-$background-color: $white
+$background-color: tint($color-tile3-6, 95%)
 $border-color: $gray
