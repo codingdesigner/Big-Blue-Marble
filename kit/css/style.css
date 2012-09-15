@@ -496,6 +496,10 @@ strong, dfn, b {
   font-weight: bold;
 }
 
+header aside {
+  font-family: museo-sans-rounded, sans-serif;
+}
+
 pre, code, kbd, tt {
   font-family: Consolas, Menlo, "Courier New", monospace, monospace;
   _font-family: Consolas, Menlo, "Courier New", monospace, monospace;
@@ -510,6 +514,11 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   font-size: 1em;
   font-family: rooney-web;
   font-style: italic;
+}
+
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
 }
 
 /* import font files using @font-face, if not using a service such as typekit */
@@ -546,14 +555,14 @@ body {
 /* Selected Text -------------------------------------------------------------- */
 /* -moz- must be declared separately */
 ::-moz-selection {
-  color: white;
-  background: #bada55;
+  color: #032430;
+  background: #a7caa8;
   text-shadow: none;
 }
 
 ::selection {
-  color: white;
-  background: #bada55;
+  color: #032430;
+  background: #a7caa8;
   text-shadow: none;
 }
 
