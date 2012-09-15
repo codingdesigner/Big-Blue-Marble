@@ -17,7 +17,7 @@
   visibility: hidden;
 }
 
-img, textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=week], input[type=time], input[type=number], input[type=range], input[type=search], input[type=color], input:not([type="radio"]), table {
+img, table {
   max-width: 100%;
 }
 
@@ -540,7 +540,7 @@ input[type="button"] {
   -ms-border-radius: 11px;
   -o-border-radius: 11px;
   border-radius: 11px;
-  background: #dddddd url('../images/formalize/button.png?1347598058') repeat-x;
+  background: #dddddd url('../images/formalize/button.png?1347684516') repeat-x;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(#ffffff, #dddddd);
   background-image: -moz-linear-gradient(#ffffff, #dddddd);
@@ -660,7 +660,7 @@ input[type="checkbox"]:active {
 }
 
 .is_webkit select {
-  background-image: url('../images/formalize/select_arrow.gif?1347598058');
+  background-image: url('../images/formalize/select_arrow.gif?1347684516');
   background-repeat: no-repeat;
   background-position: right center;
   padding-right: 20px;
@@ -692,7 +692,7 @@ optgroup {
 
 .ie6_button,
 * html button {
-  background: #dddddd url('../images/formalize/button.png?1347598058') repeat-x;
+  background: #dddddd url('../images/formalize/button.png?1347684516') repeat-x;
   border: 1px solid;
   border-color: #dddddd #bbbbbb #999999;
   cursor: pointer;
@@ -764,8 +764,8 @@ html {
 
 body {
   font-family: rooney-web, Georgia, serif;
-  color: #1a1a1a;
-  background: white;
+  color: #032430;
+  background: #fbf5f2;
 }
 
 @media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait), screen and (-o-device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (-o-device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait), screen and (device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait) {
@@ -779,19 +779,19 @@ body {
   }
 }
 ::-moz-selection {
-  color: white;
-  background: #bada55;
+  color: #032430;
+  background: #a7caa8;
   text-shadow: none;
 }
 
 ::selection {
-  color: white;
-  background: #bada55;
+  color: #032430;
+  background: #a7caa8;
   text-shadow: none;
 }
 
 a {
-  color: #bada55;
+  color: #48c2ed;
   -webkit-transition: "all", true, "ease-out";
   -moz-transition: "all", true, "ease-out";
   -ms-transition: "all", true, "ease-out";
@@ -799,29 +799,29 @@ a {
   transition: "all", true, "ease-out";
 }
 a:visited {
-  color: #bada55;
+  color: #48c2ed;
 }
 a:focus {
-  color: #bada55;
+  color: #48c2ed;
 }
 a:hover {
-  color: #7555da;
+  color: #892907;
 }
 a:active {
-  color: #7555da;
+  color: #892907;
 }
 a {
   text-decoration: none;
-  border-bottom: 1px solid #bada55;
+  border-bottom: 1px solid #48c2ed;
 }
 a:visited {
-  border-bottom-color: #bada55;
+  border-bottom-color: #48c2ed;
 }
 a:hover {
-  border-bottom-color: #7555da;
+  border-bottom-color: #892907;
 }
 a:active {
-  border-bottom-color: #7555da;
+  border-bottom-color: #892907;
 }
 
 p {
@@ -859,31 +859,43 @@ h1 {
   font-size: 2.0625em;
   line-height: 1.45455em;
   font-weight: 600;
+  color: #0e91c0;
+  -webkit-box-shadow: #79b07a 0 6px 0, white 0 7px 0;
+  -moz-box-shadow: #79b07a 0 6px 0, white 0 7px 0;
+  box-shadow: #79b07a 0 6px 0, white 0 7px 0;
 }
 
 h2 {
   font-size: 1.75em;
   line-height: 1.71429em;
+  color: #48c2ed;
+  -webkit-box-shadow: #a7caa8 0 3px 0, white 0 4px 0;
+  -moz-box-shadow: #a7caa8 0 3px 0, white 0 4px 0;
+  box-shadow: #a7caa8 0 3px 0, white 0 4px 0;
 }
 
 h3 {
   font-size: 1.4375em;
   line-height: 2.08696em;
+  color: #48c2ed;
 }
 
 h4 {
   font-size: 1.1875em;
   line-height: 1.26316em;
+  color: #79b07a;
 }
 
 h5 {
   font-size: 1.1875em;
   line-height: 1.26316em;
+  color: #79b07a;
 }
 
 h6 {
   font-size: 1.1875em;
   line-height: 1.26316em;
+  color: #79b07a;
 }
 
 h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
@@ -944,57 +956,6 @@ mark {
   background: red;
   background-color: rgba(255, 255, 0, 0.5);
   text-shadow: none;
-}
-
-fieldset {
-  margin-bottom: 1.5em;
-  border-style: solid;
-  border-width: 0.0625em;
-  padding: 1.4375em;
-  border-color: gray;
-  border-style: dotted;
-}
-
-legend {
-  padding: 0 0.25em;
-}
-
-label {
-  cursor: pointer;
-}
-
-label {
-  font-weight: bold;
-  margin-right: 0.5em;
-}
-
-textarea, input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=week], input[type=time], input[type=number], input[type=range], input[type=search], input[type=color] {
-  font-size: 1em;
-  line-height: 1.5em;
-  border-style: solid;
-  border-width: 0.0625em;
-  padding: 0.3125em;
-  border-width: 1px;
-  margin-bottom: 0.75em;
-  margin-top: 0;
-  border-color: gray;
-  height: 2.25em;
-}
-
-textarea {
-  height: 9.75;
-}
-
-input[type=search] {
-  -webkit-appearance: none;
-}
-input[type=search]::-webkit-search-decoration {
-  display: none;
-}
-
-input[type="radio"], input[type="checkbox"] {
-  margin-left: 0.25em;
-  margin-right: 0.25em;
 }
 
 ins {

@@ -1,79 +1,39 @@
 // DEFAULT COLORS
-$c-primary: #289ac8
-$c-secondary: $black
-$c-tertiary: $black
-$c-quadrary: $black
-
-$not-black: change-color($black, $lightness: 10%)
-
-// COLOR SCHEMES
-// color-schemer arguments
-// $color-location,
-// $base-color,
-// $color-scheme,
-// $hue-offset
-// Color schemes to choose from
-// mono, complement, triad, tetrad, analogic, accented-analogic
-// Pick the base color for your scheme:
+// set color schemer defaults
+$c-primary: #0e91c0
 $base-color: $c-primary
-
-// Select your scheme from the list and place it here:
-$color-scheme: accented-analogic
-
-// How distant do you want the hue offset to be:
-$hue-offset: 30
-
-// How distant do you want tints and shades to be from their base:
-$brightness-offset: 10%
-
-// Use Claude Boutet complements instead of RGB complements.
-// $color-theory: boutet;
-// Set saturation to 100% and lightness to 50% on all colors
-// $equalize: true;
-$c-primary: color-schemer(primary)
-$c-secondary: color-schemer(secondary)
-$c-tertiary: color-schemer(tertiary)
-$c-quadrary: color-schemer(quadrary)
-
-$color-tile3-1: #0e91c0
-$base-color: $color-tile3-1
 $color-scheme: accented-analogic
 $hue-offset: 75
 $brightness-offset: 30%
 $color-theory: boutet
 $equalize: false
-$color-tile3-2: scale-color(adjust-hue($color-tile3-1, 0deg), $saturation: -5%, $lightness: 34%)
-$color-tile3-3: scale-color(color-schemer(tertiary), $saturation: -70%, $lightness: 30%)
-$color-tile3-4: scale-color(adjust-hue($color-tile3-3, 0deg), $saturation: -5%, $lightness: 34%)
-$color-tile3-5: scale-color(color-schemer(quadrary), $saturation: 30%, $lightness: -30%)
-$color-tile3-6: color-schemer(quadrary)
-
-$color-tile1-1: $c-primary
-$dark-primary: shade($color-tile1-1, 60%)
+// colors
+$bbm-blue: $c-primary
+$bbm-blue-light: scale-color(adjust-hue($bbm-blue, 0deg), $saturation: -5%, $lightness: 34%)
+$bbm-green: scale-color(color-schemer(tertiary), $saturation: -70%, $lightness: 30%)
+$bbm-green-light: scale-color(adjust-hue($bbm-green, 0deg), $saturation: -5%, $lightness: 34%)
+$bbm-red-dark: scale-color(color-schemer(quadrary), $saturation: 30%, $lightness: -30%)
+$bbm-red: color-schemer(quadrary)
+$not-black: change-color($black, $lightness: 10%)
+$blue-near-black: change-color($bbm-blue, $lightness: 10%)
+$pale-red: tint($bbm-red, 95%)
 
 // Color variables expected 04-base
-$base-color: $c-primary
-$text-color: $not-black
-$alt-color: $badass
-$background-color: $white
+$base-color: $blue-near-black
+$text-color: $blue-near-black
+$alt-color: $bbm-green-light
+$background-color: $pale-red
 $border-color: $gray
 
 // link colors
-$link-normal: $alt-color
-$link-hover: complement($alt-color)
-$link-active: complement($alt-color)
-$link-visited: $alt-color
-$link-focus: $alt-color
-$link-border-normal: $alt-color
-$link-border-hover: complement($alt-color)
-$link-border-active: complement($alt-color)
-$link-border-visited: $alt-color
+$link-normal: $bbm-blue-light
+$link-hover: $bbm-red-dark
+$link-active: $bbm-red-dark
+$link-visited: $bbm-blue-light
+$link-focus: $bbm-blue-light
+$link-border-normal: $bbm-blue-light
+$link-border-hover: $bbm-red-dark
+$link-border-active: $bbm-red-dark
+$link-border-visited: $bbm-blue-light
 
-// COLOR VARIABLES FOR STYLE TILES
-// enable and customize as needed
-// $color-tile1-1: $gray
-// $color-tile1-2: $gray
-// $color-tile1-3: $gray
-// $color-tile1-4: $gray
-// $color-tile1-5: $gray
-// $color-tile1-6: $gray
+

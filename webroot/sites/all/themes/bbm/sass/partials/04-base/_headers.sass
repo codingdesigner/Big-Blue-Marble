@@ -11,36 +11,44 @@
   @else
     font-size: nth($header-sizes, 1)
   font-weight: 600
+  color: $bbm-blue
+  +box-shadow($bbm-green 0 6px 0, $white 0 7px 0)
 
 %h2
   @if $adjust-font-size-to == true
     +adjust-font-size-to(nth($header-sizes, 2))
   @else
     font-size: nth($header-sizes, 2)
+  color: $bbm-blue-light
+  +box-shadow($bbm-green-light 0 3px 0, $white 0 4px 0)
 
 %h3
   @if $adjust-font-size-to == true
     +adjust-font-size-to(nth($header-sizes, 3))
   @else
     font-size: nth($header-sizes, 3)
+  color: $bbm-blue-light
 
 %h4
   @if $adjust-font-size-to == true
     +adjust-font-size-to(nth($header-sizes, 4))
   @else
     font-size: nth($header-sizes, 4)
+  color: $bbm-green
 
 %h5
   @if $adjust-font-size-to == true
     +adjust-font-size-to(nth($header-sizes, 5))
   @else
     font-size: nth($header-sizes, 5)
+  color: $bbm-green
 
 %h6
   @if $adjust-font-size-to == true
     +adjust-font-size-to(nth($header-sizes, 6))
   @else
     font-size: nth($header-sizes, 6)
+  color: $bbm-green
 
 h1
   @extend %h1
