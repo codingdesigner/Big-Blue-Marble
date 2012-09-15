@@ -497,7 +497,7 @@ strong, dfn, b {
 }
 
 header aside {
-  font-family: museo-sans-rounded, sans-serif;
+  font-family: sans-serif;
 }
 
 pre, code, kbd, tt {
@@ -1329,7 +1329,7 @@ header aside {
   color: rgba(128, 128, 128, 0.5);
   font-size: 16px;
   text-transform: uppercase;
-  font-family: museo-sans-rounded, sans-serif;
+  font-family: sans-serif;
 }
 .label:hover, .styletile-3 .logos h1:hover:before {
   color: gray;

@@ -32,7 +32,7 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
 
 .survival-kit #page > header {
   background: #bfccd1;
-  font-family: futura, museo-sans-rounded, sans-serif;
+  font-family: futura, sans-serif;
   padding: 0 0.5em;
   margin-bottom: 0;
 }
@@ -68,7 +68,7 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   padding-right: 23px;
   margin-right: 23px;
   border-right: 1px solid white;
-  font-family: futura, museo-sans-rounded, sans-serif;
+  font-family: futura, sans-serif;
 }
 .survival-kit #page > header h1 a {
   text-indent: 110%;
@@ -102,7 +102,7 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   font-size: 1.4375em;
   line-height: 1.56522em;
   margin-top: 0;
-  font-family: futura, museo-sans-rounded, sans-serif;
+  font-family: futura, sans-serif;
 }
 .survival-kit #page > header .intro {
   margin-left: 16.5625em;
@@ -163,7 +163,7 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
 .survival-kit .kit-nav, .survival-kit .section-nav {
   margin-bottom: 1.5em;
   padding: 0 0.5em;
-  font-family: futura, museo-sans-rounded, sans-serif;
+  font-family: futura, sans-serif;
   color: #bfccd1;
 }
 .survival-kit .kit-nav h1, .survival-kit .kit-nav h2, .survival-kit .kit-nav h3, .survival-kit .kit-nav h4, .survival-kit .kit-nav h5, .survival-kit .kit-nav h6, .survival-kit .section-nav h1, .survival-kit .section-nav h2, .survival-kit .section-nav h3, .survival-kit .section-nav h4, .survival-kit .section-nav h5, .survival-kit .section-nav h6 {
