@@ -539,7 +539,7 @@ html {
 body {
   font-family: rooney-web, Georgia, serif;
   color: #032430;
-  background: #fbf5f2;
+  background: #fefaf5;
 }
 
 @media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait), screen and (-o-device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (-o-device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait), screen and (device-pixel-ratio: 1) and (device-width: 1024px) and (max-device-height: 600px) and (orientation: landscape), screen and (device-pixel-ratio: 1) and (device-width: 600px) and (max-device-height: 1024px) and (orientation: portrait) {
@@ -579,10 +579,10 @@ a:visited {
   color: #48c2ed;
 }
 a:hover {
-  color: #892907;
+  color: #cb7d0a;
 }
 a:active {
-  color: #892907;
+  color: #cb7d0a;
 }
 a {
   text-decoration: none;
@@ -592,10 +592,10 @@ a:visited {
   border-bottom-color: #48c2ed;
 }
 a:hover {
-  border-bottom-color: #892907;
+  border-bottom-color: #cb7d0a;
 }
 a:active {
-  border-bottom-color: #892907;
+  border-bottom-color: #cb7d0a;
 }
 
 p {
@@ -1388,7 +1388,7 @@ header aside {
 /* type examples */
 .styletile-3 {
   color: #032430;
-  background-color: #fbf5f2;
+  background-color: #fefaf5;
 }
 .styletile-3 h1:not(.client-name) {
   color: #0e91c0;
@@ -1421,10 +1421,10 @@ header aside {
   color: #48c2ed;
 }
 .styletile-3 a:hover {
-  color: #892907;
+  color: #cb7d0a;
 }
 .styletile-3 a:active {
-  color: #892907;
+  color: #cb7d0a;
 }
 .styletile-3 a {
   text-decoration: none;
@@ -1434,10 +1434,10 @@ header aside {
   border-bottom-color: #48c2ed;
 }
 .styletile-3 a:hover {
-  border-bottom-color: #892907;
+  border-bottom-color: #cb7d0a;
 }
 .styletile-3 a:active {
-  border-bottom-color: #892907;
+  border-bottom-color: #cb7d0a;
 }
 .styletile-3 .logos {
   counter-reset: logos;
@@ -1456,7 +1456,7 @@ header aside {
 .styletile-3 .logos h1.opt-1 {
   font-weight: 900;
   color: #0e91c0;
-  text-shadow: white 1px 1px 0, #892907 2px 2px 0;
+  text-shadow: white 1px 1px 0, #cb7d0a 2px 2px 0;
 }
 .styletile-3 .logos h1.opt-1:before {
   content: counter(logos) " - rooney-web 900 blue";
@@ -1488,7 +1488,7 @@ header aside {
   text-shadow: rgba(26, 26, 26, 0.3) 0px 1px 0;
 }
 .styletile-3 .quotes .quote {
-  color: #c03d0e;
+  color: #f1a93f;
   font-size: 2.0625em;
   line-height: 1.45455em;
   font-weight: 900;
@@ -1509,7 +1509,7 @@ header aside {
 .styletile-3 .quotes .source {
   font-size: 23px;
   line-height: 1;
-  color: #892907;
+  color: #cb7d0a;
   font-weight: 400;
 }
 .styletile-3 .quotes .source:before, .styletile-3 .quotes .source:after {
@@ -1552,7 +1552,7 @@ header aside {
   color: #0e91c0;
 }
 .styletile-3 .book .abaproduct-price {
-  color: #892907;
+  color: #cb7d0a;
 }
 .styletile-3 .book .abaproduct-other-editions {
   font-size: 0.8125em;
@@ -1576,39 +1576,39 @@ header aside {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  background: url('/images/sassy-ie-overlay.png?1345392875') repeat-x bottom left #892907;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d23f0a), color-stop(70%, #892907));
-  background: -webkit-linear-gradient(#d23f0a, #892907 70%);
-  background: -moz-linear-gradient(#d23f0a, #892907 70%);
-  background: -o-linear-gradient(#d23f0a, #892907 70%);
-  background: -ms-linear-gradient(#d23f0a, #892907 70%);
-  background: linear-gradient(#d23f0a, #892907 70%);
-  -webkit-box-shadow: #f56734 0 1px 0 inset;
-  -moz-box-shadow: #f56734 0 1px 0 inset;
-  box-shadow: #f56734 0 1px 0 inset;
-  border: 1px solid #712206;
+  background: url('/images/sassy-ie-overlay.png?1345392875') repeat-x bottom left #cb7d0a;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5a42d), color-stop(70%, #cb7d0a));
+  background: -webkit-linear-gradient(#f5a42d, #cb7d0a 70%);
+  background: -moz-linear-gradient(#f5a42d, #cb7d0a 70%);
+  background: -o-linear-gradient(#f5a42d, #cb7d0a 70%);
+  background: -ms-linear-gradient(#f5a42d, #cb7d0a 70%);
+  background: linear-gradient(#f5a42d, #cb7d0a 70%);
+  -webkit-box-shadow: #f8c476 0 1px 0 inset;
+  -moz-box-shadow: #f8c476 0 1px 0 inset;
+  box-shadow: #f8c476 0 1px 0 inset;
+  border: 1px solid #b26e09;
   color: white;
-  text-shadow: #511904 0 -1px 0;
+  text-shadow: #935b07 0 -1px 0;
   font-family: rooney-web;
   text-transform: uppercase;
 }
 .styletile-3 .book form input[type=submit]:hover {
-  background-color: #712206;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #ba3809), color-stop(75%, #712206));
-  background: -webkit-linear-gradient(#ba3809 3%, #712206 75%);
-  background: -moz-linear-gradient(#ba3809 3%, #712206 75%);
-  background: -o-linear-gradient(#ba3809 3%, #712206 75%);
-  background: -ms-linear-gradient(#ba3809 3%, #712206 75%);
-  background: linear-gradient(#ba3809 3%, #712206 75%);
+  background-color: #b26e09;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #f39a15), color-stop(75%, #b26e09));
+  background: -webkit-linear-gradient(#f39a15 3%, #b26e09 75%);
+  background: -moz-linear-gradient(#f39a15 3%, #b26e09 75%);
+  background: -o-linear-gradient(#f39a15 3%, #b26e09 75%);
+  background: -ms-linear-gradient(#f39a15 3%, #b26e09 75%);
+  background: linear-gradient(#f39a15 3%, #b26e09 75%);
 }
 .styletile-3 .book form input[type=submit]:active {
-  -webkit-box-shadow: #621e05 0 1px 2px inset;
-  -moz-box-shadow: #621e05 0 1px 2px inset;
-  box-shadow: #621e05 0 1px 2px inset;
+  -webkit-box-shadow: #a46508 0 1px 2px inset;
+  -moz-box-shadow: #a46508 0 1px 2px inset;
+  box-shadow: #a46508 0 1px 2px inset;
 }
 .styletile-3 .book form input[type=submit].disabled, .styletile-3 .book form input[type=submit][disabled] {
   opacity: 0.6;
-  background: #892907;
+  background: #cb7d0a;
   cursor: default;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -1642,14 +1642,14 @@ header aside {
   content: "#a7caa8";
 }
 .styletile-3 .colors ul li.color-5 {
-  background-color: #892907;
+  background-color: #cb7d0a;
 }
 .styletile-3 .colors ul li.color-5:after {
-  content: "#892907";
+  content: "#cb7d0a";
 }
 .styletile-3 .colors ul li.color-6 {
-  background-color: #c03d0e;
+  background-color: #f1a93f;
 }
 .styletile-3 .colors ul li.color-6:after {
-  content: "#c03d0e";
+  content: "#f1a93f";
 }
