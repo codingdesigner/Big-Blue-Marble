@@ -22,23 +22,24 @@ base theme = zen
   ; You can also override any of Zen's stylesheets or any module's stylesheets,
   ; an /extremely/ useful feature. See the excellent Drupal 6 Theme Guide at
   ; http://drupal.org/node/263967 for more details.
-stylesheets[all][]   = css/html-reset.css
-stylesheets[all][]   = css/wireframes.css
-stylesheets[all][]   = css/layout-fixed.css
-stylesheets[all][]   = css/page-backgrounds.css
-stylesheets[all][]   = css/tabs.css
-stylesheets[all][]   = css/messages.css
-stylesheets[all][]   = css/pages.css
-stylesheets[all][]   = css/block-editing.css
-stylesheets[all][]   = css/blocks.css
-stylesheets[all][]   = css/navigation.css
-stylesheets[all][]   = css/panels-styles.css
-stylesheets[all][]   = css/views-styles.css
-stylesheets[all][]   = css/nodes.css
-stylesheets[all][]   = css/comments.css
-stylesheets[all][]   = css/forms.css
-stylesheets[all][]   = css/fields.css
-stylesheets[print][] = css/print.css
+stylesheets[all][]   = css/style.css
+;stylesheets[all][]   = css/html-reset.css
+;stylesheets[all][]   = css/wireframes.css
+;stylesheets[all][]   = css/layout-fixed.css
+;stylesheets[all][]   = css/page-backgrounds.css
+;stylesheets[all][]   = css/tabs.css
+;stylesheets[all][]   = css/messages.css
+;stylesheets[all][]   = css/pages.css
+;stylesheets[all][]   = css/block-editing.css
+;stylesheets[all][]   = css/blocks.css
+;stylesheets[all][]   = css/navigation.css
+;stylesheets[all][]   = css/panels-styles.css
+;stylesheets[all][]   = css/views-styles.css
+;stylesheets[all][]   = css/nodes.css
+;stylesheets[all][]   = css/comments.css
+;stylesheets[all][]   = css/forms.css
+;stylesheets[all][]   = css/fields.css
+;stylesheets[print][] = css/print.css
 ; stylesheets[handheld][] = css/mobile.css
 ; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css
 
@@ -59,7 +60,7 @@ conditional-stylesheets[if lte IE 6][all][] = css/ie6.css
   ; add a line line to this file, and then add the new variable to your
   ; page.tpl.php template.
 regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
+;regions[sidebar_second] = Second sidebar
 regions[navigation]     = Navigation bar
 regions[highlight]      = Highlighted content
 regions[content_top]    = Content top

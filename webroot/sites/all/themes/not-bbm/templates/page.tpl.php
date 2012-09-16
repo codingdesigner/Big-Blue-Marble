@@ -27,9 +27,6 @@
 
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
   <div id="page">
-    <div id="skip">
-      <a href="#main-content-area"><?php print t('Skip to Main Content Area'); ?></a>
-    </div>
     <header role="banner">
       <h1 id="site-name"><a href="/">Big Blue Marble Bookstore</a></h1>
       <h2 id="site-slogan">A neighborhood bookstore for Mt Airy and Beyond</h2>
