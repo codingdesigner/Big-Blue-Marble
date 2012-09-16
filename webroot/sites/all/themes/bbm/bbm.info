@@ -3,6 +3,7 @@ description = A theme meant for use while designing "in the browser" and for wri
 package = The Coding Designer's Survival Kit
 version = 1.x-dev
 core = 6.x
+engine = phptemplate
 
 ; stylesheets
 stylesheets[all][] = css/style.css
