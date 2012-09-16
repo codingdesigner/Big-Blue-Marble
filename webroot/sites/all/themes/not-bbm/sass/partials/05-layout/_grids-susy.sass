@@ -1,0 +1,31 @@
+// SUSY GRID FRAMEWORK
+//*
+//  Susy: Un-obtrusive grids for designers
+//  By: Eric A. Meyer and OddBird
+//  Site: susy.oddbird.net
+//*
+
+// Grid Variables --------------------------------------------------------------
+$total-columns: 8
+$column-width: 92px
+$gutter-width: $kit-gutter
+$grid-padding: 0
+
+// uncomment to output the full container width to the terminal
+// @debug columns-width()
+
+// BUILD THE GRID FOR YOUR SITE
+
+// BUILD THE GRID BY CALLING SUSY MIXINS ON DOM ELEMENTS
+#page
+  +container
+  @if $show-grid == true
+    @include susy-grid-background
+  @elseif $show-baseline == true
+    @include baseline-grid-background
+.main
+  @include span-columns(6)
+.sidebar
+  @include span-columns(2 omega)
+#page-footer
+  clear: both
