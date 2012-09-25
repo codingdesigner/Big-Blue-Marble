@@ -6,17 +6,20 @@
 //*
 
 // Grid Variables --------------------------------------------------------------
-$total-columns: 8
+$total-columns: 9
 $column-width: 92px
 $gutter-width: $kit-gutter
 $grid-padding: 0
+$container-style: static
 
 // uncomment to output the full container width to the terminal
 // @debug columns-width()
 
-// BUILD THE GRID FOR YOUR SITE
-
 // BUILD THE GRID BY CALLING SUSY MIXINS ON DOM ELEMENTS
+#name-and-slogan
+  @include span-columns(6)
+#header-tools
+  @include span-columns(3 omega)
 #page
   +container
   @if $show-grid == true
@@ -25,7 +28,7 @@ $grid-padding: 0
     @include baseline-grid-background
 #main
   @include span-columns(6)
-#sidebar
-  @include span-columns(2 omega)
+.region-sidebar-first
+  @include span-columns(3 omega)
 #page-footer
   clear: both

@@ -107,11 +107,17 @@
  * @see zen_process()
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
-
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class='no-js ie6' lang='<?php print $language->language; ?>' dir='<?php print $language->dir; ?>'> <![endif]-->
+<!--[if IE 7]>    <html class='no-js ie7' lang='<?php print $language->language; ?>' dir='<?php print $language->dir; ?>'> <![endif]-->
+<!--[if IE 8]>    <html class='no-js ie8' lang='<?php print $language->language; ?>' dir='<?php print $language->dir; ?>'> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='no-js' lang='<?php print $language->language; ?>' dir='<?php print $language->dir; ?>'>
+  <!--<![endif]-->
 <head>
+  <meta charset='utf-8' />
   <title><?php print $head_title; ?></title>
+  <!-- <meta content='width=device-width, initial-scale=1.0' name='viewport' /> -->
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
@@ -142,9 +148,12 @@
           <?php endif; ?>
         </div><!-- /#name-and-slogan -->
       <?php endif; ?>
-      <?php if ($search_box): ?>
-        <div id="search-box"><?php print $search_box; ?></div>
-      <?php endif; ?>
+      <div id="header-tools">
+        <?php if ($search_box): ?>
+          <div id="search-box"><?php print $search_box; ?></div>
+        <?php endif; ?>
+        <?php print $header; ?>
+      </div>
       <?php if ($primary_links || $navigation): ?>
         <nav role="navigation" class="main-menu">
 
@@ -164,7 +173,6 @@
 
         </nav><!-- /.section, /#navigation -->
       <?php endif; ?>
-      <?php print $header; ?>
     </header>
     <div class="content">
       <div id="main">

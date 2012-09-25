@@ -1,2 +1,48 @@
 // Create the design for your site below
 // SITE-WIDE DESIGN -------------------------------------------------------------- */
+
+// hide link to skip to nav
+#skip-link
+  @extend %visuallyhidden
+
+// replace site name with logo
+#site-name
+  a
+    +replace-text-with-dimensions('bbm-logo.png')
+    max-width: 100%
+    display: block
+    +undo-border-links
+
+#site-slogan
+  @extend %h2
+
+
+.element-invisible
+  @extend %visuallyhidden
+
+body
+  +padding-leader
+
+#main-menu
+  clear: both
+  +adjust-font-size-to(ms(2))
+  background: $pale-blue
+  +leader
+  +trailer(2)
+
+.abaproduct-content
+  .abaproduct-image
+    float: left
+    margin: 0 $kit-gutter $base-line-height 0
+  .abaproduct-title
+    +adjust-font-size-to(nth($header-sizes, 3), 1, nth($header-sizes, 2))
+    h2
+      +box-shadow(none)
+
+%book-grid-2
+  .abaproduct-content
+    +span-columns(3,6)
+    +nth-omega(2n)
+
+#block-block-1
+  @extend %book-grid-2
