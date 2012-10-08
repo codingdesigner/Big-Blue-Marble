@@ -121,6 +121,13 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <!-- Typekit -->
+  <script src='http://use.typekit.com/gxt0pvy.js' type='text/javascript'></script>
+  <script type='text/javascript'>
+    //<![CDATA[
+      try{Typekit.load();}catch(e){}
+    //]]>
+  </script>
 </head>
 <body class="<?php print $classes; ?>">
   <?php if ($primary_links): ?>

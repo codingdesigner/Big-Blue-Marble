@@ -3,3 +3,26 @@
 // nothing here yet.
 // add your own.
 ////////////////////////////
+
+
+=book-border($width: 6px, $bg-color: $background-color)
+  $border-bottom-width: $width
+  $border-bottom-width-half: $border-bottom-width / 2
+  border-width: 0 1px $border-bottom-width 1px
+  border-style: none solid solid
+  border-top-color: transparent
+  border-left-color: transparent
+  border-right-color: transparent
+  +pseudo
+  &:before
+    display: block
+    content: $space
+    width: 0
+    height: 0
+    left: 50%
+    bottom: -$border-bottom-width-half
+    +transform(translateX(-$border-bottom-width-half))
+    border-width: $border-bottom-width-half $border-bottom-width-half 0 $border-bottom-width-half
+    border-color: transparent
+    border-style: solid solid none solid
+    border-top-color: $bg-color

@@ -96,12 +96,14 @@ function bbm_preprocess(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function bbm_preprocess_page(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+  // $vars['sample_variable'] = t('Lorem ipsum.');
 
   // To remove a class from $classes_array, use array_diff().
   //$vars['classes_array'] = array_diff($vars['classes_array'], array('class-to-remove'));
+  drupal_add_js(path_to_theme() . '/js/ss-standard.js');
+  drupal_add_js(path_to_theme() . '/js/ss-social.js');
+  $vars['scripts'] = drupal_get_js();
 }
 // */
 

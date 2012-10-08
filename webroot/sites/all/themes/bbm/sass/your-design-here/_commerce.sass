@@ -1,0 +1,21 @@
+.cart-block-icon, .cart-block-icon-empty
+  background-image: none
+  @extend .ss-icon.ss-standard
+  @extend .ss-cart
+.cart-block-icon
+  color: $bbm-green-light
+.cart-block-icon-empty
+  color: $bbm-gray-light
+
+.cart-block-arrow
+  @extend .ss-icon.ss-standard
+  background-image: none !important
+  font-size: ms(-1)
+  &.arrow-up
+    @extend .ss-directup
+  &.arrow-down
+    @extend .ss-dropdown
+
+.cart-block-summary
+  td
+    padding-right: 1em

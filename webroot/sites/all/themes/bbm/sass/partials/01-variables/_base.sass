@@ -9,7 +9,7 @@
 $init-type: normalize
 
 // use [Formalize](http://formalize.me/)
-$formalize: true
+$formalize: false
 
 // pixel-normalize
 // [A List Apart](http://www.alistapart.com/articles/a-pixel-identity-crisis/)
@@ -59,13 +59,45 @@ $kit-form-defaults: false
 
 // Grid Variables
 // note: set grid system-specific variables in the grid section (06)
-$show-grid: true
+$show-grid: false
 $show-baseline: false
 
 // Animate all the things
 // useful for previewing css changes.
 // do something more targeted in production, ok?
 $animate-all-the-things: false
+
+////////////////////////////
+// Breakpoint variables
+////////////////////////////
+$bp-hi-rez: 2 device-pixel-ratio
+
+
+////////////////////////////
+// SASSY BUTTONS DEFAULTS
+////////////////////////////
+// Base color of your button
+$sb-base-color:      $bbm-blue-light
+// Optional second color of button gradient
+$sb-second-color:    $bbm-blue
+// Button border radius
+$sb-border-radius:   ms(-6)
+// Button border width
+$sb-border-width:    1px
+// Button padding
+$sb-padding:         0.5em 1em
+// Button font-size
+$sb-font-size:       ms(0)
+// Button line-height
+$sb-line-height:     1.2em
+// Button text color
+$sb-text-color:      white
+// Button text shadow style
+$sb-text-style:      "inset"
+// Button gradient style
+$sb-gradient-style:  "matte"
+// Automatically create pseudo styles
+$sb-auto-states:     true
 
 ////////////////////////////
 // COMPASS DEFAULTS

@@ -26,12 +26,14 @@
 body
   font-family: $font-body
   color: $text-color
-  background: $background-color
+  background: $background-color image-url('groovepaper.png')
+  +breakpoint($bp-hi-rez)
+    background-image: image-url('groovepaper_@2X.png')
 
 @if $pixel-normalize
   +pixel-normalize
 
-// Selected Text -------------------------------------------------------------- 
+// Selected Text --------------------------------------------------------------
 // -moz- must be declared separately
 
 \::-moz-selection
@@ -78,7 +80,10 @@ blockquote
 
 ol, ul
   // @include trailer;
-  // padding-left: $kit-gutter;
+  &, .block &
+    padding-left: 0
+  li, .item-list & li
+    margin: 0 0 0 0
 
 dl
   margin-left: 0
