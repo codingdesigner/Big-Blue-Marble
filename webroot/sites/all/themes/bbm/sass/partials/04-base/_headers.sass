@@ -22,7 +22,7 @@
 
 %h3
   @if $adjust-font-size-to == true
-    +adjust-font-size-to(nth($header-sizes, 3))
+    +adjust-font-size-to(nth($header-sizes, 3), 1.5)
   @else
     font-size: nth($header-sizes, 3)
   color: $bbm-blue-light

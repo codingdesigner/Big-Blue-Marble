@@ -24,8 +24,8 @@ $container-style: static
   +container
   @if $show-grid == true
     @include susy-grid-background
-  @elseif $show-baseline == true
-    @include baseline-grid-background
+  @if $show-baseline == true
+    @include baseline-grid-background($base-line-height)
 #main
   @include span-columns(6)
 .region-sidebar-first

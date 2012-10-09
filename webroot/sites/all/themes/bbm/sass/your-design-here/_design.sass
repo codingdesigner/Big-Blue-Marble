@@ -7,6 +7,7 @@
 
 // replace site name with logo
 #site-name
+  margin-bottom: 15px
   a
     +replace-text-with-dimensions('bbm-logo.png')
     max-width: 100%
@@ -23,12 +24,12 @@
 body
   +padding-leader
 
-#main-menu
+nav.main-menu
   clear: both
-  +adjust-font-size-to(ms(2))
-  // background: $pale-blue
-  +leader
+  +padding-leader
   +trailer(2)
+  ul
+    +adjust-font-size-to(ms(2))
   li
     &.first
       padding-left: 0
@@ -38,6 +39,7 @@ body
     padding: 0 0.5em 0 0.25em
     line-height: 1.4
     +book-border
+    margin: 9px 0
 
 .block
   .title
@@ -55,6 +57,7 @@ body
 #main
   h2.title
     @extend %thick-green-border
+    margin-bottom: 21px
 
 img
   border: 1px solid $bbm-gray-light
@@ -63,3 +66,19 @@ img
   h2.title
     a
       +undo-border-links
+
+
+////////////////////////////
+// debug
+////////////////////////////
+// #page
+//   border-top: 1px solid rgba($bbm-gray-light, 0.5)
+//   border-right: 1px solid rgba($bbm-gray-light, 0.5)
+//   border-left: 1px solid rgba($bbm-gray-light, 0.5)
+// img,
+// #admin-menu,
+// .tabs
+//   display: none !important
+
+// body.admin-menu
+//   margin-top: 0 !important

@@ -7,25 +7,34 @@
   a
     +undo-border-links
 .abaproduct-title
-  +adjust-font-size-to(nth($header-sizes, 3), 1, nth($header-sizes, 2))
+  // +adjust-font-size-to(nth($header-sizes, 3), 1, nth($header-sizes, 2))
   @extend %thin-green-border
+  padding-bottom: 6px
+  margin-bottom: 17px
   +book-border
   .abaproduct-image + .abaproduct-page &
     margin-left: 106px
-  // h2
-    // +box-shadow(none)
+  h2
+    @extend %h3
+    line-height: $base-line-height
 
 .abaproduct-authors
-  padding: 0.25em 0
   font-style: italic
 
 .abaproduct-price
+  +adjust-font-size-to(ms(1))
+  font-style: italic
   color: $bbm-green
 
 .abaproduct-cart
   .availability
-    margin: 1em 0
-    padding: 0.5em
+    +leader(0.5)
+    +trailer(0.5)
+    +padding-leader(0.5)
+    +padding-trailer(0.5)
+    margin-left: 0
+    margin-right: 0
+    // padding: 0
     border: 1px solid $bbm-gray-light
     background-color: rgba($bbm-gray-light, 0.2)
 
@@ -40,5 +49,5 @@
 
 .form-submit
   +sassy-button
+  margin: 4px 0
 
-.add-to-cart

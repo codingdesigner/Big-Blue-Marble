@@ -17,13 +17,15 @@ $pixel-normalize: true
 
 // Font size and line-height
 $base-font-size: 16px
-$base-line-height: $base-font-size * 1.5
+$base-line-height: $base-font-size * 1.75
+// 28px, ms(3)
 
 // Modular Scale (used by 04-base)
 // values used to determine modular scale values
 // and http://modularscale.com/
 $ratio: minor_third()
 $base-size: $base-font-size
+
 
 // Dimensions
 // basic values, independant of any css framework
@@ -89,7 +91,7 @@ $sb-padding:         0.5em 1em
 // Button font-size
 $sb-font-size:       ms(0)
 // Button line-height
-$sb-line-height:     1.2em
+$sb-line-height:     $base-line-height
 // Button text color
 $sb-text-color:      white
 // Button text shadow style
@@ -194,7 +196,8 @@ $sb-auto-states:     true
 // $grid-background-column-width: 30px;
 // $grid-background-gutter-width: 10px;
 // $grid-background-offset: 0px;
-// $grid-background-baseline-color: rgba(0, 0, 0, 0.5);
+$grid-background-baseline-color: rgba($bbm-gray-light, 0.5)
+// $round-to-nearest-half-line: true
 // $grid-background-baseline-height: 1.5em;
 // $show-column-grid-backgrounds: true;
 // $show-baseline-grid-backgrounds: true;

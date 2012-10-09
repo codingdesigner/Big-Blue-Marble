@@ -541,7 +541,7 @@ pre, code, kbd, tt {
   font-family: Consolas, Menlo, "Courier New", monospace, monospace;
 }
 
-h1, h2, #site-slogan, h3, h4, h5, h6 {
+h1, h2, #site-slogan, h3, .abaproduct-title h2, h4, h5, h6 {
   font-family: rooney-web, Georgia, serif;
 }
 
@@ -567,7 +567,7 @@ h1, h2, #site-slogan, h3, h4, h5, h6 {
 
 html {
   font-size: 100%;
-  line-height: 1.5em;
+  line-height: 1.75em;
 }
 
 body {
@@ -638,7 +638,8 @@ a:active {
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-top: 0;
+  margin-bottom: 1.75em;
 }
 
 pre {
@@ -670,45 +671,45 @@ li ul {
   list-style-type: circle;
 }
 
-h1, h2, #site-slogan, h3, h4, h5, h6 {
+h1, h2, #site-slogan, h3, .abaproduct-title h2, h4, h5, h6 {
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
 
 h1 {
   font-size: 2.0625em;
-  line-height: 1.45455em;
+  line-height: 1.69697em;
   font-weight: 600;
   color: #0e91c0;
 }
 
 h2, #site-slogan {
   font-size: 1.75em;
-  line-height: 1.71429em;
+  line-height: 2em;
   color: #48c2ed;
 }
 
-h3 {
+h3, .abaproduct-title h2 {
   font-size: 1.4375em;
-  line-height: 2.08696em;
+  line-height: 1.82609em;
   color: #48c2ed;
 }
 
 h4 {
   font-size: 1.1875em;
-  line-height: 1.26316em;
+  line-height: 1.47368em;
   color: #79b07a;
 }
 
 h5 {
   font-size: 1.1875em;
-  line-height: 1.26316em;
+  line-height: 1.47368em;
   color: #79b07a;
 }
 
 h6 {
   font-size: 1.1875em;
-  line-height: 1.26316em;
+  line-height: 1.47368em;
   color: #79b07a;
 }
 
@@ -724,16 +725,16 @@ img {
 }
 img.left {
   float: left;
-  margin: 12px 23px 12px 0;
+  margin: 14px 23px 14px 0;
 }
 img.right {
   float: right;
-  margin: 12px 0 12px 23px;
+  margin: 14px 0 14px 23px;
 }
 
 small {
   font-size: 0.8125em;
-  line-height: 1.84615em;
+  line-height: 2.15385em;
 }
 
 q {
@@ -772,6 +773,10 @@ mark {
   text-shadow: none;
 }
 
+tbody {
+  border-top: none;
+}
+
 ins {
   text-decoration: none;
   border-bottom: 1px solid gray;
@@ -803,20 +808,6 @@ del {
   margin-right: auto;
   padding-left: 0;
   padding-right: 0;
-  @elseif $show-baseline == true {
-    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(0, 0, 0, 0.5)), color-stop(5%, rgba(0, 0, 0, 0)));
-    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
-    background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
-    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
-    background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
-    background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
-    -webkit-background-size: 100% 1.5em;
-    -moz-background-size: 100% 1.5em;
-    -o-background-size: 100% 1.5em;
-    background-size: 100% 1.5em;
-    background-position: left top;
-}
-
 }
 #page:after {
   content: "";
@@ -1554,7 +1545,7 @@ del {
   font-style: normal;
 }
 
-.ss-icon, .ss-icon.ss-social, .ss-icon.ss-social-circle,
+.ss-icon, .ss-icon.ss-social, .vcard i, .ss-icon.ss-social-circle,
 [class^="ss-"]:before, [class*=" ss-"]:before,
 [class^="ss-"][class*=" ss-social"]:before, [class*=" ss-"][class*=" ss-social"]:before,
 [class^="ss-"].right:after, [class*=" ss-"].right:after,
@@ -1689,6 +1680,9 @@ del {
   content: '';
 }
 
+#site-name {
+  margin-bottom: 15px;
+}
 #site-name a {
   text-indent: 110%;
   white-space: nowrap;
@@ -1719,20 +1713,22 @@ del {
 }
 
 body {
-  padding-top: 1.5em;
+  padding-top: 1.75em;
 }
 
-#main-menu {
+nav.main-menu {
   clear: both;
-  font-size: 1.4375em;
-  line-height: 2.08696em;
-  margin-top: 1.5em;
-  margin-bottom: 3em;
+  padding-top: 1.75em;
+  margin-bottom: 3.5em;
 }
-#main-menu li.first {
+nav.main-menu ul {
+  font-size: 1.4375em;
+  line-height: 1.21739em;
+}
+nav.main-menu li.first {
   padding-left: 0;
 }
-#main-menu a {
+nav.main-menu a {
   display: inline-block;
   min-width: 12%;
   padding: 0 0.5em 0 0.25em;
@@ -1743,11 +1739,12 @@ body {
   border-left-color: transparent;
   border-right-color: transparent;
   position: relative;
+  margin: 9px 0;
 }
-#main-menu a:before {
+nav.main-menu a:before {
   position: absolute;
 }
-#main-menu a:before {
+nav.main-menu a:before {
   display: block;
   content: "\0020";
   width: 0;
@@ -1782,6 +1779,10 @@ body {
   display: inline;
 }
 
+#main h2.title {
+  margin-bottom: 21px;
+}
+
 img {
   border: 1px solid #dfdfdf;
 }
@@ -1804,12 +1805,12 @@ img {
 }
 
 .abaproduct-content {
-  margin-bottom: 3em;
+  margin-bottom: 3.5em;
 }
 
 .abaproduct-image {
   float: left;
-  margin: 0 23px 24px 0;
+  margin: 0 23px 28px 0;
 }
 .abaproduct-image a {
   text-decoration: none;
@@ -1829,8 +1830,8 @@ img {
 }
 
 .abaproduct-title {
-  font-size: 0.82143em;
-  line-height: 1.04348em;
+  padding-bottom: 6px;
+  margin-bottom: 17px;
   border-width: 0 1px 6px 1px;
   border-style: none solid solid;
   border-top-color: transparent;
@@ -1861,19 +1862,28 @@ img {
 .abaproduct-image + .abaproduct-page .abaproduct-title {
   margin-left: 106px;
 }
+.abaproduct-title h2 {
+  line-height: 28px;
+}
 
 .abaproduct-authors {
-  padding: 0.25em 0;
   font-style: italic;
 }
 
 .abaproduct-price {
+  font-size: 1.1875em;
+  line-height: 1.47368em;
+  font-style: italic;
   color: #79b07a;
 }
 
 .abaproduct-cart .availability {
-  margin: 1em 0;
-  padding: 0.5em;
+  margin-top: 0.875em;
+  margin-bottom: 0.875em;
+  padding-top: 0.875em;
+  padding-bottom: 0.875em;
+  margin-left: 0;
+  margin-right: 0;
   border: 1px solid #dfdfdf;
   background-color: rgba(223, 223, 223, 0.2);
 }
@@ -1884,9 +1894,9 @@ img {
 }
 
 .abaproduct-related-editions {
-  margin-top: 1.5em;
+  margin-top: 1.75em;
   font-size: 0.8125em;
-  line-height: 1.84615em;
+  line-height: 2.15385em;
   color: #999999;
 }
 
@@ -1895,7 +1905,7 @@ img {
   padding: 0.5em 1em;
   display: inline-block;
   cursor: pointer;
-  line-height: 1.2em;
+  line-height: 28px;
   text-decoration: none;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1915,6 +1925,7 @@ img {
   border: 1px solid #0c7fa8;
   color: white;
   text-shadow: #0d6585 0 -1px 0;
+  margin: 4px 0;
 }
 .form-submit:hover {
   background-color: #0c7fa8;
@@ -1958,6 +1969,25 @@ img {
 
 .cart-block-summary td {
   padding-right: 1em;
+}
+
+.vcard {
+  color: #999999;
+}
+.vcard .org {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('../images/bbm-map.png?1349754304');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 196px;
+  background-position: 50% -120px;
+  border: 1px solid #dfdfdf;
+}
+.vcard i {
+  margin-right: 0.5em;
+  color: #0e91c0;
 }
 
 @media print {
