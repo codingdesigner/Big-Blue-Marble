@@ -5,15 +5,19 @@
 ////////////////////////////
 
 
-=book-border($width: 6px, $bg-color: $background-color)
+=book-border($width: 6px, $bg-color: $background-color, $spine-color: false)
   $border-bottom-width: $width
   $border-bottom-width-half: $border-bottom-width / 2
-  border-width: 0 1px $border-bottom-width 1px
-  border-style: none solid solid
+  border:
+    width: 0 1px $border-bottom-width 1px
+    style: none solid solid
   border-top-color: transparent
   border-left-color: transparent
   border-right-color: transparent
-  +pseudo
+  @if $spine-color
+    +pseudo(both)
+  @else
+    +pseudo
   &:before
     display: block
     content: $space
@@ -26,3 +30,13 @@
     border-color: transparent
     border-style: solid solid none solid
     border-top-color: $bg-color
+  @if $spine-color
+    &:after
+      display: block
+      content: $space
+      width: $width
+      height: 1px
+      background-color: $spine-color
+      left: 50%
+      bottom: -$border-bottom-width - 1px
+      +transform(translateX(-$border-bottom-width-half))

@@ -17,7 +17,6 @@
 #site-slogan
   @extend %h2
 
-
 .element-invisible
   @extend %visuallyhidden
 
@@ -35,16 +34,35 @@ nav.main-menu
       padding-left: 0
   a
     display: inline-block
-    min-width: 12%
+    min-width: 10%
     padding: 0 0.5em 0 0.25em
     line-height: 1.4
-    +book-border
+    +book-border($spine-color: $bbm-blue-light)
     margin: 9px 0
+    &:hover
+      &:after
+        background-color: $bbm-red-dark
+    &:active
+      &:after
+        background-color: $bbm-red-dark
 
 .block
+  +trailer
   .title
     margin-bottom: 0.5em
 
+.sidebar
+  background-color: rgba($bbm-green-light, 0.25)
+  color: $bbm-green
+  padding:
+    left: 0.5em
+    right: 0.5em
+  border:
+    width: 1px
+    style: solid
+    color: $bbm-gray-light
+  // .block
+  //   +clearfix
 
 %book-grid-2
   .abaproduct-content
