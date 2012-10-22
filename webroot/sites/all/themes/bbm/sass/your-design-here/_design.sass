@@ -1,6 +1,11 @@
 // Create the design for your site below
 // SITE-WIDE DESIGN -------------------------------------------------------------- */
 
+#page
+  background: image-url("paper-bag.png") no-repeat top center
+  +padding-leader
+  position: relative
+
 // hide link to skip to nav
 #skip-link
   @extend %visuallyhidden
@@ -8,6 +13,8 @@
 // replace site name with logo
 #site-name
   margin-bottom: 15px
+  position: relative
+  left: 0.5em
   a
     +replace-text-with-dimensions('bbm-logo.png')
     max-width: 100%
@@ -19,9 +26,6 @@
 
 .element-invisible
   @extend %visuallyhidden
-
-body
-  +padding-leader
 
 nav.main-menu
   clear: both

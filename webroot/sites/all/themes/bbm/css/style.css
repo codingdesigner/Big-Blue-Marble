@@ -1680,8 +1680,16 @@ del {
   content: '';
 }
 
+#page {
+  background: url('../images/paper-bag.png?1350876717') no-repeat top center;
+  padding-top: 1.75em;
+  position: relative;
+}
+
 #site-name {
   margin-bottom: 15px;
+  position: relative;
+  left: 0.5em;
 }
 #site-name a {
   text-indent: 110%;
@@ -1710,10 +1718,6 @@ del {
 }
 #site-name a:active {
   border-bottom: none;
-}
-
-body {
-  padding-top: 1.75em;
 }
 
 nav.main-menu {
@@ -2002,11 +2006,11 @@ img {
 }
 
 .cart-block-icon {
-  color: #a7caa8;
+  color: #79b07a;
 }
 
 .cart-block-icon-empty {
-  color: #dfdfdf;
+  color: #a7caa8;
 }
 
 .cart-block-arrow {
