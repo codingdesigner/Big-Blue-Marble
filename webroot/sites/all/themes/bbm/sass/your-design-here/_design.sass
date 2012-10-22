@@ -23,13 +23,14 @@
 
 #site-slogan
   @extend %h2
+  text-indent: 8px
 
 .element-invisible
   @extend %visuallyhidden
 
 nav.main-menu
   clear: both
-  +padding-leader
+  // +padding-leader
   +trailer(2)
   ul
     +adjust-font-size-to(ms(2))

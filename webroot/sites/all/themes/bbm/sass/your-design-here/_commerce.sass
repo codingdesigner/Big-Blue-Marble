@@ -1,3 +1,9 @@
+.block-uc_cart
+  h2.title
+    @extend %h4
+    margin-bottom: 0
+    margin-top: -1em
+
 .cart-block-icon, .cart-block-icon-empty
   background-image: none
   @extend .ss-icon.ss-standard
@@ -8,6 +14,7 @@
   color: $bbm-green-light
 
 .cart-block-arrow
+  display: none
   @extend .ss-icon.ss-standard
   background-image: none !important
   font-size: ms(-1)
@@ -17,5 +24,8 @@
     @extend .ss-dropdown
 
 .cart-block-summary
+  color: $bbm-gray
+  +adjust-font-size-to(ms(-1))
+  margin-left: 42px
   td
     padding-right: 1em

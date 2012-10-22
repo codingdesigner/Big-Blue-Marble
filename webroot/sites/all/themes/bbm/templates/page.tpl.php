@@ -190,6 +190,9 @@
         <?php print $highlight; ?>
 
         <?php print $breadcrumb; ?>
+
+        <?php print $content_top; ?>
+
         <?php if ($title): ?>
           <h1 class="title"><?php print $title; ?></h1>
         <?php endif; ?>
@@ -198,8 +201,6 @@
           <div class="tabs"><?php print $tabs; ?></div>
         <?php endif; ?>
         <?php print $help; ?>
-
-        <?php print $content_top; ?>
 
         <div id="content-area">
           <?php print $content; ?>
