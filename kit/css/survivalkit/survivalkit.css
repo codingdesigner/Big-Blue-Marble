@@ -71,10 +71,10 @@ h1 .amp, h2 .amp, h3 .amp, h4 .amp, h5 .amp, h6 .amp {
   font-family: futura, sans-serif;
 }
 .survival-kit #page > header h1 a {
-  text-indent: 110%;
-  white-space: nowrap;
+  text-indent: -119988px;
   overflow: hidden;
-  background-image: url('/images/survival-kit-logo.png?1345392875');
+  text-align: left;
+  background-image: url('/images/survival-kit-logo.png?1344196173');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 220px;
