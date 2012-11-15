@@ -17,7 +17,7 @@
     color: $color-tile2-4
   a
     +link-colors($color-tile2-2, $color-tile2-5, $color-tile2-5, $color-tile2-2, false)
-    +underline-links($color-tile2-2, $color-tile2-5, $color-tile2-5, $color-tile2-2, false)
+    +border-links($color-tile2-2, $color-tile2-5, $color-tile2-5, $color-tile2-2, false)
     +link-transitions
   .logos
     counter-reset: logos
@@ -74,7 +74,7 @@
       +float(left)
       margin-right: 1em
       a
-        +undo-underline-links
+        +undo-border-links
     .abaproduct-details
       h2
         +adjust-font-size-to(ms(-1))
